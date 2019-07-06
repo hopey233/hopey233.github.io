@@ -81,14 +81,14 @@
 
 <meta name="description" content="这场比较简单，深夜肝题，精神抖擞.jpg A. Keanu Reeves题意: 是给定一个只含0和1的串，问能否能分成最少的子串，并且这些子串的0和1数量不相等 解析: 如果该串本身01数量不等，直接输出，否则就分成两部分就好，第一个字符单独一部分，剩下的为另一部分(我的代码是最后一个字符单独一部分) 123456789101112131415161718192021222324#include&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces Round">
+<meta property="og:title" content="Codeforces Round#572(Div 2)">
 <meta property="og:url" content="http://yoursite.com/2019/07/06/cf190705/index.html">
 <meta property="og:site_name" content="Hope_Y">
 <meta property="og:description" content="这场比较简单，深夜肝题，精神抖擞.jpg A. Keanu Reeves题意: 是给定一个只含0和1的串，问能否能分成最少的子串，并且这些子串的0和1数量不相等 解析: 如果该串本身01数量不等，直接输出，否则就分成两部分就好，第一个字符单独一部分，剩下的为另一部分(我的代码是最后一个字符单独一部分) 123456789101112131415161718192021222324#include&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-06T09:47:43.351Z">
+<meta property="og:updated_time" content="2019-07-06T09:54:06.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces Round">
+<meta name="twitter:title" content="Codeforces Round#572(Div 2)">
 <meta name="twitter:description" content="这场比较简单，深夜肝题，精神抖擞.jpg A. Keanu Reeves题意: 是给定一个只含0和1的串，问能否能分成最少的子串，并且这些子串的0和1数量不相等 解析: 如果该串本身01数量不等，直接输出，否则就分成两部分就好，第一个字符单独一部分，剩下的为另一部分(我的代码是最后一个字符单独一部分) 123456789101112131415161718192021222324#include&amp;">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>Codeforces Round | Hope_Y</title>
+  <title>Codeforces Round#572(Div 2) | Hope_Y</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Codeforces Round</h1>
+          <h1 class="post-title" itemprop="name headline">Codeforces Round#572(Div 2)</h1>
         
 
         <div class="post-meta">
@@ -308,7 +308,7 @@
 <p>解析: 对数组a首先排序，直接从最后一个元素a[n]开始找，找从前面找a[i]，使得a[n-1]+a[i] &gt; a[n]，如果找到a[i]，那么序列就是a[n-1] a[n] a[i] a[1] … a[n-2] (假设i不是1或者n-2)，具体看代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=1e5+10;</span><br><span class="line">int n;</span><br><span class="line">int a[maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+n);</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n-2; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]+a[n-2] &gt; a[n-1])&#123;</span><br><span class="line">            puts(<span class="string">"YES"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,a[n-2],a[n-1],a[i]);</span><br><span class="line">            <span class="keyword">for</span>(int j=0; j&lt;n-2; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j!=i) <span class="built_in">printf</span>(<span class="string">" %d"</span>,a[j]);</span><br><span class="line">            &#125;</span><br><span class="line">            puts(<span class="string">""</span>);</span><br><span class="line">            <span class="built_in">return</span> 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    puts(<span class="string">"NO"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="C-Candies"><a href="#C-Candies" class="headerlink" title="C. Candies!"></a><a href="https://codeforces.com/contest/1189/problem/C" target="_blank" rel="noopener">C. Candies!</a></h2><p> 题意: 有这么一个操作，对于a[i], a[i+1],…,a[j],其中，j-i+1是2的幂次方，然后对于每两个数，相加得到一个新数，然后个数就变成了原来的一半，比如说{1,2,3,4}，经过一次变换之后就变成了{3，7},一直操作直到个数为1;然后对于每次操作，如果相加得到的新数大于10，我就能得到一颗糖，并且将新数对10取模;然后我有k次循环，对于区间内的数，经过若干次操作之后，我能拿多少糖。</p>
+<h2 id="C-Candies"><a href="#C-Candies" class="headerlink" title="C. Candies!"></a><a href="https://codeforces.com/contest/1189/problem/C" target="_blank" rel="noopener">C. Candies!</a></h2><p> 题意: 有这么一个操作，对于a[i], a[i+1],…,a[j],其中，j-i+1是2的幂次方，然后对于每两个数，相加得到一个新数，然后个数就变成了原来的一半，比如说{1,2,3,4}，经过一次变换之后就变成了{3，7},一直操作直到个数为1; 然后对于每次操作，如果相加得到的新数大于10，我就能得到一颗糖，并且将新数对10取模; 然后我有k次询问，对于区间内的数，经过若干次操作之后，我能拿多少糖。</p>
 <p> 解析: 题目给的限制，每个数小于10，我只要统计区间内的总数，然后除以10取整就是答案，证明略。<del>(盲猜结论直接莽一发)</del></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=1e5+10;</span><br><span class="line">int n;</span><br><span class="line">int a[maxn];</span><br><span class="line">int dp[maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(int i=1; i&lt;=n; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        dp[i]=dp[i-1]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    int m,l,r;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        scanf(<span class="string">"%d %d"</span>,&amp;l,&amp;r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(dp[r]-dp[l-1])/10);;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
