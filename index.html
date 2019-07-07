@@ -249,10 +249,40 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2019/07/06/newcoder190705/" itemprop="url">牛客练习赛49D
-                  阅读全文 &raquo;
                 </a></h1>
         
+          <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-06T17:39:24+08:00">
+                2019-07-06
+              </time>
+            
 
+            
+
+            
+          </span>
+
+          </div>
+          </header>
+            
+
+
+
+           <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/06/newcoder190705/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
 
     
@@ -335,13 +365,20 @@
             
           </span>
 
+          </div>
+          </header>
+
+          
+            <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/06/cf190705/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
           
 
           
-            
-          
-
-          
           
 
           
@@ -350,46 +387,10 @@
 
           
 
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         
-          
-            <p><del>这场比较简单</del>，深夜肝题，精神抖擞.jpg</p>
-<h2 id="A-Keanu-Reeves"><a href="#A-Keanu-Reeves" class="headerlink" title="A. Keanu Reeves"></a><a href="https://codeforces.com/contest/1189/problem/A" target="_blank" rel="noopener">A. Keanu Reeves</a></h2><p>题意: 是给定一个只含0和1的串，问能否能分成最少的子串，并且这些子串的0和1数量不相等</p>
-<p>解析: 如果该串本身01数量不等，直接输出，否则就分成两部分就好，第一个字符单独一部分，剩下的为另一部分(我的代码是最后一个字符单独一部分)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">char s[200];</span><br><span class="line">int n;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    scanf(<span class="string">"%s"</span>,s);</span><br><span class="line">    int cnt0=0,cnt1=0;</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'0'</span>) cnt0++;</span><br><span class="line">        <span class="keyword">else</span> cnt1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt0 != cnt1)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"1\n%s\n"</span>,s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        puts(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">for</span>(int i=0; i&lt;n-1; i++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%c"</span>,s[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" %c\n"</span>,s[n-1]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
 
-<h2 id="B-Number-Circle"><a href="#B-Number-Circle" class="headerlink" title="B. Number Circle"></a><a href="https://codeforces.com/contest/1189/problem/B" target="_blank" rel="noopener">B. Number Circle</a></h2><p>题意: 给定一个序列，问你能否组成一个首尾相接循环的序列，使得每个数都比相邻的两个数的和小</p>
-<p>解析: 对数组a首先排序，直接从最后一个元素a[n]开始找，找从前面找a[i]，使得a[n-1]+a[i] &gt; a[n]，如果找到a[i]，那么序列就是a[n-1] a[n] a[i] a[1] … a[n-2] (假设i不是1或者n-2)，具体看代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=1e5+10;</span><br><span class="line">int n;</span><br><span class="line">int a[maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+n);</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n-2; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]+a[n-2] &gt; a[n-1])&#123;</span><br><span class="line">            puts(<span class="string">"YES"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,a[n-2],a[n-1],a[i]);</span><br><span class="line">            <span class="keyword">for</span>(int j=0; j&lt;n-2; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j!=i) <span class="built_in">printf</span>(<span class="string">" %d"</span>,a[j]);</span><br><span class="line">            &#125;</span><br><span class="line">            puts(<span class="string">""</span>);</span><br><span class="line">            <span class="built_in">return</span> 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    puts(<span class="string">"NO"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-Candies"><a href="#C-Candies" class="headerlink" title="C. Candies!"></a><a href="https://codeforces.com/contest/1189/problem/C" target="_blank" rel="noopener">C. Candies!</a></h2><p> 题意: 有这么一个操作，对于a[i], a[i+1],…,a[j],其中，j-i+1是2的幂次方，然后对于每两个数，相加得到一个新数，然后个数就变成了原来的一半，比如说{1,2,3,4}，经过一次变换之后就变成了{3，7},一直操作直到个数为1; 然后对于每次操作，如果相加得到的新数大于10，我就能得到一颗糖，并且将新数对10取模; 然后我有k次询问，对于区间内的数，经过若干次操作之后，我能拿多少糖。</p>
-<p> 解析: 题目给的限制，每个数小于10，我只要统计区间内的总数，然后除以10取整就是答案，证明略。<del>(盲猜结论直接莽一发)</del></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=1e5+10;</span><br><span class="line">int n;</span><br><span class="line">int a[maxn];</span><br><span class="line">int dp[maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(int i=1; i&lt;=n; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        dp[i]=dp[i-1]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    int m,l,r;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        scanf(<span class="string">"%d %d"</span>,&amp;l,&amp;r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(dp[r]-dp[l-1])/10);;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="D1-Add-on-a-Tree"><a href="#D1-Add-on-a-Tree" class="headerlink" title="D1. Add on a Tree"></a><a href="https://codeforces.com/contest/1189/problem/D1" target="_blank" rel="noopener">D1. Add on a Tree</a></h2><p>题意: 有一棵树，然后有一种操作，任意选择两个叶子节点，然后得到一条路径，我能在这条路径上加上某个实数(初始化每条边都是0)，这样每条边都有一个数，问对于任意一组边上的数，我能否通过有限次操作实现</p>
-<p>解析: 透过题目看本质，其实就是一道水题，当一个节点只连接两条边，就是NO，否则就是YES</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e5+10;</span><br><span class="line">int vis[maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    int n,x,y;</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    int s=0;</span><br><span class="line">    memset(vis,0,sizeof vis);</span><br><span class="line">    <span class="keyword">for</span>(int i=0; i&lt;n-1; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%d %d"</span>,&amp;x,&amp;y);</span><br><span class="line">        vis[x]++;</span><br><span class="line">        vis[y]++;</span><br><span class="line">    &#125;</span><br><span class="line">    bool flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(int i=1; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i] == 2)&#123;</span><br><span class="line">            flag=<span class="literal">false</span>;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag) puts(<span class="string">"YES"</span>);</span><br><span class="line">    <span class="keyword">else</span> puts(<span class="string">"NO"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="E-Count-Pairs"><a href="#E-Count-Pairs" class="headerlink" title="E. Count Pairs"></a><a href="https://codeforces.com/contest/1189/problem/E" target="_blank" rel="noopener">E. Count Pairs</a></h2><p>题意: 有一个数组a，给定一个素数p和一个小于p的数k，问能找到多少组(i,j),使得 (a[i] + a[j])(a[i]^2 + a[j]^2) ≡ k mod p.</p>
-<p>解析: 两边同时乘a[i]-a[j]，就变成了(a[i]^4 - a[j]^4) ≡ (k* a[i]- k* a[j])mod p ,转换就是(a[i]^4 - k* a[i]) ≡ (a[j]^4 -k* a[j]) mod p</p>
-<p>只要另b[i] = a[i]^4 - k* a[i] 就可以通过map统计个数了,注意取模</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a,b;</span><br><span class="line">ll n,p,k;</span><br><span class="line">map&lt;ll,ll&gt;ma;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    scanf(<span class="string">"%lld %lld %lld"</span>,&amp;n,&amp;p,&amp;k);</span><br><span class="line">    ll cnt=0;</span><br><span class="line">    <span class="keyword">for</span>(ll i=0; i&lt;n; i++)&#123;</span><br><span class="line">        scanf(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">        b=(a*a%p*a%p*a%p<span class="_">-a</span>*k%p+p)%p;</span><br><span class="line">        //<span class="built_in">printf</span>(<span class="string">"%lld %lld\n"</span>,b,(a*a*a*a<span class="_">-a</span>*k+p)%p);</span><br><span class="line">        ma[b]++;</span><br><span class="line">        cnt+=(ma[b]-1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
+    
     
     
     
@@ -649,7 +650,7 @@
 
 
 
-	
+  
 
 
 
