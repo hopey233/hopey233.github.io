@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="description" content="复习一波区间dp，不然有时候玄学区间dp过题很难受，题目来源：[kuangbin带你飞]专题二十二 区间DP 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hash">
-<meta property="og:url" content="http://yoursite.com/2019/07/11/hash/index.html">
+<meta property="og:title" content="区间dp">
+<meta property="og:url" content="http://yoursite.com/2019/07/11/区间dp/index.html">
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
-<meta property="og:description" content="遇到hash的题目默默流下眼泪😥">
+<meta property="og:description" content="复习一波区间dp，不然有时候玄学区间dp过题很难受，题目来源：[kuangbin带你飞]专题二十二 区间DP 。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T10:16:51.562Z">
+<meta property="og:updated_time" content="2019-07-11T15:06:18.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hash">
-<meta name="twitter:description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="twitter:title" content="区间dp">
+<meta name="twitter:description" content="复习一波区间dp，不然有时候玄学区间dp过题很难受，题目来源：[kuangbin带你飞]专题二十二 区间DP 。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/11/hash/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/11/区间dp/">
 
 
 
 
 
-  <title>hash | Hope_Y's blog</title>
+  <title>区间dp | Hope_Y's blog</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/hash/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/区间dp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hope_Y">
@@ -261,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hash</h1>
+          <h1 class="post-title" itemprop="name headline">区间dp</h1>
         
 
         <div class="post-meta">
@@ -273,7 +273,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T16:44:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T23:03:13+08:00">
                 2019-07-11
               </time>
             
@@ -296,8 +296,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/dp/" itemprop="url" rel="index">
+                    <span itemprop="name">dp</span>
                   </a>
                 </span>
 
@@ -338,13 +338,16 @@
       
 
       
-        <p><del>遇到hash的题目默默流下眼泪😥</del></p>
+        <p>复习一波区间dp，不然有时候玄学区间dp过题很难受，题目来源：<a href="https://cn.vjudge.net/contest/308873#overview" target="_blank" rel="noopener">[kuangbin带你飞]专题二十二 区间DP</a> 。</p>
 <a id="more"></a>
 
-<h2 id="小w的a-b问题"><a href="#小w的a-b问题" class="headerlink" title="小w的a=b问题"></a><a href="https://ac.nowcoder.com/acm/contest/923/B" target="_blank" rel="noopener">小w的a=b问题</a></h2><p>题意：给你两个数组a和b，长度为n和m，问你$\prod_{i=1}^{n}a_i ! $是否等于$\prod_{i=1}^{m}b_i ! $，其中$1 \leq n,m \leq 10^5$,$0 \leq a_i,b_i \leq 10^5$</p>
-<p><del>初次遇到这种题目，我以为是一个推公式的题目，把我整懵了，果然数据结构的知识还是灰常重要啊[点头]</del></p>
-<p>思路：用两个比较大一点的质数作为模系，然后计算每个阶乘$(0 \sim10^5)$所在模系hash值，用两个可以保证不冲突的几率大大减小。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll mod1=<span class="number">1e9</span>+<span class="number">7</span>,mod2=<span class="number">1e9</span>+<span class="number">9</span>;</span><br><span class="line">ll m1[maxn],m2[maxn];</span><br><span class="line">ll t,n,m,a;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    m1[<span class="number">0</span>]=m2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;maxn; i++)&#123;</span><br><span class="line">        m1[i]=m1[i<span class="number">-1</span>]*i%mod1;</span><br><span class="line">        m2[i]=m2[i<span class="number">-1</span>]*i%mod2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;m);</span><br><span class="line">        ll s1=<span class="number">1</span>,s2=<span class="number">1</span>,s3=<span class="number">1</span>,s4=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s1=s1*m1[a]%mod1;</span><br><span class="line">            s2=s2*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s3=s3*m1[a]%mod1;</span><br><span class="line">            s4=s4*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s1==s3 &amp;&amp; s2==s4) <span class="built_in">puts</span>(<span class="string">"equal"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"unequal"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="A-Halloween-Costumes"><a href="#A-Halloween-Costumes" class="headerlink" title="A-Halloween Costumes"></a><a href="https://cn.vjudge.net/contest/308873#problem/A" target="_blank" rel="noopener">A-Halloween Costumes</a></h2><p>题意：有n个万圣节聚会，每个聚会有要穿一种衣服过去$a_i$，可以将一件衣服套在本来穿的衣服上，如果参加的聚会要穿的这种衣服在我外面套的衣服的里面，有两种选择，要么重新拿一件对应样式的衣服，要么脱下穿在对应样式外的所有衣服；如果里面没有对应样式的衣服，就要重新另拿一件。脱下的衣服不能重新穿回去<del>（有些拗口，建议看题目自行体会，语文水平有限）</del>，问你对于所有聚会，所需最少的衣服数量。</p>
+<p>思路：<code>dp[i][j]</code>代表区间i到j所需最少的数目，那么首先有<code>dp[i][j]=dp[i][j-1]+1</code>，然后在枚举断点的时候，如果枚举的断点k，有<code>a[k]=a[j]</code>的话，那么对于j这一点，我可以脱下<code>dp[k+1][j-1]</code>件衣服，回到k这一个状态点，即<code>dp[i][j]=min(dp[i][j],dp[i][k]+dp[k+1][j-1])</code>，注意条件不是<code>a[i]=a[k]</code>，因为i到k中的状态可能会影响到k到j的状态（比如说在k点，我脱下了一件后面要用到的衣服，就会有矛盾）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn],a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">            dp[i][i]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> len=<span class="number">2</span>; len&lt;=n; len++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">                <span class="keyword">int</span> j=i+len<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">if</span>(j&gt;n) <span class="keyword">break</span>;</span><br><span class="line">                dp[i][j]=dp[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=i; k&lt;j; k++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(a[k] == a[j]) dp[i][j]=min(dp[i][j],dp[i][k]+dp[k+<span class="number">1</span>][j<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d: %d\n"</span>,cnt++,dp[<span class="number">1</span>][n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="G-String-painter"><a href="#G-String-painter" class="headerlink" title="G-String painter"></a><a href="https://cn.vjudge.net/contest/308873#problem/G" target="_blank" rel="noopener">G-String painter</a></h2><p>题意：两个相同长度的字符串s和t，你可以选择一段区间，将其变成同一个字符，问你将第一个字符串刷成第二串最小需要多少个操作。</p>
+<p>思路：和A题非常相似，先用A题的思路将字符串s处理好，<code>dp[i][j]</code>代表区间i到j变成任意其他的字符所需的最小步数，然后再对t字符串进行处理，也是区间dp的思维，<code>a[i]</code>代表从1到i区间所需的最小操作。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn],t[maxn];</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%s %s"</span>,s+<span class="number">1</span>,t+<span class="number">1</span>))&#123;</span><br><span class="line">        <span class="keyword">int</span> n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) dp[i][i]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> len=<span class="number">2</span>; len&lt;=n; len++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">                <span class="keyword">int</span> j=i+len<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">if</span>(j&gt;n) <span class="keyword">break</span>;</span><br><span class="line">                dp[i][j]=dp[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=i; k&lt;j; k++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(t[k] == t[j]) dp[i][j]=min(dp[i][j],dp[i][k]+dp[k+<span class="number">1</span>][j<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) a[i]=dp[<span class="number">1</span>][i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == t[i]) a[i]=a[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;i; j++)</span><br><span class="line">                a[i]=min(a[i],a[j]+dp[j+<span class="number">1</span>][i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -370,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/主席树/" rel="next" title="主席树">
-                <i class="fa fa-chevron-left"></i> 主席树
+              <a href="/2019/07/11/hash/" rel="next" title="hash">
+                <i class="fa fa-chevron-left"></i> hash
               </a>
             
           </div>
@@ -379,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/区间dp/" rel="prev" title="区间dp">
-                区间dp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小w的a-b问题"><span class="nav-number">1.</span> <span class="nav-text">小w的a=b问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Halloween-Costumes"><span class="nav-number">1.</span> <span class="nav-text">A-Halloween Costumes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-String-painter"><span class="nav-number">2.</span> <span class="nav-text">G-String painter</span></a></li></ol></div>
             
 
           </div>
