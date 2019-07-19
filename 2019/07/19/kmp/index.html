@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Hope_Y's blog" type="application/atom+xml">
 
@@ -81,17 +83,17 @@
 
 
 
-<meta name="description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="description" content="之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，出来挨打！，不过还好发现的及时。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hash">
-<meta property="og:url" content="http://yoursite.com/2019/07/11/hash/index.html">
+<meta property="og:title" content="kmp">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/kmp/index.html">
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
-<meta property="og:description" content="遇到hash的题目默默流下眼泪😥">
+<meta property="og:description" content="之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，出来挨打！，不过还好发现的及时。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T10:16:51.562Z">
+<meta property="og:updated_time" content="2019-07-19T15:31:03.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hash">
-<meta name="twitter:description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="twitter:title" content="kmp">
+<meta name="twitter:description" content="之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，出来挨打！，不过还好发现的及时。">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/11/hash/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/kmp/">
 
 
 
 
 
-  <title>hash | Hope_Y's blog</title>
+  <title>kmp | Hope_Y's blog</title>
   
 
 
@@ -244,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/hash/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/kmp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hope_Y">
@@ -261,7 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hash</h1>
+          <h1 class="post-title" itemprop="name headline">kmp</h1>
         
 
         <div class="post-meta">
@@ -273,8 +275,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T16:44:34+08:00">
-                2019-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T23:28:41+08:00">
+                2019-07-19
               </time>
             
 
@@ -338,14 +340,17 @@
       
 
       
-        <p><del>遇到hash的题目默默流下眼泪😥</del></p>
+        <p>之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，<del>出来挨打！</del>，不过还好发现的及时。</p>
 <a id="more"></a>
 
-<h2 id="小w的a-b问题"><a href="#小w的a-b问题" class="headerlink" title="小w的a=b问题"></a><a href="https://ac.nowcoder.com/acm/contest/923/B" target="_blank" rel="noopener">小w的a=b问题</a></h2><p>题意：给你两个数组a和b，长度为n和m，问你$\prod_{i=1}^{n}a_i ! $是否等于$\prod_{i=1}^{m}b_i ! $，其中$1 \leq n,m \leq 10^5$,$0 \leq a_i,b_i \leq 10^5$</p>
-<p><del>初次遇到这种题目，我以为是一个推公式的题目，把我整懵了，果然数据结构的知识还是灰常重要啊[点头]</del></p>
-<p>思路：用两个比较大一点的质数作为模系，然后计算每个阶乘$(0 \sim10^5)$所在模系hash值，用两个可以保证不冲突的几率大大减小。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll mod1=<span class="number">1e9</span>+<span class="number">7</span>,mod2=<span class="number">1e9</span>+<span class="number">9</span>;</span><br><span class="line">ll m1[maxn],m2[maxn];</span><br><span class="line">ll t,n,m,a;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    m1[<span class="number">0</span>]=m2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;maxn; i++)&#123;</span><br><span class="line">        m1[i]=m1[i<span class="number">-1</span>]*i%mod1;</span><br><span class="line">        m2[i]=m2[i<span class="number">-1</span>]*i%mod2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;m);</span><br><span class="line">        ll s1=<span class="number">1</span>,s2=<span class="number">1</span>,s3=<span class="number">1</span>,s4=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s1=s1*m1[a]%mod1;</span><br><span class="line">            s2=s2*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s3=s3*m1[a]%mod1;</span><br><span class="line">            s4=s4*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s1==s3 &amp;&amp; s2==s4) <span class="built_in">puts</span>(<span class="string">"equal"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"unequal"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Extend-to-Palindrome"><a href="#Extend-to-Palindrome" class="headerlink" title="Extend to Palindrome"></a><a href="https://www.spoj.com/problems/EPALIN/" target="_blank" rel="noopener">Extend to Palindrome</a></h2><p>题意：就是在一个字符串最后添加最少的字符，使得字符串回文。</p>
+<p>思路：求一个正序的串，和一个逆序的串，求其中的正向的后缀和逆向的前缀相等的长度最大值，最后先输出正向的串，在输出逆序中最大长度之后的字符。</p>
+<p>比如说 正序：abaa，逆序：aaba ，那么最长的长度就是2，为aa，然后就输出abaa ba就好了，可以kmp或者hash求最长的长度。</p>
+<p>KMP法（模板拿稳了）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">char</span> t[maxn];</span><br><span class="line"><span class="keyword">int</span> nex[maxn],len;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cal</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    nex[<span class="number">0</span>]=j=<span class="number">-1</span>;</span><br><span class="line">    i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;len)&#123;</span><br><span class="line">        <span class="keyword">while</span>(j!=<span class="number">-1</span> &amp;&amp; s[j]!=s[i]) j=nex[j];</span><br><span class="line">        nex[++i]=++j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kmp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//原串t，目的串s</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;len&amp;&amp;j&lt;len)&#123;</span><br><span class="line">        <span class="keyword">while</span>(j!=<span class="number">-1</span> &amp;&amp; t[i]!=s[j]) j=nex[j];</span><br><span class="line">        i++;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%s"</span>,t))&#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(t);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">            s[i]=t[len-i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        s[len]=<span class="string">'\0'</span>;</span><br><span class="line">        cal();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s"</span>,t);</span><br><span class="line">        <span class="keyword">int</span> tt=kmp();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=tt; i&lt;len; i++) <span class="built_in">putchar</span>(s[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>hash留坑吧……</p>
+<p>后记：如果是求在任意位置插入任意字符，求插入的最少字符的个数，做法就是区间dp。</p>
 
       
     </div>
@@ -370,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/主席树/" rel="next" title="主席树">
-                <i class="fa fa-chevron-left"></i> 主席树
+              <a href="/2019/07/18/cf190717/" rel="next" title="Codeforces Round">
+                <i class="fa fa-chevron-left"></i> Codeforces Round
               </a>
             
           </div>
@@ -379,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/区间dp/" rel="prev" title="区间dp">
-                区间dp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小w的a-b问题"><span class="nav-number">1.</span> <span class="nav-text">小w的a=b问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Extend-to-Palindrome"><span class="nav-number">1.</span> <span class="nav-text">Extend to Palindrome</span></a></li></ol></div>
             
 
           </div>

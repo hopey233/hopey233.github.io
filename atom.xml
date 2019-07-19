@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-18T03:04:16.506Z</updated>
+  <updated>2019-07-19T15:31:03.846Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kmp</title>
+    <link href="http://yoursite.com/2019/07/19/kmp/"/>
+    <id>http://yoursite.com/2019/07/19/kmp/</id>
+    <published>2019-07-19T15:28:41.647Z</published>
+    <updated>2019-07-19T15:31:03.846Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，<del>出来挨打！</del>，不过还好发现的及时。</p><a id="more"></a><h2 id="Extend-to-Palindrome"><a href="#Extend-to-Palindrome" class="headerlink" title="Extend to Palindrome"></a><a href="https://www.spoj.com/problems/EPALIN/" target="_blank" rel="noopener">Extend to Palindrome</a></h2><p>题意：就是在一个字符串最后添加最少的字符，使得字符串回文。</p><p>思路：求一个正序的串，和一个逆序的串，求其中的正向的后缀和逆向的前缀相等的长度最大值，最后先输出正向的串，在输出逆序中最大长度之后的字符。</p><p>比如说 正序：abaa，逆序：aaba ，那么最长的长度就是2，为aa，然后就输出abaa ba就好了，可以kmp或者hash求最长的长度。</p><p>KMP法（模板拿稳了）：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">char</span> t[maxn];</span><br><span class="line"><span class="keyword">int</span> nex[maxn],len;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cal</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    nex[<span class="number">0</span>]=j=<span class="number">-1</span>;</span><br><span class="line">    i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;len)&#123;</span><br><span class="line">        <span class="keyword">while</span>(j!=<span class="number">-1</span> &amp;&amp; s[j]!=s[i]) j=nex[j];</span><br><span class="line">        nex[++i]=++j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kmp</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//原串t，目的串s</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;len&amp;&amp;j&lt;len)&#123;</span><br><span class="line">        <span class="keyword">while</span>(j!=<span class="number">-1</span> &amp;&amp; t[i]!=s[j]) j=nex[j];</span><br><span class="line">        i++;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%s"</span>,t))&#123;</span><br><span class="line">        len=<span class="built_in">strlen</span>(t);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">            s[i]=t[len-i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        s[len]=<span class="string">'\0'</span>;</span><br><span class="line">        cal();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s"</span>,t);</span><br><span class="line">        <span class="keyword">int</span> tt=kmp();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=tt; i&lt;len; i++) <span class="built_in">putchar</span>(s[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>hash留坑吧……</p><p>后记：如果是求在任意位置插入任意字符，求插入的最少字符的个数，做法就是区间dp。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前写过kmp的算法，lwl给了我一个模板，现在再写就出问题了，&lt;del&gt;出来挨打！&lt;/del&gt;，不过还好发现的及时。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Codeforces Round</title>
