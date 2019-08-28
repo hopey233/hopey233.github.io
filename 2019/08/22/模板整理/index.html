@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="Collected By Hope_Y…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-28T02:51:04.681Z">
+<meta property="og:updated_time" content="2019-08-28T02:56:57.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板整理">
 <meta name="twitter:description" content="Collected By Hope_Y…">
@@ -413,7 +413,7 @@
 <h5 id="扩展KMP"><a href="#扩展KMP" class="headerlink" title="扩展KMP"></a>扩展KMP</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//next[i]表示t[i...m-1]与t[0...m-1]的最长公共前缀</span></span><br><span class="line"><span class="comment">//extend[i]表示s[i...n-1]与t[0...m-1]的最长公共前缀</span></span><br><span class="line"><span class="keyword">int</span> Next[maxn],extend[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNext</span><span class="params">(<span class="keyword">char</span> t[],<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    Next[<span class="number">0</span>]=m;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j+<span class="number">1</span>&lt;m&amp;&amp;t[j]==t[j+<span class="number">1</span>]) j++;</span><br><span class="line">    Next[<span class="number">1</span>]=j;</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> p=Next[k]+k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> L=Next[i-k];</span><br><span class="line">        <span class="keyword">if</span>(i+L&lt;p+<span class="number">1</span>) Next[i]=L;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            j=max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j&lt;m&amp;&amp;t[i+j]==t[j]) j++;</span><br><span class="line">            Next[i]=j;</span><br><span class="line">            k=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extendkmp</span><span class="params">(<span class="keyword">char</span> t[],<span class="keyword">int</span> m,<span class="keyword">char</span> s[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    getNext(t,m);</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;n&amp;&amp;j&lt;m&amp;&amp;t[j]==s[j]) j++;</span><br><span class="line">    extend[<span class="number">0</span>]=j;</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> p=extend[k]+k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> L=Next[i-k];</span><br><span class="line">        <span class="keyword">if</span>(i+L&lt;p+<span class="number">1</span>) extend[i]=L;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            j=max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j&lt;n&amp;&amp;j&lt;m&amp;&amp;s[i+j]==t[j]) j++;</span><br><span class="line">            extend[i]=j;</span><br><span class="line">            k=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><h4 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h4><p>当$gcd(y,p)=1$，在这种情况下，有可能给定$p$为质数。设$x=a * m - b$ ，$m= \lceil \sqrt p \rceil$，$ a \in [0,m+1)$，$b \in [0,m)$，那么原式变成$y^{a * m}=z * y^{b}$，先枚举$b$，计算$z * y^{b}(mod\ p)$，存到$map$中，再枚举$a$就好了。</p>
-<h6 id="SDOI2011"><a href="#SDOI2011" class="headerlink" title="SDOI2011"></a><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2242" target="_blank" rel="noopener">SDOI2011</a></h6><p>题意：给定$y,z,p$，计算1. $y^z (mod \ p)$；2. 满足$x * y \equiv z(mod \ p)$的最小非负整数的$x$；3.满足$y^x  \equiv  z\ (mod\ p)$的最小非负整数的$x$。</p>
+<h5 id="SDOI2011"><a href="#SDOI2011" class="headerlink" title="SDOI2011"></a><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2242" target="_blank" rel="noopener">SDOI2011</a></h5><p>题意：给定$y,z,p$，计算1. $y^z (mod \ p)$；2. 满足$x * y \equiv z(mod \ p)$的最小非负整数的$x$；3.满足$y^x  \equiv  z\ (mod\ p)$的最小非负整数的$x$。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll y,z,p;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x,ll mod)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> qpow(x,mod<span class="number">-2</span>,mod);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nnot</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BSGS</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;ll,ll&gt;pw;</span><br><span class="line">    <span class="keyword">if</span>(y == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">-1</span>, m = <span class="built_in">sqrt</span>(p) + <span class="number">1</span>, xx, s = y;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">        pw[s] = i;</span><br><span class="line">        s = s * x % p;</span><br><span class="line">    &#125;</span><br><span class="line">    xx = qpow(x, m, p), s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= m + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        s = s * xx % p;</span><br><span class="line">        <span class="keyword">if</span>(pw.count(s))&#123;</span><br><span class="line">            ans = i * m - pw[s];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) nnot();</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll t,op;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;t,&amp;op);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;y,&amp;z,&amp;p);</span><br><span class="line">        <span class="keyword">if</span>(op == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,qpow(y,z,p));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op == <span class="number">2</span>)&#123;</span><br><span class="line">            ll tm=y%p;</span><br><span class="line">            <span class="keyword">if</span>(tm==<span class="number">0</span> &amp;&amp; z%p!=<span class="number">0</span>)&#123;</span><br><span class="line">                nnot();</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,z*inv(y,p)%p);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(y%p) BSGS(y,z);</span><br><span class="line">            <span class="keyword">else</span> nnot();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -421,7 +421,7 @@
 <p>将原式写成$y * y^{x-1}+k * p=z,k \in Z$，根据$exgcd$，当$d=gcd(y,p)$不是$z$的约数就不会有解，有：$$\frac{y}{d} * y^{x-1}+k * \frac{p}{d}=\frac{z}{d}$$</p>
 <p>一直递归直到$d=1$，设之间的所有的$d$的乘积为$g$，递归$c$次，令$x’=x-c\ ,\ p’=\frac{p}{g}\ ,\ z=\frac{z}{g}$，$y^{x’} * \frac{y^c}{g} \equiv z’(mod \ p’)$</p>
 <p>然后再用BSGS求解。</p>
-<h6 id="SPOJMOD-Power-Modulo-Inverted"><a href="#SPOJMOD-Power-Modulo-Inverted" class="headerlink" title="SPOJMOD Power Modulo Inverted"></a><a href="http://www.spoj.com/problems/MOD/" target="_blank" rel="noopener">SPOJMOD Power Modulo Inverted</a></h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll y,z,p;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (y==<span class="number">0</span>)?x:gcd(y,x%y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">exBSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(z==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">map</span>&lt;ll,ll&gt;pw;</span><br><span class="line">    ll cnt=<span class="number">0</span>,mul=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll d=gcd(y,p); d!=<span class="number">1</span>; d=gcd(y,p))&#123;</span><br><span class="line">        <span class="keyword">if</span>(z%d) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ++cnt,z/=d,p/=d,mul=(mul*y/d%p);</span><br><span class="line">        <span class="keyword">if</span>(z == mul) <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    ll s=z,m=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">        pw[s]=i;</span><br><span class="line">        s=s*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">    ll x=qpow(y,m,p);</span><br><span class="line">    s=mul;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        s=s*x%p;</span><br><span class="line">        <span class="keyword">if</span>(pw.count(s)) <span class="keyword">return</span> i*m-pw[s]+cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;y,&amp;p,&amp;z)&amp;&amp;(y||z||p))&#123;</span><br><span class="line">        y%=p;</span><br><span class="line">        z%=p;</span><br><span class="line">        ll ans=exBSGS();</span><br><span class="line">        <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="SPOJMOD-Power-Modulo-Inverted"><a href="#SPOJMOD-Power-Modulo-Inverted" class="headerlink" title="SPOJMOD Power Modulo Inverted"></a><a href="http://www.spoj.com/problems/MOD/" target="_blank" rel="noopener">SPOJMOD Power Modulo Inverted</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll y,z,p;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (y==<span class="number">0</span>)?x:gcd(y,x%y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">exBSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(z==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">map</span>&lt;ll,ll&gt;pw;</span><br><span class="line">    ll cnt=<span class="number">0</span>,mul=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll d=gcd(y,p); d!=<span class="number">1</span>; d=gcd(y,p))&#123;</span><br><span class="line">        <span class="keyword">if</span>(z%d) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ++cnt,z/=d,p/=d,mul=(mul*y/d%p);</span><br><span class="line">        <span class="keyword">if</span>(z == mul) <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    ll s=z,m=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">        pw[s]=i;</span><br><span class="line">        s=s*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">    ll x=qpow(y,m,p);</span><br><span class="line">    s=mul;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        s=s*x%p;</span><br><span class="line">        <span class="keyword">if</span>(pw.count(s)) <span class="keyword">return</span> i*m-pw[s]+cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;y,&amp;p,&amp;z)&amp;&amp;(y||z||p))&#123;</span><br><span class="line">        y%=p;</span><br><span class="line">        z%=p;</span><br><span class="line">        ll ans=exBSGS();</span><br><span class="line">        <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="欧拉降幂"><a href="#欧拉降幂" class="headerlink" title="欧拉降幂"></a>欧拉降幂</h4><p>求解$A^B \ mod\ C$，$B \leq 10^{1000000}$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll __int64</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 10000000007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">1000006</span>];</span><br><span class="line">ll x,z;</span><br><span class="line"><span class="function">ll <span class="title">quickpow</span><span class="params">(ll x,ll y,ll z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(y&amp;<span class="number">1</span>)</span><br><span class="line">            ans=ans*x%z;</span><br><span class="line">        x=x*x%z;</span><br><span class="line">        y&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll i,rea=n;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rea=rea-rea/i;</span><br><span class="line">            <span class="keyword">while</span>(n%i==<span class="number">0</span>)</span><br><span class="line">                n/=i;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">1</span>)</span><br><span class="line">        rea=rea-rea/n;</span><br><span class="line">    <span class="keyword">return</span> rea;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld %s %lld"</span>,&amp;x,a,&amp;z)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        ll len=<span class="built_in">strlen</span>(a);</span><br><span class="line">        ll p=phi(z);</span><br><span class="line">        ll ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            ans=(ans*<span class="number">10</span>+a[i]-<span class="string">'0'</span>)%p;</span><br><span class="line">        ans+=p;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,quickpow(x,ans,z));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -434,248 +434,254 @@
 <table>
 <thead>
 <tr>
-<th>3</th>
-<th>1</th>
-<th>1</th>
-<th>2</th>
+<th align="left">$a * 2^k + 1$</th>
+<th>$a$</th>
+<th>$k$</th>
+<th>$g$</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>5</td>
+<td align="left">3</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td align="left">5</td>
 <td>1</td>
 <td>2</td>
 <td>2</td>
 </tr>
 <tr>
-<td>17</td>
+<td align="left">17</td>
 <td>1</td>
 <td>4</td>
 <td>3</td>
 </tr>
 <tr>
-<td>97</td>
+<td align="left">97</td>
 <td>3</td>
 <td>5</td>
 <td>5</td>
 </tr>
 <tr>
-<td>193</td>
+<td align="left">193</td>
 <td>3</td>
 <td>6</td>
 <td>5</td>
 </tr>
 <tr>
-<td>257</td>
+<td align="left">257</td>
 <td>1</td>
 <td>8</td>
 <td>3</td>
 </tr>
 <tr>
-<td>7681</td>
+<td align="left">7681</td>
 <td>15</td>
 <td>9</td>
 <td>17</td>
 </tr>
 <tr>
-<td>12289</td>
+<td align="left">12289</td>
 <td>3</td>
 <td>12</td>
 <td>11</td>
 </tr>
 <tr>
-<td>40961</td>
+<td align="left">40961</td>
 <td>5</td>
 <td>13</td>
 <td>3</td>
 </tr>
 <tr>
-<td>65537</td>
+<td align="left">65537</td>
 <td>1</td>
 <td>16</td>
 <td>3</td>
 </tr>
 <tr>
-<td>786433</td>
+<td align="left">786433</td>
 <td>3</td>
 <td>18</td>
 <td>10</td>
 </tr>
 <tr>
-<td>5767169</td>
+<td align="left">5767169</td>
 <td>11</td>
 <td>19</td>
 <td>3</td>
 </tr>
 <tr>
-<td>7340033</td>
+<td align="left">7340033</td>
 <td>7</td>
 <td>20</td>
 <td>3</td>
 </tr>
 <tr>
-<td>23068673</td>
+<td align="left">23068673</td>
 <td>11</td>
 <td>21</td>
 <td>3</td>
 </tr>
 <tr>
-<td>104857601</td>
+<td align="left">104857601</td>
 <td>25</td>
 <td>22</td>
 <td>3</td>
 </tr>
 <tr>
-<td>167772161</td>
+<td align="left">167772161</td>
 <td>5</td>
 <td>25</td>
 <td>3</td>
 </tr>
 <tr>
-<td>469762049</td>
+<td align="left">469762049</td>
 <td>7</td>
 <td>26</td>
 <td>3</td>
 </tr>
 <tr>
-<td>998244353(常见)</td>
+<td align="left">998244353(常见)</td>
 <td>119</td>
 <td>23</td>
 <td>3</td>
 </tr>
 <tr>
-<td>1004535809</td>
+<td align="left">1004535809</td>
 <td>479</td>
 <td>21</td>
 <td>3</td>
 </tr>
 <tr>
-<td>1998585857</td>
+<td align="left">1998585857</td>
 <td>953</td>
 <td>21</td>
 <td>3</td>
 </tr>
 <tr>
-<td>2013265921</td>
+<td align="left">2013265921</td>
 <td>15</td>
 <td>27</td>
 <td>31</td>
 </tr>
 <tr>
-<td>2281701377</td>
+<td align="left">2281701377</td>
 <td>17</td>
 <td>27</td>
 <td>3</td>
 </tr>
 <tr>
-<td>3221225473</td>
+<td align="left">3221225473</td>
 <td>3</td>
 <td>30</td>
 <td>5</td>
 </tr>
 <tr>
-<td>75161927681</td>
+<td align="left">75161927681</td>
 <td>35</td>
 <td>31</td>
 <td>3</td>
 </tr>
 <tr>
-<td>77309411329</td>
+<td align="left">77309411329</td>
 <td>9</td>
 <td>33</td>
 <td>7</td>
 </tr>
 <tr>
-<td>206158430209</td>
+<td align="left">206158430209</td>
 <td>3</td>
 <td>36</td>
 <td>22</td>
 </tr>
 <tr>
-<td>2061584302081</td>
+<td align="left">2061584302081</td>
 <td>15</td>
 <td>37</td>
 <td>7</td>
 </tr>
 <tr>
-<td>2748779069441</td>
+<td align="left">2748779069441</td>
 <td>5</td>
 <td>39</td>
 <td>3</td>
 </tr>
 <tr>
-<td>6597069766657</td>
+<td align="left">6597069766657</td>
 <td>3</td>
 <td>41</td>
 <td>5</td>
 </tr>
 <tr>
-<td>39582418599937</td>
+<td align="left">39582418599937</td>
 <td>9</td>
 <td>42</td>
 <td>5</td>
 </tr>
 <tr>
-<td>79164837199873</td>
+<td align="left">79164837199873</td>
 <td>9</td>
 <td>43</td>
 <td>5</td>
 </tr>
 <tr>
-<td>263882790666241</td>
+<td align="left">263882790666241</td>
 <td>15</td>
 <td>44</td>
 <td>7</td>
 </tr>
 <tr>
-<td>1231453023109121</td>
+<td align="left">1231453023109121</td>
 <td>35</td>
 <td>45</td>
 <td>3</td>
 </tr>
 <tr>
-<td>1337006139375617</td>
+<td align="left">1337006139375617</td>
 <td>19</td>
 <td>46</td>
 <td>3</td>
 </tr>
 <tr>
-<td>3799912185593857</td>
+<td align="left">3799912185593857</td>
 <td>27</td>
 <td>47</td>
 <td>5</td>
 </tr>
 <tr>
-<td>4222124650659841</td>
+<td align="left">4222124650659841</td>
 <td>15</td>
 <td>48</td>
 <td>19</td>
 </tr>
 <tr>
-<td>7881299347898369</td>
+<td align="left">7881299347898369</td>
 <td>7</td>
 <td>50</td>
 <td>6</td>
 </tr>
 <tr>
-<td>31525197391593473</td>
+<td align="left">31525197391593473</td>
 <td>7</td>
 <td>52</td>
 <td>3</td>
 </tr>
 <tr>
-<td>180143985094819841</td>
+<td align="left">180143985094819841</td>
 <td>5</td>
 <td>55</td>
 <td>6</td>
 </tr>
 <tr>
-<td>1945555039024054273</td>
+<td align="left">1945555039024054273</td>
 <td>27</td>
 <td>56</td>
 <td>5</td>
 </tr>
 <tr>
-<td>4179340454199820289</td>
+<td align="left">4179340454199820289</td>
 <td>29</td>
 <td>57</td>
 <td>3</td>
@@ -861,7 +867,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#STL"><span class="nav-text">STL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划"><span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背包dp"><span class="nav-text">背包dp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#01背包"><span class="nav-text">01背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完全背包"><span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多重背包"><span class="nav-text">多重背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分组背包"><span class="nav-text">分组背包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数位dp"><span class="nav-text">数位dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区间dp"><span class="nav-text">区间dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树形dp"><span class="nav-text">树形dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斜率优化dp"><span class="nav-text">斜率优化dp</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图论"><span class="nav-text">图论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最短路"><span class="nav-text">最短路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Dijkstra（堆优化）"><span class="nav-text">Dijkstra（堆优化）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Floyd"><span class="nav-text">Floyd</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络流Dinic算法"><span class="nav-text">网络流Dinic算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树"><span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#区间操作"><span class="nav-text">区间操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二维线段树-HDU1823"><span class="nav-text">二维线段树(HDU1823)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#势能线段树"><span class="nav-text">势能线段树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树链剖分"><span class="nav-text">树链剖分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hash"><span class="nav-text">hash</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串hash"><span class="nav-text">字符串hash</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#手写hash"><span class="nav-text">手写hash</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KMP"><span class="nav-text">KMP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#KMP-1"><span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展KMP"><span class="nav-text">扩展KMP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学"><span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BSGS"><span class="nav-text">BSGS</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#SDOI2011"><span class="nav-text">SDOI2011</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SPOJMOD-Power-Modulo-Inverted"><span class="nav-text">SPOJMOD Power Modulo Inverted</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欧拉降幂"><span class="nav-text">欧拉降幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中国剩余定理"><span class="nav-text">中国剩余定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原根"><span class="nav-text">原根</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#STL"><span class="nav-text">STL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划"><span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背包dp"><span class="nav-text">背包dp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#01背包"><span class="nav-text">01背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完全背包"><span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多重背包"><span class="nav-text">多重背包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分组背包"><span class="nav-text">分组背包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数位dp"><span class="nav-text">数位dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区间dp"><span class="nav-text">区间dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树形dp"><span class="nav-text">树形dp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斜率优化dp"><span class="nav-text">斜率优化dp</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图论"><span class="nav-text">图论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最短路"><span class="nav-text">最短路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Dijkstra（堆优化）"><span class="nav-text">Dijkstra（堆优化）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Floyd"><span class="nav-text">Floyd</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络流Dinic算法"><span class="nav-text">网络流Dinic算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树"><span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#区间操作"><span class="nav-text">区间操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二维线段树-HDU1823"><span class="nav-text">二维线段树(HDU1823)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#势能线段树"><span class="nav-text">势能线段树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树链剖分"><span class="nav-text">树链剖分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hash"><span class="nav-text">hash</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串hash"><span class="nav-text">字符串hash</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#手写hash"><span class="nav-text">手写hash</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KMP"><span class="nav-text">KMP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#KMP-1"><span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展KMP"><span class="nav-text">扩展KMP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学"><span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BSGS"><span class="nav-text">BSGS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SDOI2011"><span class="nav-text">SDOI2011</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SPOJMOD-Power-Modulo-Inverted"><span class="nav-text">SPOJMOD Power Modulo Inverted</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欧拉降幂"><span class="nav-text">欧拉降幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中国剩余定理"><span class="nav-text">中国剩余定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原根"><span class="nav-text">原根</span></a></li></ol></li></ol></div>
             
 
           </div>
