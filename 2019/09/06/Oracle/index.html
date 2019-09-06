@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="description" content="上谢大的课有感？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hash">
-<meta property="og:url" content="http://yoursite.com/2019/07/11/hash/index.html">
+<meta property="og:title" content="Oracle">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/Oracle/index.html">
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
-<meta property="og:description" content="遇到hash的题目默默流下眼泪😥">
+<meta property="og:description" content="上谢大的课有感？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T03:47:06.242Z">
+<meta property="og:updated_time" content="2019-09-06T15:31:39.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hash">
-<meta name="twitter:description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="twitter:title" content="Oracle">
+<meta name="twitter:description" content="上谢大的课有感？">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/11/hash/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/06/Oracle/">
 
 
 
@@ -136,7 +136,7 @@
       })();
   </script>
 
-  <title>hash | Hope_Y's blog</title>
+  <title>Oracle | Hope_Y's blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/hash/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/Oracle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hope_Y">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hash</h1>
+          <h1 class="post-title" itemprop="name headline">Oracle</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T16:44:34+08:00">
-                2019-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T23:24:57+08:00">
+                2019-09-06
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/课堂笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">课堂笔记</span>
                   </a>
                 </span>
 
@@ -347,21 +347,254 @@
       
 
       
-        <p><del>遇到hash的题目默默流下眼泪😥</del></p>
+        <p><del>上谢大的课有感？</del></p>
 <a id="more"></a>
 
-<h2 id="小w的a-b问题"><a href="#小w的a-b问题" class="headerlink" title="小w的a=b问题"></a><a href="https://ac.nowcoder.com/acm/contest/923/B" target="_blank" rel="noopener">小w的a=b问题</a></h2><p>题意：给你两个数组a和b，长度为n和m，问你$\prod_{i=1}^{n}a_i ! $是否等于$\prod_{i=1}^{m}b_i ! $，其中$1 \leq n,m \leq 10^5$,$0 \leq a_i,b_i \leq 10^5$</p>
-<p><del>初次遇到这种题目，我以为是一个推公式的题目，把我整懵了，果然数据结构的知识还是灰常重要啊[点头]</del></p>
-<p>思路：用两个比较大一点的质数作为模系，然后计算每个阶乘$(0 \sim10^5)$所在模系hash值，用两个可以保证不冲突的几率大大减小。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll mod1=<span class="number">1e9</span>+<span class="number">7</span>,mod2=<span class="number">1e9</span>+<span class="number">9</span>;</span><br><span class="line">ll m1[maxn],m2[maxn];</span><br><span class="line">ll t,n,m,a;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    m1[<span class="number">0</span>]=m2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;maxn; i++)&#123;</span><br><span class="line">        m1[i]=m1[i<span class="number">-1</span>]*i%mod1;</span><br><span class="line">        m2[i]=m2[i<span class="number">-1</span>]*i%mod2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;m);</span><br><span class="line">        ll s1=<span class="number">1</span>,s2=<span class="number">1</span>,s3=<span class="number">1</span>,s4=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s1=s1*m1[a]%mod1;</span><br><span class="line">            s2=s2*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s3=s3*m1[a]%mod1;</span><br><span class="line">            s4=s4*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s1==s3 &amp;&amp; s2==s4) <span class="built_in">puts</span>(<span class="string">"equal"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"unequal"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="oracle函数"><a href="#oracle函数" class="headerlink" title="oracle函数"></a>oracle函数</h3><hr>
+<h4 id="数值型常用函数"><a href="#数值型常用函数" class="headerlink" title="数值型常用函数"></a>数值型常用函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>样例</th>
+<th>显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ceil(n)</td>
+<td>大于或等于数值n的最小整数</td>
+<td>select ceil(10.6) from dual;</td>
+<td>11</td>
+</tr>
+<tr>
+<td>floor(n)</td>
+<td>小于等于数值n的最大整数</td>
+<td>select ceil(10.6) from dual;</td>
+<td>10</td>
+</tr>
+<tr>
+<td>mod(m,n)</td>
+<td>m除以n的余数,若n=0,则返回m</td>
+<td>select mod(7,5) from dual;</td>
+<td>2</td>
+</tr>
+<tr>
+<td>power(m,n)</td>
+<td>$m^n$</td>
+<td>select power(3,2) from dual;</td>
+<td>9</td>
+</tr>
+<tr>
+<td>round(n,m)</td>
+<td>将n四舍五入,保留小数点后m位</td>
+<td>select round(1234.5678,2) from dual;</td>
+<td>1234.57</td>
+</tr>
+<tr>
+<td>sign(n)</td>
+<td>若n=0,则返回0,否则,n&gt;0,则返回1,n&lt;0,则返回-1</td>
+<td>select sign(12) from dual;</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sqrt(n)</td>
+<td>$\sqrt{n}$</td>
+<td>select sqrt(25) from dual ;</td>
+<td>5</td>
+</tr>
+</tbody></table>
 <hr>
-<h2 id="字符串hash"><a href="#字符串hash" class="headerlink" title="字符串hash"></a>字符串hash</h2><p>上面是数字的hash，而字符串的hash就是一个$O(n)$的预处理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="comment">//ull 会溢出取模</span></span><br><span class="line"><span class="keyword">const</span> ull base=<span class="number">233</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line">ull hs[maxn],p[maxn];</span><br><span class="line"><span class="function">ull <span class="title">geths</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (ull)hs[r]-p[r-l+<span class="number">1</span>]*hs[l<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    p[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;maxn; i++) p[i]=p[i<span class="number">-1</span>]*base;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=len; i++)&#123;</span><br><span class="line">        hs[i]=hs[i<span class="number">-1</span>]*base+s[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h4 id="日期型函数"><a href="#日期型函数" class="headerlink" title="日期型函数"></a>日期型函数</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sysdate</td>
+<td>当前日期和时间</td>
+<td>select sysdate from dual;</td>
+</tr>
+<tr>
+<td>last_day</td>
+<td>本月最后一天</td>
+<td>select last_day(sysdate) from dual;</td>
+</tr>
+<tr>
+<td>add_months(d,n)</td>
+<td>当前日期d后推n个月</td>
+<td>select add_months(sysdate,2) from dual;</td>
+</tr>
+<tr>
+<td>next_day(d,day)</td>
+<td>d后第一周指定day的日期</td>
+<td>select next_day(sysdate,’Monday’) from dual;</td>
+</tr>
+<tr>
+<td>months_between(d,n)</td>
+<td>日期d和n相差月数</td>
+<td>select months_between(sysdate, to_date(‘20020812’,’YYYYMMDD’)) from dual;</td>
+</tr>
+</tbody></table>
+<p>day 格式：’Monday’ ‘  ‘Tuesday’ ‘wednesday’ ‘Thursday’ ‘Friday’ ‘Saturday’ ‘Sunday’ </p>
 <hr>
-<h2 id="手写hash，可以替代map加速查询"><a href="#手写hash，可以替代map加速查询" class="headerlink" title="手写hash，可以替代map加速查询"></a>手写hash，可以替代map加速查询</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Hash</span>&#123;</span></span><br><span class="line">    ll mod = <span class="number">2908361</span>;</span><br><span class="line">    ll cnt = <span class="number">0</span>, Head[<span class="number">2908361</span>], nxt[<span class="number">1000006</span>];</span><br><span class="line">    ll val[<span class="number">1000006</span>], pos[<span class="number">1000006</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(Head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(Head)); cnt = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ll x, ll v)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        pos[cnt] = x, val[cnt] = v, nxt[cnt] = Head[key];</span><br><span class="line">        Head[key] = cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ll <span class="title">Find</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        <span class="keyword">for</span>(ll i = Head[key]; ~i; i = nxt[i])&#123;</span><br><span class="line">            <span class="keyword">if</span>(pos[i] == x) <span class="keyword">return</span> val[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1l</span>l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;hs;</span><br></pre></td></tr></table></figure>
-
+<h4 id="特殊格式的日期型函数"><a href="#特殊格式的日期型函数" class="headerlink" title="特殊格式的日期型函数"></a>特殊格式的日期型函数</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Y或YY或YYY 年的最后一位，两位，三位</td>
+<td>select to_char(sysdate,’YYY’) from dual;</td>
+</tr>
+<tr>
+<td>Q 季度,1-3月为第一季度</td>
+<td>select to_char(sysdate,’Q’) from dual;</td>
+</tr>
+<tr>
+<td>MM 　月份数</td>
+<td>select to_char(sysdate,’MM’) from dual;</td>
+</tr>
+<tr>
+<td>RM 月份的罗马表示</td>
+<td>select to_char(sysdate,’RM’) from dual; IV</td>
+</tr>
+<tr>
+<td>month 用9个字符表示的月份名</td>
+<td>select to_char(sysdate,’month’) from dual;</td>
+</tr>
+<tr>
+<td>ww 当年第几周</td>
+<td>select to_char(sysdate,’ww’) from dual;</td>
+</tr>
+<tr>
+<td>w 本月第几周</td>
+<td>select to_char(sysdate,’w’) from dual;</td>
+</tr>
+<tr>
+<td>DDD 当年第几天,一月一日为001 ,二月一日032</td>
+<td>select to_char(sysdate,’DDD’) from dual;</td>
+</tr>
+<tr>
+<td>DD 当月第几天</td>
+<td>select to_char(sysdate,’DD’) from dual;</td>
+</tr>
+<tr>
+<td>D 周内第几天</td>
+<td>select to_char(sysdate,’D’) from dual; 如　sunday</td>
+</tr>
+<tr>
+<td>DY 周内第几天缩写</td>
+<td>select to_char(sysdate,’DY’) from dual; 如　sun</td>
+</tr>
+<tr>
+<td>hh12 12小时制小时数</td>
+<td>select to_char(sysdate,’hh12’) from dual;</td>
+</tr>
+<tr>
+<td>hh24 24小时制小时数</td>
+<td>select to_char(sysdate,’hh24’) from dual;</td>
+</tr>
+<tr>
+<td>Mi 分钟数</td>
+<td>select to_char(sysdate,’Mi’) from dual;</td>
+</tr>
+<tr>
+<td>ss 秒数</td>
+<td>select to_char(sysdate,’ss’) from dual;</td>
+</tr>
+<tr>
+<td>to_number() 将合法的数字字符串转换成数字</td>
+<td>select to_number(‘88877’) from dual; 88877</td>
+</tr>
+<tr>
+<td>to_char() 将数字转换为字符串</td>
+<td>select to_char(88877) from dual; ‘88877’</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h4><p>字符函数主要用于修改字符列。这些函数接受字符输入，返回字符或数字值。Oracle 提供的一些字符函数如下。</p>
+<ol>
+<li>CONCAT (char1, char2)</li>
+</ol>
+<p>返回连接“char2”的“char1”。</p>
+<p>示例  SELECT CONCAT( CONCAT(ename, ‘ is a ‘), job) FROM emp;</p>
+<ol start="2">
+<li>INITCAP(string)</li>
+</ol>
+<p>将“string”的字符转成大写。</p>
+<p>示例 Select INITCAP(ename) from emp;</p>
+<ol start="3">
+<li>LOWER (string)</li>
+</ol>
+<p>将“string”转成小写。</p>
+<p>示例 Select LOWER(ENAME) from emp;</p>
+<ol start="4">
+<li>LPAD(char1,n [,char2])</li>
+</ol>
+<p>返回“char1”，左起由“char2”中的字符补充到“n”个字符长。如果“char1”比“n”长，则函数返回“char1”的前“n”个字符。</p>
+<p>示例 SELECT LPAD(ename,15,’*’) FROM emp;</p>
+<ol start="5">
+<li>LTRIM(string,trim_set)</li>
+</ol>
+<p>从左边删除字符，此处“string”是数据库的列，或者是字面字符串，而“trim_set” 是我们要去掉的字符的集合。</p>
+<p>示例 SELECT LTRIM(‘abcdab’,’a’) FROM DUAL;</p>
+<ol start="6">
+<li>REPLACE(string, if, then)</li>
+</ol>
+<p>用 0 或其他字符代替字符串中的字符。“if”是字符或字符串，对于每个出现在“string”中的“if”，都用“then”的内容代替。</p>
+<p>示例 SELECT REPLACE(‘JACK and JUE’,’J’,’BL’) FROM DUAL;</p>
+<ol start="7">
+<li>RPAD(char1, n [,char2])</li>
+</ol>
+<p>返回“char1”，右侧用“char2”中的字符补充到“n”个字符长。如果 “char1”比“n” 长，则函数返回“char1”的前“n”个字符。</p>
+<p>示例 SELECT RPAD(ename,15,’*’) FROM emp;</p>
+<ol start="8">
+<li>RTRIM(string,trim_set)</li>
+</ol>
+<p>从右侧删除字符，此处“string”是数据库的列，或者是字面字符串，而“trim_set” 是我们要去掉的字符的集合。</p>
+<p>示例 SELECT RTRIM(‘abcdef’, ‘f’) FROM DUAL;</p>
+<ol start="9">
+<li>SOUNDEX(char)</li>
+</ol>
+<p>返回包含“char”的表意字符的字符串。它允许比较英语中拼写不同而发音类似的字。</p>
+<p>示例 SELECT ename FROM emp</p>
+<p>WHERE SOUNDEX(ename) = SoUNDEX(‘SMYTHE’);</p>
+<ol start="10">
+<li>SUBSTR(string, start [,count])</li>
+</ol>
+<p>返回“string”中截取的一部分。该命令截取“string”的一个子集，从“start”位置开始，持续“count”个字符。如果我们不指定“count”，则从“start”开始截取到“string”的尾部。</p>
+<p>示例 SELECT SUBSTR(‘ABCDEFGIJKLM’,3,4) FROM DUAL;</p>
+<ol start="11">
+<li>TRANSLATE(string, if, then)</li>
+</ol>
+<p>“if”中字符的位置，并检查“then”的相同位置，然后用该位置的字符替换 “string”中的字符。</p>
+<p>示例 SELECT TRANSLATE(ename,’AEIOU’, ‘XXXXX’) FROM emp;</p>
+<ol start="12">
+<li>UPPER(string)</li>
+</ol>
+<p>返回大写的“string”。</p>
+<p>示例 SELECT UPPER(‘aptech computer education’) FROM dual;</p>
+<ol start="13">
+<li>ASCII(string)</li>
+</ol>
+<p>该命令是“American Standard Code for Information Interchange”的缩写。它是使用数字表示可打印字符的基本规则。该函数返回 “string”中第一个（最左边）字符的 ASCII 值。</p>
+<p>示例 SELECT ASCII(‘APTECH’) from dual;</p>
+<ol start="14">
+<li>INSTR (string, set[, start[, occurrence] ] )</li>
+</ol>
+<p>该命令“string”中从“start”位置开始查找字符集合的位置，再查找“set”出现的第一次、第二次等等的“occurrence”（次数）。“start”的值也可以是负数，代表从字符串结尾开始向反方向搜索。该函数也用于数字和日期数据类型。</p>
+<p>示例 SELECT INSTR(‘aptech is aptech’,’ap’,1,2) FROM DUAL;</p>
+<ol start="15">
+<li>LENGTH(string)</li>
+</ol>
+<p>返回“string”的长度值。</p>
+<p>示例 SELECT ename, LENGTH(ename) FROM emp </p>
+<p>WHERE empno = 7698;</p>
 
       
     </div>
@@ -386,8 +619,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/主席树/" rel="next" title="主席树">
-                <i class="fa fa-chevron-left"></i> 主席树
+              <a href="/2019/08/22/模板整理/" rel="next" title="模板整理">
+                <i class="fa fa-chevron-left"></i> 模板整理
               </a>
             
           </div>
@@ -395,10 +628,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/区间dp/" rel="prev" title="区间dp">
-                区间dp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小w的a-b问题"><span class="nav-text">小w的a=b问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串hash"><span class="nav-text">字符串hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写hash，可以替代map加速查询"><span class="nav-text">手写hash，可以替代map加速查询</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#oracle函数"><span class="nav-text">oracle函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值型常用函数"><span class="nav-text">数值型常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日期型函数"><span class="nav-text">日期型函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊格式的日期型函数"><span class="nav-text">特殊格式的日期型函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符函数"><span class="nav-text">字符函数</span></a></li></ol></li></ol></div>
             
 
           </div>
