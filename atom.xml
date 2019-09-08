@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-06T15:31:39.621Z</updated>
+  <updated>2019-09-08T03:06:56.878Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机系统结构</title>
+    <link href="http://yoursite.com/2019/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    <id>http://yoursite.com/2019/09/08/计算机系统结构/</id>
+    <published>2019-09-08T03:06:09.017Z</published>
+    <updated>2019-09-08T03:06:56.878Z</updated>
+    
+    <content type="html"><![CDATA[<p>yqw还是依旧开口脆</p><a id="more"></a><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><h5 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h5><p>共分为7个层次，第0级和第1级由硬件实现，第2级至第6级由软件实现，称为虚拟计算机。<br>从科学领域来划分：<br>第0级和第1级属于“计算机组成与系统结构”；<br>第2级至第5级是系统软件；<br>第6级是应用软件。<br>它们之间有交叉，如第3级必须依赖第4级和第5级来实现。</p><p><img src="C:%5CUsers%5CHope_Y%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567911273254.png" alt="1567911273254"></p><h5 id="透明性"><a href="#透明性" class="headerlink" title="透明性"></a>透明性</h5><p>本来存在的事物或属性，从某种角度看似乎不存在。</p><h5 id="计算机系统的分类"><a href="#计算机系统的分类" class="headerlink" title="计算机系统的分类"></a>计算机系统的分类</h5><h6 id="按处理机性能分类"><a href="#按处理机性能分类" class="headerlink" title="按处理机性能分类:"></a>按处理机性能分类:</h6><p>按大小、用途、数据类型、处理机个数和种数、所用的器件</p><h6 id="佛林分类法"><a href="#佛林分类法" class="headerlink" title="佛林分类法"></a>佛林分类法</h6><p>按照指令流和数据流的多倍特征进行分类，<br>用指令流：机器执行的指令序列；<br>数据流：由指令流调用的数据序列<br>多倍性（multiplicity):在系统性能瓶颈部件上同时处于同一执行阶段的指令或数据的最大可能个数。<br>分成 4 类：<br>单指令流单数据流SISD (Single Instruction Single Datastream)<br>单指令流多数据流SIMD Single Instruction Multiple Datastream)<br>多指令流单数据流MISD(Multiple Instruction Single Datastream)<br>多指令流多数据流MIMD(Multiple Instruction Multiple Datastream)</p><h6 id="冯泽云分类法"><a href="#冯泽云分类法" class="headerlink" title="冯泽云分类法"></a>冯泽云分类法</h6><p>用最大并行度计算机系统进行分类<br>单位时间内能处理的最大二进制位数</p><p>同时处理的字宽为$n$，位宽$m$，则<br>最大并行度定义为：$P_m=m * n$</p><p>平均并行度：假使每个时钟周期$t_i$内能同时处理的二进位$B_i$，则n个时钟周期平均并行度为：<br>$$<br>P_n = \frac {\sum_{i=1}^{n} B_i * t_i}{n}​<br>$$<br>表示方法：处理机名$(m,n)$</p><h6 id="汉德勒分类法"><a href="#汉德勒分类法" class="headerlink" title="汉德勒分类法"></a>汉德勒分类法</h6><p>程序级k：程序控制部件(PCU)的个数。<br>操作级d：算术逻辑部件（ALU）或处理部件（PU）的个数。<br>逻辑级w：每个算术逻辑部件包含的逻辑线路（ELC）的套数。</p><p>表示方法：<br>t(系统型号）=（k, d, w)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;yqw还是依旧开口脆&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="课堂笔记" scheme="http://yoursite.com/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Oracle</title>
