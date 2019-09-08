@@ -88,12 +88,10 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="yqw还是依旧开口脆">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:%5CUsers%5CHope_Y%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567911273254.png">
-<meta property="og:updated_time" content="2019-09-08T03:06:56.878Z">
+<meta property="og:updated_time" content="2019-09-08T13:01:21.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机系统结构">
 <meta name="twitter:description" content="yqw还是依旧开口脆">
-<meta name="twitter:image" content="c:%5CUsers%5CHope_Y%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567911273254.png">
 
 
 
@@ -352,16 +350,75 @@
         <p>yqw还是依旧开口脆</p>
 <a id="more"></a>
 
-<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><h5 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h5><p>共分为7个层次，第0级和第1级由硬件实现，第2级至第6级由软件实现，称为虚拟计算机。<br>从科学领域来划分：<br>第0级和第1级属于“计算机组成与系统结构”；<br>第2级至第5级是系统软件；<br>第6级是应用软件。<br>它们之间有交叉，如第3级必须依赖第4级和第5级来实现。</p>
-<p><img src="C:%5CUsers%5CHope_Y%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567911273254.png" alt="1567911273254"></p>
-<h5 id="透明性"><a href="#透明性" class="headerlink" title="透明性"></a>透明性</h5><p>本来存在的事物或属性，从某种角度看似乎不存在。</p>
-<h5 id="计算机系统的分类"><a href="#计算机系统的分类" class="headerlink" title="计算机系统的分类"></a>计算机系统的分类</h5><h6 id="按处理机性能分类"><a href="#按处理机性能分类" class="headerlink" title="按处理机性能分类:"></a>按处理机性能分类:</h6><p>按大小、用途、数据类型、处理机个数和种数、所用的器件</p>
-<h6 id="佛林分类法"><a href="#佛林分类法" class="headerlink" title="佛林分类法"></a>佛林分类法</h6><p>按照指令流和数据流的多倍特征进行分类，<br>用指令流：机器执行的指令序列；<br>数据流：由指令流调用的数据序列<br>多倍性（multiplicity):在系统性能瓶颈部件上同时处于同一执行阶段的指令或数据的最大可能个数。<br>分成 4 类：<br>单指令流单数据流SISD (Single Instruction Single Datastream)<br>单指令流多数据流SIMD Single Instruction Multiple Datastream)<br>多指令流单数据流MISD(Multiple Instruction Single Datastream)<br>多指令流多数据流MIMD(Multiple Instruction Multiple Datastream)</p>
-<h6 id="冯泽云分类法"><a href="#冯泽云分类法" class="headerlink" title="冯泽云分类法"></a>冯泽云分类法</h6><p>用最大并行度计算机系统进行分类<br>单位时间内能处理的最大二进制位数</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h4><p>共分为7个层次，第0级和第1级由硬件实现，第2级至第6级由软件实现，称为虚拟计算机。<br>从科学领域来划分：<br>第0级和第1级属于“计算机组成与系统结构”；<br>第2级至第5级是系统软件；<br>第6级是应用软件。<br>它们之间有交叉，如第3级必须依赖第4级和第5级来实现。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第6级：应用程序</td>
+<td>应用软件</td>
+</tr>
+<tr>
+<td>第5级：高级语言</td>
+<td>系统软件</td>
+</tr>
+<tr>
+<td>第4级：汇编语言</td>
+<td>系统软件</td>
+</tr>
+<tr>
+<td>第3级：操作系统</td>
+<td>系统软件</td>
+</tr>
+<tr>
+<td>第2级：机器语言</td>
+<td>软硬件分界</td>
+</tr>
+<tr>
+<td>第1级：微程序</td>
+<td>硬件</td>
+</tr>
+<tr>
+<td>第0级：硬联逻辑</td>
+<td>硬件</td>
+</tr>
+</tbody></table>
+<h4 id="透明性"><a href="#透明性" class="headerlink" title="透明性"></a>透明性</h4><p>本来存在的事物或属性，从某种角度看似乎不存在。</p>
+<h4 id="计算机系统的分类"><a href="#计算机系统的分类" class="headerlink" title="计算机系统的分类"></a>计算机系统的分类</h4><h5 id="按处理机性能分类"><a href="#按处理机性能分类" class="headerlink" title="按处理机性能分类:"></a>按处理机性能分类:</h5><p>按大小、用途、数据类型、处理机个数和种数、所用的器件。</p>
+<h5 id="佛林分类法"><a href="#佛林分类法" class="headerlink" title="佛林分类法"></a>佛林分类法</h5><p>按照指令流和数据流的多倍特征进行分类，<br>用指令流：机器执行的指令序列；<br>数据流：由指令流调用的数据序列；<br>多倍性（multiplicity):在系统性能瓶颈部件上同时处于同一执行阶段的指令或数据的最大可能个数。<br>分成 4 类：<br>单指令流单数据流SISD (Single Instruction Single Datastream)<br>单指令流多数据流SIMD Single Instruction Multiple Datastream)<br>多指令流单数据流MISD(Multiple Instruction Single Datastream)<br>多指令流多数据流MIMD(Multiple Instruction Multiple Datastream)</p>
+<h5 id="冯泽云分类法"><a href="#冯泽云分类法" class="headerlink" title="冯泽云分类法"></a>冯泽云分类法</h5><p>用最大并行度计算机系统进行分类<br>单位时间内能处理的最大二进制位数</p>
 <p>同时处理的字宽为$n$，位宽$m$，则<br>最大并行度定义为：$P_m=m * n$</p>
 <p>平均并行度：假使每个时钟周期$t_i$内能同时处理的二进位$B_i$，则n个时钟周期平均并行度为：<br>$$<br>P_n = \frac {\sum_{i=1}^{n} B_i * t_i}{n}​<br>$$<br>表示方法：处理机名$(m,n)$</p>
-<h6 id="汉德勒分类法"><a href="#汉德勒分类法" class="headerlink" title="汉德勒分类法"></a>汉德勒分类法</h6><p>程序级k：程序控制部件(PCU)的个数。<br>操作级d：算术逻辑部件（ALU）或处理部件（PU）的个数。<br>逻辑级w：每个算术逻辑部件包含的逻辑线路（ELC）的套数。</p>
-<p>表示方法：<br>t(系统型号）=（k, d, w)</p>
+<h5 id="汉德勒分类法"><a href="#汉德勒分类法" class="headerlink" title="汉德勒分类法"></a>汉德勒分类法</h5><p>程序级$k$：程序控制部件(PCU)的个数。<br>操作级$d$：算术逻辑部件（ALU）或处理部件（PU）的个数。<br>逻辑级$w$：每个算术逻辑部件包含的逻辑线路（ELC）的套数。</p>
+<p>表示方法：<br>$t ( 系统型号 ) = ( k,d,w )$</p>
+<p>对于流水线来说，$t(系统型号) = (k * {k}’ , d * {d}’ , w * {w}’ )$</p>
+<p>Cray1有1个CPU，12个相当于ALU或PE的处理部件，最多8级流水线，字长为64位，可以实现1<del>14位流水线，可以表示为：`t(Cray1)=(1 , 12×8 , 64(1</del>14))`。</p>
+<h4 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h4><p>$$<br>可改进部分的比例: Fe=\frac{可改进部分的执行时间}{改进前整个任务的执行时间}<br>$$</p>
+<p>$$<br>改进部分的加速比: Se=\frac{改进前改进部分的执行时间}{改进后改进部分的执行时间}<br>$$</p>
+<p>改进后整个任务的执行速度：$T_n =T_0 * (1-Fe+\frac{Fe}{Se}) $</p>
+<p>改进后整个任务的加速比：$S_n = \frac{T_0}{T_n} = \frac{1}{(1-Fe)+\frac{Fe}{Se}}$</p>
+<h4 id="改进性能的主要途径"><a href="#改进性能的主要途径" class="headerlink" title="改进性能的主要途径"></a>改进性能的主要途径</h4><h5 id="面向目标代码改进"><a href="#面向目标代码改进" class="headerlink" title="面向目标代码改进"></a>面向目标代码改进</h5><p>根据计算结果改进（硬件乘除）、据统计数据改进指令功能（有目的改进）、增加运算型指令的功能（函数运算指令）。</p>
+<h5 id="面向高级语言和编译程序改进"><a href="#面向高级语言和编译程序改进" class="headerlink" title="面向高级语言和编译程序改进"></a>面向高级语言和编译程序改进</h5><p>增强对高级语言和便宜程序支持的指令功能<del>花更少的成本有效率办事</del>。</p>
+<h5 id="面向操作系统改进"><a href="#面向操作系统改进" class="headerlink" title="面向操作系统改进"></a>面向操作系统改进</h5><p> 系统结构设计要规整，消除例外情况。比如有$A-B$，就要有$B-A$，寄存器量的设置……</p>
+<h4 id="计算机系统设计方法"><a href="#计算机系统设计方法" class="headerlink" title="计算机系统设计方法"></a>计算机系统设计方法</h4><h5 id="由上向下"><a href="#由上向下" class="headerlink" title="由上向下"></a>由上向下</h5><p>适合专用计算机的设计，价格要求高</p>
+<h5 id="由下向上"><a href="#由下向上" class="headerlink" title="由下向上"></a>由下向上</h5><p>早期计算机设计，容易使软硬件的脱节</p>
+<h5 id="中间开始"><a href="#中间开始" class="headerlink" title="中间开始"></a>中间开始</h5><p>软硬件同时设计</p>
+<h4 id="计算机系统的评价标准"><a href="#计算机系统的评价标准" class="headerlink" title="计算机系统的评价标准"></a>计算机系统的评价标准</h4><h5 id="时钟频率"><a href="#时钟频率" class="headerlink" title="时钟频率"></a>时钟频率</h5><p>运行速度与Cache、内存大小、IO、程序等均有关。</p>
+<h5 id="指令执行速度（算数平均）"><a href="#指令执行速度（算数平均）" class="headerlink" title="指令执行速度（算数平均）"></a>指令执行速度（算数平均）</h5><p>MIPS（百万次每秒）, GIPS, TIPS</p>
+<p>最后求出来要带单位！写成$x \ MIPS$或者写$x*10^6$<br>$$<br>MIPS = \frac{Fz}{CPI} = IPC * Fz<br>$$<br>$Fz$为处理机工作主频<br>$CPI$为每条指令所需的平均时钟周期数<br>$IPC$为每个时钟周期平均执行的指令条数(流水线)</p>
+<h5 id="等效指令速度（加权平均）：吉普森（Gibson-法"><a href="#等效指令速度（加权平均）：吉普森（Gibson-法" class="headerlink" title="等效指令速度（加权平均）：吉普森（Gibson)法"></a>等效指令速度（加权平均）：吉普森（Gibson)法</h5><p>等效指令执行时间$T = \sum_{i=1}^{n} {Time}_i * {Weight}_i$</p>
+<p>等效指令速度$MIPS = \frac{1}{\sum_{i=1}^{n} {Time}_i * {Weight}_i}$</p>
+<p>等效CPI $CPI = \sum_{i=1}^{n} {CPI}_i * {Weight}_i$</p>
+<p>Gibson法：（一般）加减法$50%$，乘法$15%$，除法$5%$，程序控制$15%$，其它$15%$。</p>
+<h4 id="冯·诺依曼结构"><a href="#冯·诺依曼结构" class="headerlink" title="冯·诺依曼结构"></a>冯·诺依曼结构</h4><h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><p>存储程序、运算器为中心、集成控制</p>
+<p>将指令放到<strong>存储器</strong>中，然后执行</p>
+<h5 id="变与不变"><a href="#变与不变" class="headerlink" title="变与不变"></a>变与不变</h5><p>不变的：存储程序。改变的：存储器为中心，总线结构，分散控制</p>
+<h4 id="软件对系统结构兼容性"><a href="#软件对系统结构兼容性" class="headerlink" title="软件对系统结构兼容性"></a>软件对系统结构兼容性</h4><p>1、向后兼容； 2、向前兼容； 3、向上兼容； 4、向下兼容。</p>
+<p>对于设计：向后必须兼容，向上兼容尽量满足，剩下不做要求</p>
 
       
     </div>
@@ -542,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#层次结构"><span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明性"><span class="nav-text">透明性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机系统的分类"><span class="nav-text">计算机系统的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#按处理机性能分类"><span class="nav-text">按处理机性能分类:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#佛林分类法"><span class="nav-text">佛林分类法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#冯泽云分类法"><span class="nav-text">冯泽云分类法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#汉德勒分类法"><span class="nav-text">汉德勒分类法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#层次结构"><span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明性"><span class="nav-text">透明性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的分类"><span class="nav-text">计算机系统的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按处理机性能分类"><span class="nav-text">按处理机性能分类:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#佛林分类法"><span class="nav-text">佛林分类法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冯泽云分类法"><span class="nav-text">冯泽云分类法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#汉德勒分类法"><span class="nav-text">汉德勒分类法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Amdahl定律"><span class="nav-text">Amdahl定律</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进性能的主要途径"><span class="nav-text">改进性能的主要途径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#面向目标代码改进"><span class="nav-text">面向目标代码改进</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向高级语言和编译程序改进"><span class="nav-text">面向高级语言和编译程序改进</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向操作系统改进"><span class="nav-text">面向操作系统改进</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统设计方法"><span class="nav-text">计算机系统设计方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#由上向下"><span class="nav-text">由上向下</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#由下向上"><span class="nav-text">由下向上</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中间开始"><span class="nav-text">中间开始</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的评价标准"><span class="nav-text">计算机系统的评价标准</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时钟频率"><span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指令执行速度（算数平均）"><span class="nav-text">指令执行速度（算数平均）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#等效指令速度（加权平均）：吉普森（Gibson-法"><span class="nav-text">等效指令速度（加权平均）：吉普森（Gibson)法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冯·诺依曼结构"><span class="nav-text">冯·诺依曼结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#特点"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变与不变"><span class="nav-text">变与不变</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软件对系统结构兼容性"><span class="nav-text">软件对系统结构兼容性</span></a></li></ol></li></ol></div>
             
 
           </div>
