@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="yqw还是依旧开口脆">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-14T01:13:06.615Z">
+<meta property="og:updated_time" content="2019-09-23T04:23:25.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机系统结构">
 <meta name="twitter:description" content="yqw还是依旧开口脆">
@@ -286,6 +286,13 @@
                 2019-09-08
               </time>
             
+            
+  <span class="post-updated">
+    &nbsp; | &nbsp; 更新于
+    <time itemprop="dateUpdated" datetime="2019-09-23T12:23:25+08:00" content="2019-09-23">
+      2019-09-23
+    </time>
+  </span>
 
             
               <span class="post-meta-divider">|</span>
@@ -298,8 +305,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-14T09:13:06+08:00">
-                2019-09-14
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-23T12:23:25+08:00">
+                2019-09-23
               </time>
             
           </span>
@@ -546,13 +553,85 @@
 <h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h3><p>数据表示是指计算机硬件能够直接认识，可以被指令系统直接调用的那些数据类型。</p>
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>文件、图、表、树、链表、栈、向量、队列、阵列、串、实数、整数、布尔数、字符等。</p>
 <p>用<strong>变址寻址</strong>方式来支持向量数据表示，用<strong>字节编址</strong>支持字符串数据表示</p>
+<p>普通需要支持向量运算，则在设计寻址方式时，一定要设置<strong>变址和自动变址</strong>寻址方式。</p>
 <h4 id="浮点数据"><a href="#浮点数据" class="headerlink" title="浮点数据"></a>浮点数据</h4><p>$$<br>N = m \times r_m^e<br>$$</p>
 <h5 id="两个数值"><a href="#两个数值" class="headerlink" title="两个数值"></a>两个数值</h5><p>尾数$m$：数制(小数或整数)和码制(原码或补码)。<br>阶码$e$:     整码，移码(偏码、增码、余码)或补码。（移码就是补码的符号位取反）</p>
 <h5 id="两个基值"><a href="#两个基值" class="headerlink" title="两个基值"></a>两个基值</h5><p>$r_m$：尾数的基值，二进制，八进制…</p>
 <p>$r_e$：阶码的基值，一般为$2$。</p>
-<h5 id="两个子长"><a href="#两个子长" class="headerlink" title="两个子长"></a>两个子长</h5><p>长度和物理位置，均不包含符号位</p>
+<h5 id="两个字长"><a href="#两个字长" class="headerlink" title="两个字长"></a>两个字长</h5><p>长度和物理位置，均不包含符号位</p>
 <p>尾数的长度$p$：尾数部分按照基值计算的长度，比如说$10_{(10)} = 1010_{(2)}$，$p$分别为$2$和$4$</p>
 <p>阶码长度$q$ :  阶码部分的二进制位数</p>
+<h5 id="阶码"><a href="#阶码" class="headerlink" title="阶码"></a>阶码</h5><p>阶码就是补码的符号位取反</p>
+<h5 id="表数范围"><a href="#表数范围" class="headerlink" title="表数范围"></a>表数范围</h5><p>尾数用原码、纯小数时规格化浮点数的表数范围</p>
+<table>
+<thead>
+<tr>
+<th>表数范围</th>
+<th>规格化尾数</th>
+<th>阶码</th>
+<th>规格化浮点数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$N_{max}$最大正数</td>
+<td>$1 - r_m^{-p}$</td>
+<td>$r_e^q-1$</td>
+<td>$(1-r_m^{-p})\times r_m^{r_e^{q}-1}$</td>
+</tr>
+<tr>
+<td>$N_{min}$最小正数</td>
+<td>$r_m^{-1}$</td>
+<td>\</td>
+<td>$r_m^{-1}\times r_m^{-r_e^q}$</td>
+</tr>
+<tr>
+<td>$-N_{max}$最大负数</td>
+<td>$-r_m^{-1}$</td>
+<td>\</td>
+<td>$-r_m^{-1}\times r_m^{-r_e^q}$</td>
+</tr>
+<tr>
+<td>$-N_{min}$最小负数</td>
+<td>$-(1-r_m^{-p})$</td>
+<td>$-r_e^q$</td>
+<td>$-(1-r_m^{-p}) \times r_m^{r_e^q-1}$</td>
+</tr>
+</tbody></table>
+<p>尾数用补码、纯小数时规格化浮点数的表数范围</p>
+<table>
+<thead>
+<tr>
+<th>表数范围</th>
+<th>规格化尾数</th>
+<th>阶码</th>
+<th>规格化浮点数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$N_{max}$最大正数</td>
+<td>$1 - r_m^{-p}$</td>
+<td>$r_e^q-1$</td>
+<td>$(1-r_m^{-p})\times r_m^{r_e^{q}-1}$</td>
+</tr>
+<tr>
+<td>$N_{min}$最小正数</td>
+<td>$r_m^{-1}$</td>
+<td>\</td>
+<td>$r_m^{-1}\times r_m^{-r_e^q}$</td>
+</tr>
+<tr>
+<td>$-N_{max}$最大负数</td>
+<td>$-(r_m^{-1}+r_m^{-p})$</td>
+<td>\</td>
+<td>$-(r_m^{-1}+r_m^{-p})\times r_m^{-r_e^q}$</td>
+</tr>
+<tr>
+<td>$-N_{min}$最小负数</td>
+<td>$-1$</td>
+<td>$-r_e^q$</td>
+<td>$-r_m^{r_e^q-1}$</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -733,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层次结构"><span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明性"><span class="nav-text">透明性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的分类"><span class="nav-text">计算机系统的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按处理机性能分类"><span class="nav-text">按处理机性能分类:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#佛林分类法"><span class="nav-text">佛林分类法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冯泽云分类法"><span class="nav-text">冯泽云分类法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉德勒分类法"><span class="nav-text">汉德勒分类法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amdahl定律"><span class="nav-text">Amdahl定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进性能的主要途径"><span class="nav-text">改进性能的主要途径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向目标代码改进"><span class="nav-text">面向目标代码改进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向高级语言和编译程序改进"><span class="nav-text">面向高级语言和编译程序改进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向操作系统改进"><span class="nav-text">面向操作系统改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统设计方法"><span class="nav-text">计算机系统设计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的评价标准"><span class="nav-text">计算机系统的评价标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时钟频率"><span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令执行速度（算数平均）"><span class="nav-text">指令执行速度（算数平均）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等效指令速度（加权平均）：吉普森（Gibson-法"><span class="nav-text">等效指令速度（加权平均）：吉普森（Gibson)法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冯·诺依曼结构"><span class="nav-text">冯·诺依曼结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变与不变"><span class="nav-text">变与不变</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件的可移植性"><span class="nav-text">软件的可移植性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#采用系列机"><span class="nav-text">采用系列机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用模拟与仿真"><span class="nav-text">采用模拟与仿真</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用统一高级语言方法"><span class="nav-text">采用统一高级语言方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课后习题"><span class="nav-text">课后习题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8"><span class="nav-text">1.8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9"><span class="nav-text">1.9</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-11"><span class="nav-text">1.11</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-17"><span class="nav-text">1.17</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-19"><span class="nav-text">1.19</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-21"><span class="nav-text">1.21</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-23"><span class="nav-text">1.23</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令系统"><span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表示"><span class="nav-text">数据表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数据"><span class="nav-text">浮点数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#两个数值"><span class="nav-text">两个数值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两个基值"><span class="nav-text">两个基值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两个子长"><span class="nav-text">两个子长</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层次结构"><span class="nav-text">层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明性"><span class="nav-text">透明性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的分类"><span class="nav-text">计算机系统的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按处理机性能分类"><span class="nav-text">按处理机性能分类:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#佛林分类法"><span class="nav-text">佛林分类法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冯泽云分类法"><span class="nav-text">冯泽云分类法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉德勒分类法"><span class="nav-text">汉德勒分类法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amdahl定律"><span class="nav-text">Amdahl定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进性能的主要途径"><span class="nav-text">改进性能的主要途径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向目标代码改进"><span class="nav-text">面向目标代码改进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向高级语言和编译程序改进"><span class="nav-text">面向高级语言和编译程序改进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向操作系统改进"><span class="nav-text">面向操作系统改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统设计方法"><span class="nav-text">计算机系统设计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的评价标准"><span class="nav-text">计算机系统的评价标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时钟频率"><span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令执行速度（算数平均）"><span class="nav-text">指令执行速度（算数平均）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等效指令速度（加权平均）：吉普森（Gibson-法"><span class="nav-text">等效指令速度（加权平均）：吉普森（Gibson)法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冯·诺依曼结构"><span class="nav-text">冯·诺依曼结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变与不变"><span class="nav-text">变与不变</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件的可移植性"><span class="nav-text">软件的可移植性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#采用系列机"><span class="nav-text">采用系列机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用模拟与仿真"><span class="nav-text">采用模拟与仿真</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用统一高级语言方法"><span class="nav-text">采用统一高级语言方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课后习题"><span class="nav-text">课后习题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8"><span class="nav-text">1.8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9"><span class="nav-text">1.9</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-11"><span class="nav-text">1.11</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-17"><span class="nav-text">1.17</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-19"><span class="nav-text">1.19</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-21"><span class="nav-text">1.21</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-23"><span class="nav-text">1.23</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令系统"><span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表示"><span class="nav-text">数据表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数据"><span class="nav-text">浮点数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#两个数值"><span class="nav-text">两个数值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两个基值"><span class="nav-text">两个基值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两个字长"><span class="nav-text">两个字长</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#阶码"><span class="nav-text">阶码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表数范围"><span class="nav-text">表数范围</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

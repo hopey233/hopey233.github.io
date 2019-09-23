@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="Collected By Hope_Y…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-18T13:41:03.252Z">
+<meta property="og:updated_time" content="2019-09-23T02:31:58.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板整理">
 <meta name="twitter:description" content="Collected By Hope_Y…">
@@ -286,6 +286,13 @@
                 2019-08-22
               </time>
             
+            
+  <span class="post-updated">
+    &nbsp; | &nbsp; 更新于
+    <time itemprop="dateUpdated" datetime="2019-09-23T10:31:58+08:00" content="2019-09-23">
+      2019-09-23
+    </time>
+  </span>
 
             
               <span class="post-meta-divider">|</span>
@@ -298,8 +305,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-18T21:41:03+08:00">
-                2019-09-18
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-23T10:31:58+08:00">
+                2019-09-23
               </time>
             
           </span>
@@ -460,7 +467,7 @@
 
 <h4 id="欧拉降幂"><a href="#欧拉降幂" class="headerlink" title="欧拉降幂"></a>欧拉降幂</h4><p>求解$A^B \ mod\ C$，$B \leq 10^{1000000}$</p>
 <p>若$a$和$n$为正整数并且互质</p>
-<p>$a^{\varphi (n)} \equiv 1(mod \ n)$<br>$$<br>a^b \equiv<br>\begin{cases}<br>a^{p \ mod \  \varphi(p) } &amp; \text{ gcd(a,p)=1}  \newline<br>a^b &amp; \text gcd(a,p) \neq 1 , b&lt;\varphi(p)   \newline<br>a^{ (b \ mod \  \varphi(p)) + \varphi(p)}  &amp; \text gcd(a,p) \neq 1 , b \geq \varphi(p)<br>\end{cases}  \ \ \ \ \ \ \ \ \ \ (mod\ p)<br>$$</p>
+<p>$a^{\varphi (n)} \equiv 1(mod \ n)$<br>$$<br>a^b \equiv<br>\begin{cases}<br>a^{b \ mod \  \varphi(p) } &amp; \text{ gcd(a,p)=1}  \newline<br>a^b &amp; \text gcd(a,p) \neq 1 , b&lt;\varphi(p)   \newline<br>a^{ (b \ mod \  \varphi(p)) + \varphi(p)}  &amp; \text gcd(a,p) \neq 1 , b \geq \varphi(p)<br>\end{cases}  \ \ \ \ \ \ \ \ \ \ (mod\ p)<br>$$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll __int64</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 10000000007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">1000006</span>];</span><br><span class="line">ll x,z;</span><br><span class="line"><span class="function">ll <span class="title">quickpow</span><span class="params">(ll x,ll y,ll z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(y&amp;<span class="number">1</span>)</span><br><span class="line">            ans=ans*x%z;</span><br><span class="line">        x=x*x%z;</span><br><span class="line">        y&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll i,rea=n;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rea=rea-rea/i;</span><br><span class="line">            <span class="keyword">while</span>(n%i==<span class="number">0</span>)</span><br><span class="line">                n/=i;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">1</span>)</span><br><span class="line">        rea=rea-rea/n;</span><br><span class="line">    <span class="keyword">return</span> rea;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld %s %lld"</span>,&amp;x,a,&amp;z)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        ll len=<span class="built_in">strlen</span>(a);</span><br><span class="line">        ll p=phi(z);</span><br><span class="line">        ll ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">            ans=(ans*<span class="number">10</span>+a[i]-<span class="string">'0'</span>)%p;</span><br><span class="line">        ans+=p;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,quickpow(x,ans,z));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h4><p>求解<br>$$<br>\begin{cases}<br>x \equiv a_1 (mod\ b_1) \newline<br>x \equiv a_2 (mod\ b_2)  \newline<br>…  \newline<br>x \equiv a_n (mod\ b_n)<br>\end{cases}<br>$$</p>
