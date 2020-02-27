@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="工程经济学笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-26T12:10:58.604Z">
+<meta property="og:updated_time" content="2020-02-27T08:19:26.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程经济学">
 <meta name="twitter:description" content="工程经济学笔记">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-26T20:10:58+08:00">
-                2020-02-26
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-27T16:19:26+08:00">
+                2020-02-27
               </time>
             
           </span>
@@ -422,7 +422,29 @@
 <p>​<br>$$<br>A=\frac{F * i}{(1+i)^n-1}=F(A/F,i,n)<br>$$<br>5、年金现值公式</p>
 <p>​        已知$A,i,n$，求$P$</p>
 <p>​        由于上面两个$F$的公式，联立得<br>$$<br>P * (1+i)^n= \frac{A * [(1+i)^n-1]}{i}<br>$$</p>
-<p>$$<br>P=\frac{A * [(1+i)^n-1]}{i * (1+i)^n}=A(P/A,i,n)<br>$$<br>6、资金回收公式</p>
+<p>$$<br>P=\frac{A * [(1+i)^n-1]}{i * (1+i)^n}=A(P/A,i,n)<br>$$<br>​        例题：小A从建设银行贷款60万付首套房按揭，贷款利率为4.9%，按年计息，贷款15年，等额本息还款，试计算每年应还银行本金，利息分别是多少。请用c++或者c计算，上传代码图和计算结果图<br>$$<br>F=P(F/P,i,n)=P * (1+i)^n = 60 * (1+0.049)^{10} = 122.97(万元)<br>$$</p>
+<p>$$<br>F=A(F/A,i,n)=\frac{A * [(1+i)^n-1]}{i}<br>$$</p>
+<p>联立上两式，可以得到$A$<br>$$<br>A=\frac{F<em>i}{(1+i)^n-1}=\frac{122.97</em>0.049}{1.049^{10}-1}=5.74(万元)<br>$$<br>第一年利息：$60 * 0.049=2.94(万元)$</p>
+<p>第一年本金：$5.74-2.94=2.80(万元)$</p>
+<p>第二年利息：$(60-2.80) * 0.049 = 2.80(万元)$</p>
+<p>第二年本金：$5.74-2.80=2.94(万元)$</p>
+<p>第三年利息：$(60-2.80-2.94) * 0.049 = 2.66(万元)$</p>
+<p>第三年本金：$5.74-2.66=3.08(万元)$</p>
+<p>…</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">double</span> F,A,i,P;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"请输入贷款金额,利率,年份:(单位:万元)"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf %lf %d"</span>,&amp;P,&amp;i,&amp;n);</span><br><span class="line">    <span class="keyword">double</span> tmp=<span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) tmp*=(<span class="number">1.0</span>+i);</span><br><span class="line">    F=P*tmp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"F=%.6f(万元)\n"</span>,F);</span><br><span class="line">    A=F*i/(tmp<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"A=%.6f(万元)\n"</span>,A);</span><br><span class="line">    <span class="keyword">double</span> pre=P;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">        <span class="keyword">double</span> l=pre*i;</span><br><span class="line">        <span class="keyword">double</span> x=A-l;</span><br><span class="line">        pre-=x;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d年利息:%.6f(万元)\t第%d年本金:%.6f(万元)\n"</span>,j,l,j,x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><strong>Input</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">60</span> <span class="number">0.049</span> <span class="number">15</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Output</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">请输入贷款金额,利率,年份:(单位:万元)</span><br><span class="line"><span class="number">60</span> <span class="number">0.049</span> <span class="number">15</span></span><br><span class="line">F=<span class="number">122.965583</span>(万元)</span><br><span class="line">A=<span class="number">5.741530</span>(万元)</span><br><span class="line">第<span class="number">1</span>年利息:<span class="number">2.940000</span>(万元)        第<span class="number">1</span>年本金:<span class="number">2.801530</span>(万元)</span><br><span class="line">第<span class="number">2</span>年利息:<span class="number">2.802725</span>(万元)        第<span class="number">2</span>年本金:<span class="number">2.938805</span>(万元)</span><br><span class="line">第<span class="number">3</span>年利息:<span class="number">2.658724</span>(万元)        第<span class="number">3</span>年本金:<span class="number">3.082807</span>(万元)</span><br><span class="line">第<span class="number">4</span>年利息:<span class="number">2.507666</span>(万元)        第<span class="number">4</span>年本金:<span class="number">3.233864</span>(万元)</span><br><span class="line">第<span class="number">5</span>年利息:<span class="number">2.349207</span>(万元)        第<span class="number">5</span>年本金:<span class="number">3.392324</span>(万元)</span><br><span class="line">第<span class="number">6</span>年利息:<span class="number">2.182983</span>(万元)        第<span class="number">6</span>年本金:<span class="number">3.558548</span>(万元)</span><br><span class="line">第<span class="number">7</span>年利息:<span class="number">2.008614</span>(万元)        第<span class="number">7</span>年本金:<span class="number">3.732917</span>(万元)</span><br><span class="line">第<span class="number">8</span>年利息:<span class="number">1.825701</span>(万元)        第<span class="number">8</span>年本金:<span class="number">3.915829</span>(万元)</span><br><span class="line">第<span class="number">9</span>年利息:<span class="number">1.633825</span>(万元)        第<span class="number">9</span>年本金:<span class="number">4.107705</span>(万元)</span><br><span class="line">第<span class="number">10</span>年利息:<span class="number">1.432548</span>(万元)       第<span class="number">10</span>年本金:<span class="number">4.308983</span>(万元)</span><br><span class="line">第<span class="number">11</span>年利息:<span class="number">1.221408</span>(万元)       第<span class="number">11</span>年本金:<span class="number">4.520123</span>(万元)</span><br><span class="line">第<span class="number">12</span>年利息:<span class="number">0.999922</span>(万元)       第<span class="number">12</span>年本金:<span class="number">4.741609</span>(万元)</span><br><span class="line">第<span class="number">13</span>年利息:<span class="number">0.767583</span>(万元)       第<span class="number">13</span>年本金:<span class="number">4.973948</span>(万元)</span><br><span class="line">第<span class="number">14</span>年利息:<span class="number">0.523859</span>(万元)       第<span class="number">14</span>年本金:<span class="number">5.217671</span>(万元)</span><br><span class="line">第<span class="number">15</span>年利息:<span class="number">0.268194</span>(万元)       第<span class="number">15</span>年本金:<span class="number">5.473337</span>(万元)</span><br></pre></td></tr></table></figure>
+
+<p>6、资金回收公式</p>
 <p>​        已知$P,i,n$，求$A$<br>$$<br>A=\frac {P * i * (1+i)^n} {(1+i)^n-1} =A(A/P,i,n)<br>$$</p>
 
       
@@ -457,6 +479,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/27/软件工程/" rel="prev" title="软件工程">
+                软件工程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -535,7 +561,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
