@@ -88,10 +88,12 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="人工智能学习笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-28T09:08:28.407Z">
+<meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:updated_time" content="2020-03-03T04:05:24.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
 
 
 
@@ -297,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-28T17:08:28+08:00">
-                2020-02-28
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-03T12:05:24+08:00">
+                2020-03-03
               </time>
             
           </span>
@@ -430,6 +432,29 @@
 <h6 id="一阶谓词逻辑知识表示法特点"><a href="#一阶谓词逻辑知识表示法特点" class="headerlink" title="一阶谓词逻辑知识表示法特点"></a>一阶谓词逻辑知识表示法特点</h6><p>优点：自然性；精确性；严密性；容易实现</p>
 <p>缺点：不能表示不确定的知识；组合爆炸；效率低</p>
 <p>应用：自动问答系统；机器人行动规划系统；机器博弈系统；问题求解系统</p>
+<h4 id="第三讲-产生式表示法和框架表示法"><a href="#第三讲-产生式表示法和框架表示法" class="headerlink" title="第三讲 产生式表示法和框架表示法"></a>第三讲 产生式表示法和框架表示法</h4><h5 id="3-1-产生式表示法"><a href="#3-1-产生式表示法" class="headerlink" title="3.1 产生式表示法"></a>3.1 产生式表示法</h5><p>确定性规则知识产生式表示、不确定性规则知识产生式表示（加上置信度）、确定性事实性知识的产生式表示（三元组表示）、不确定性事实性知识的产生式表示（在前面的基础上机上置信度）</p>
+<p>产生式与崔此逻辑中蕴含式的区别</p>
+<p>1、产生式除了能表示蕴含，还可以表示操作规则、变换、函数等</p>
+<p>2、蕴含只能表达精确的知识（非真即假），而产生式还能表示“可能”</p>
+<p>巴克斯范式$BNF$：定义描述，$::=$表示定义为，$|$表示或，$[]$表示可缺省</p>
+<pre class="mermaid">graph LR
+    A[控制] --> B[规则库]
+    A --> C[推理机]
+    A --> D[综合数据库]
+    B --> C
+    D --> C
+    C --> D</pre>
+
+<p>规则库：用于描述相应领域内知识的产生式集合。<br>综合数据库（事实库、上下文、黑板等）：一个用于存放问题求解过程中各种当前信息的数据结构。<br>控制系统（推理机构）：由一组程序组成，负责整个产生式系统的运行，实现对问题的求解。</p>
+<p>产生式优点：自然性、模块性、有效性、清晰性</p>
+<p>缺点：效率不高、不能表达结构性知识</p>
+<p>适用场合：1、领域知识间关系不密切，不存在结构关系。2、经验性及不确定性的知识，且相关领域中对这些知识 没有严格、统一的理论。3、领域问题的求解过程可被表示为一系列相对独立的操作，且每个操作可被表示为一条或多条产生式规则。</p>
+<h5 id="3-2-框架表示法"><a href="#3-2-框架表示法" class="headerlink" title="3.2 框架表示法"></a>3.2 框架表示法</h5><p>框架(frame)：一种描述所论对象属性的数据结构，一个框架由若干个“槽”的结构组成，每个槽又可根据实际情况分成若干个“侧面”。</p>
+<p>槽(slot)：用于描述所论对象某一方面的属性</p>
+<p>侧面(faced)：描述相应属性的某一方面（细分下的细分）</p>
+<p>结构：</p>
+<p><img src="/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg" alt="alt"></p>
+<p>特点：结构性、继承性、自然性、便于表达结构性的知识</p>
 
       
     </div>
@@ -614,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -671,6 +696,14 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">
 </span>
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
         
 <div class="busuanzi-count">
