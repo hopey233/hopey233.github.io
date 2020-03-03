@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="工程经济学笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-03T04:14:55.101Z">
+<meta property="og:updated_time" content="2020-03-03T13:35:34.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程经济学">
 <meta name="twitter:description" content="工程经济学笔记">
@@ -297,7 +297,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-03T12:14:55+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-03T21:35:34+08:00">
                 2020-03-03
               </time>
             
@@ -407,6 +407,7 @@
 <p>边际收益：是指增加一单位产品的销售所增加的收益，即最后一单位产品的售出所取得的收益</p>
 <p>资源的合理配置 具体举措有哪些：</p>
 <p>工程-经济系统，工程经济与环境，工程经济学概念，工程经济学发展史，工程经济学方法和原则，课程思政重点</p>
+<hr>
 <h4 id="资金的时间价值与现金流量"><a href="#资金的时间价值与现金流量" class="headerlink" title="资金的时间价值与现金流量"></a>资金的时间价值与现金流量</h4><p>社会生产再生产过程（类似工程-经济系统）</p>
 <p>资金时间价值的影响因素：时间、本金、利率</p>
 <p>边际收益就是指一个增加资金而使收益减少的一个点，相当于导数为0</p>
@@ -448,24 +449,27 @@
 <p>…</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">double</span> F,A,i,P;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"请输入贷款金额,利率,年份:(单位:万元)"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf %lf %d"</span>,&amp;P,&amp;i,&amp;n);</span><br><span class="line">    <span class="keyword">double</span> tmp=<span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) tmp*=(<span class="number">1.0</span>+i);</span><br><span class="line">    F=P*tmp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"F=%.6f(万元)\n"</span>,F);</span><br><span class="line">    A=F*i/(tmp<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"A=%.6f(万元)\n"</span>,A);</span><br><span class="line">    <span class="keyword">double</span> pre=P;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">        <span class="keyword">double</span> l=pre*i;</span><br><span class="line">        <span class="keyword">double</span> x=A-l;</span><br><span class="line">        pre-=x;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d年利息:%.6f(万元)\t第%d年本金:%.6f(万元)\n"</span>,j,l,j,x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<ul>
-<li><strong>Input</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">60</span> <span class="number">0.049</span> <span class="number">15</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>Output</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">请输入贷款金额,利率,年份:(单位:万元)</span><br><span class="line"><span class="number">60</span> <span class="number">0.049</span> <span class="number">15</span></span><br><span class="line">F=<span class="number">122.965583</span>(万元)</span><br><span class="line">A=<span class="number">5.741530</span>(万元)</span><br><span class="line">第<span class="number">1</span>年利息:<span class="number">2.940000</span>(万元)        第<span class="number">1</span>年本金:<span class="number">2.801530</span>(万元)</span><br><span class="line">第<span class="number">2</span>年利息:<span class="number">2.802725</span>(万元)        第<span class="number">2</span>年本金:<span class="number">2.938805</span>(万元)</span><br><span class="line">第<span class="number">3</span>年利息:<span class="number">2.658724</span>(万元)        第<span class="number">3</span>年本金:<span class="number">3.082807</span>(万元)</span><br><span class="line">第<span class="number">4</span>年利息:<span class="number">2.507666</span>(万元)        第<span class="number">4</span>年本金:<span class="number">3.233864</span>(万元)</span><br><span class="line">第<span class="number">5</span>年利息:<span class="number">2.349207</span>(万元)        第<span class="number">5</span>年本金:<span class="number">3.392324</span>(万元)</span><br><span class="line">第<span class="number">6</span>年利息:<span class="number">2.182983</span>(万元)        第<span class="number">6</span>年本金:<span class="number">3.558548</span>(万元)</span><br><span class="line">第<span class="number">7</span>年利息:<span class="number">2.008614</span>(万元)        第<span class="number">7</span>年本金:<span class="number">3.732917</span>(万元)</span><br><span class="line">第<span class="number">8</span>年利息:<span class="number">1.825701</span>(万元)        第<span class="number">8</span>年本金:<span class="number">3.915829</span>(万元)</span><br><span class="line">第<span class="number">9</span>年利息:<span class="number">1.633825</span>(万元)        第<span class="number">9</span>年本金:<span class="number">4.107705</span>(万元)</span><br><span class="line">第<span class="number">10</span>年利息:<span class="number">1.432548</span>(万元)       第<span class="number">10</span>年本金:<span class="number">4.308983</span>(万元)</span><br><span class="line">第<span class="number">11</span>年利息:<span class="number">1.221408</span>(万元)       第<span class="number">11</span>年本金:<span class="number">4.520123</span>(万元)</span><br><span class="line">第<span class="number">12</span>年利息:<span class="number">0.999922</span>(万元)       第<span class="number">12</span>年本金:<span class="number">4.741609</span>(万元)</span><br><span class="line">第<span class="number">13</span>年利息:<span class="number">0.767583</span>(万元)       第<span class="number">13</span>年本金:<span class="number">4.973948</span>(万元)</span><br><span class="line">第<span class="number">14</span>年利息:<span class="number">0.523859</span>(万元)       第<span class="number">14</span>年本金:<span class="number">5.217671</span>(万元)</span><br><span class="line">第<span class="number">15</span>年利息:<span class="number">0.268194</span>(万元)       第<span class="number">15</span>年本金:<span class="number">5.473337</span>(万元)</span><br></pre></td></tr></table></figure>
-
 <p>6、资金回收公式</p>
 <p>​        已知$P,i,n$，求$A$<br>$$<br>A=\frac {P * i * (1+i)^n} {(1+i)^n-1} =A(A/P,i,n)<br>$$</p>
 <p>例题：某人计划用购房的方式解决住房问 题。房价50万元。某人只有12万元资金，余款需贷款解决，贷款年利率4%，在未来10年内等额偿还。若基准折现率为5% ，问某人购房总支出相当于现在一次性付款多少？</p>
 <p>解：首先我们可以求出每年所还的钱</p>
 <p>​<br>$$<br>A=\frac{F * i} {(1+i)^n-1} = 4.685<br>$$</p>
-<p>$$<br>S = 12 * (1+0.05)^{10} + \sum_{j=0}^{n-1}A*(1+i)^j = 75.796<br>$$</p>
+<p>$$<br>S = 12 * (1+0.05)^{10} + \sum_{j=0}^{n-1}A*(1+i)^j = 75.796  \ \<br>$$</p>
 <p>$$<br>P=\frac{S}{(1+0.05)^{10}} = 46.53<br>$$</p>
+<p>​            相当于12w以5%增值，每年的$A$按4%增值，到最后变成$S$，最后通过$S$返回求$P$</p>
+<p><strong>永久年金</strong><br>$$<br>P = \lim_{n \to \infty} \frac{A * [(1+i)^n-1]}{i * (1+i)^n} = \frac{A}{i}<br>$$<br><strong>名义利率与实际利率</strong></p>
+<p>年利率为$r$，一年计息$m$次，当$m \neq 1$时，称$r$为名义利率。</p>
+<p>实际利率即实际上以年为计息周期的利率。</p>
+<p>假设名义利率为$r$，每年计息$m$次，则实际利率$i$<br>$$<br>i=(1+\frac{r}{m})^m-1<br>$$<br>广义年金：连续分布在每期期末，且绝对数值相等的序列。</p>
+<hr>
+<h4 id="建设项目评价的基本经济要素"><a href="#建设项目评价的基本经济要素" class="headerlink" title="建设项目评价的基本经济要素"></a>建设项目评价的基本经济要素</h4><p>投资反映了项目对生产力要素的占用。</p>
+<p>成本反映了项目对劳动的消耗。<br>$$<br>固定资产原值=固定资产净值+固定资产折旧<br>$$</p>
+<p>$$<br>流动资金 = 流动资产 - 流动负债<br>$$</p>
+<p>$$<br>某年应计利息 = （年初借款资金累计 + \frac{当年借款}{2}）\times  借款年利率<br>$$</p>
+<p><strong>建设期利息即资本化利息，仅发生在建设期</strong></p>
+<p>折旧（摊销）是固定（其他）资产价值磨损的补偿金。</p>
+<p>$经营成本 = 总成本－折旧、摊销费－财务费用$<br>$经营成本 = 外购原材料、燃料、动力费+工资及福利费+修理费+其他费用$</p>
+<p>经营成本是现金流概念下的成本，所以，非现金支出的项目不包含在经营成本中。</p>
 
       
     </div>
@@ -584,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -653,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建设项目评价的基本经济要素"><span class="nav-text">建设项目评价的基本经济要素</span></a></li></ol></div>
             
 
           </div>
