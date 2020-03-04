@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="description" content="链式前向星 &amp;amp;&amp;amp; 手写Hash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hash">
-<meta property="og:url" content="http://yoursite.com/2019/07/11/hash/index.html">
+<meta property="og:title" content="Day6">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/Day6/index.html">
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
-<meta property="og:description" content="遇到hash的题目默默流下眼泪😥">
+<meta property="og:description" content="链式前向星 &amp;amp;&amp;amp; 手写Hash">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T03:47:06.242Z">
+<meta property="og:updated_time" content="2020-03-04T14:25:53.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hash">
-<meta name="twitter:description" content="遇到hash的题目默默流下眼泪😥">
+<meta name="twitter:title" content="Day6">
+<meta name="twitter:description" content="链式前向星 &amp;amp;&amp;amp; 手写Hash">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/11/hash/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/04/Day6/">
 
 
 
@@ -136,7 +136,7 @@
       })();
   </script>
 
-  <title>hash | Hope_Y's blog</title>
+  <title>Day6 | Hope_Y's blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/hash/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/Day6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hope_Y">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hash</h1>
+          <h1 class="post-title" itemprop="name headline">Day6</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T16:44:34+08:00">
-                2019-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-04T22:03:49+08:00">
+                2020-03-04
               </time>
             
             
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-06T11:47:06+08:00">
-                2019-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-04T22:25:53+08:00">
+                2020-03-04
               </time>
             
           </span>
@@ -316,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/day/" itemprop="url" rel="index">
+                    <span itemprop="name">day++</span>
                   </a>
                 </span>
 
@@ -334,8 +334,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/11/hash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/11/hash/" itemprop="commentCount"></span>
+                <a href="/2020/03/04/Day6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/04/Day6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -368,20 +368,32 @@
       
 
       
-        <p><del>遇到hash的题目默默流下眼泪😥</del></p>
+        <p>链式前向星 &amp;&amp; 手写Hash</p>
 <a id="more"></a>
 
-<h2 id="小w的a-b问题"><a href="#小w的a-b问题" class="headerlink" title="小w的a=b问题"></a><a href="https://ac.nowcoder.com/acm/contest/923/B" target="_blank" rel="noopener">小w的a=b问题</a></h2><p>题意：给你两个数组a和b，长度为n和m，问你$\prod_{i=1}^{n}a_i ! $是否等于$\prod_{i=1}^{m}b_i ! $，其中$1 \leq n,m \leq 10^5$,$0 \leq a_i,b_i \leq 10^5$</p>
-<p><del>初次遇到这种题目，我以为是一个推公式的题目，把我整懵了，果然数据结构的知识还是灰常重要啊[点头]</del></p>
-<p>思路：用两个比较大一点的质数作为模系，然后计算每个阶乘$(0 \sim10^5)$所在模系hash值，用两个可以保证不冲突的几率大大减小。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll mod1=<span class="number">1e9</span>+<span class="number">7</span>,mod2=<span class="number">1e9</span>+<span class="number">9</span>;</span><br><span class="line">ll m1[maxn],m2[maxn];</span><br><span class="line">ll t,n,m,a;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    m1[<span class="number">0</span>]=m2[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;maxn; i++)&#123;</span><br><span class="line">        m1[i]=m1[i<span class="number">-1</span>]*i%mod1;</span><br><span class="line">        m2[i]=m2[i<span class="number">-1</span>]*i%mod2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;m);</span><br><span class="line">        ll s1=<span class="number">1</span>,s2=<span class="number">1</span>,s3=<span class="number">1</span>,s4=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s1=s1*m1[a]%mod1;</span><br><span class="line">            s2=s2*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a);</span><br><span class="line">            s3=s3*m1[a]%mod1;</span><br><span class="line">            s4=s4*m2[a]%mod2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s1==s3 &amp;&amp; s2==s4) <span class="built_in">puts</span>(<span class="string">"equal"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"unequal"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h4><p>对于图来说，链式前向星的概念就不得不提及了，其中的链表的思想也是手写Hash的重要一环</p>
+<p>什么是链式前向星，就是利用链表的方式存图</p>
+<p>定义一个结构体，其中包含next和to</p>
+<p>next：表示与这个边起点相同的上一条边的编号</p>
+<p>to：表示这条边的终点</p>
+<p>ecnt：表示边的编号</p>
+<p>还要定义一个head数组，head[i]表示以i为起点的最后一条边的编号</p>
+<p>最开始head数组赋值为-1</p>
+<p>加边操作</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span>&#123;</span><br><span class="line">    e[ecnt].nex=head[from];</span><br><span class="line">    e[ecnt].to=to;</span><br><span class="line">    head[from]=ecnt++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="字符串hash"><a href="#字符串hash" class="headerlink" title="字符串hash"></a>字符串hash</h2><p>上面是数字的hash，而字符串的hash就是一个$O(n)$的预处理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="comment">//ull 会溢出取模</span></span><br><span class="line"><span class="keyword">const</span> ull base=<span class="number">233</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line">ull hs[maxn],p[maxn];</span><br><span class="line"><span class="function">ull <span class="title">geths</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (ull)hs[r]-p[r-l+<span class="number">1</span>]*hs[l<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    p[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;maxn; i++) p[i]=p[i<span class="number">-1</span>]*base;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=len; i++)&#123;</span><br><span class="line">        hs[i]=hs[i<span class="number">-1</span>]*base+s[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过加边操作我们可以记录所有从from出去的边，然后把每条边的前面的值放入next值中。</p>
+<p>那么我们遍历每个点的边是，只要递归地寻找head[i]，然后再往E[i].next找即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=head[i]; ~j; j=e[j].nex)&#123;</span><br><span class="line">        <span class="comment">//这条边就是i-&gt;e[j].to</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="手写hash，可以替代map加速查询"><a href="#手写hash，可以替代map加速查询" class="headerlink" title="手写hash，可以替代map加速查询"></a>手写hash，可以替代map加速查询</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Hash</span>&#123;</span></span><br><span class="line">    ll mod = <span class="number">2908361</span>;</span><br><span class="line">    ll cnt = <span class="number">0</span>, Head[<span class="number">2908361</span>], nxt[<span class="number">1000006</span>];</span><br><span class="line">    ll val[<span class="number">1000006</span>], pos[<span class="number">1000006</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(Head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(Head)); cnt = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ll x, ll v)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        pos[cnt] = x, val[cnt] = v, nxt[cnt] = Head[key];</span><br><span class="line">        Head[key] = cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ll <span class="title">Find</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        <span class="keyword">for</span>(ll i = Head[key]; ~i; i = nxt[i])&#123;</span><br><span class="line">            <span class="keyword">if</span>(pos[i] == x) <span class="keyword">return</span> val[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1l</span>l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;hs;</span><br></pre></td></tr></table></figure>
+<p>完整代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">110</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">egde</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> nex,to;</span><br><span class="line">&#125;e[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> head[maxn],ecnt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span> head);</span><br><span class="line">    <span class="built_in">memset</span>(in,<span class="number">0</span>,<span class="keyword">sizeof</span> in);</span><br><span class="line">    ecnt=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span>&#123;</span><br><span class="line">    e[ecnt].nex=head[from];</span><br><span class="line">    e[ecnt].to=to;</span><br><span class="line">    head[from]=ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=head[i]; ~j; j=e[j].nex)&#123;</span><br><span class="line">        <span class="comment">//这条边就是i-&gt;e[j].to</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="手写Hash"><a href="#手写Hash" class="headerlink" title="手写Hash"></a>手写Hash</h4><p>c++的STL有hash的两个函数，一个是map一个是unorder_map，都可以标记哪个数是否出现过，效率还可以$logn$，但是常数大。</p>
+<p>我们可以直接手写Hash，利用链式前向星的思想，找一个不是特别大的质模数，然后对于每个模数相当于建立一个点，每次出现一个同模的就可以建立一条边，比如模数为$mod$，就会有$mod$个余数，每次加数的时候先求余数，然后加到那个余数集合里面，存储就用链式前向星的方法。</p>
+<p>当数不是特别大特别多的时候，这个效率还可以。</p>
+<p>但是这种一般题目可以用，（一般还是用unorder_map，这里只是介绍一种思想），如果卡模数就没办法了，只能更换模数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Hash</span>&#123;</span></span><br><span class="line">    ll mod = <span class="number">2908361</span>;</span><br><span class="line">    ll cnt = <span class="number">0</span>, Head[<span class="number">2908361</span>], nxt[<span class="number">1000006</span>];</span><br><span class="line">    ll val[<span class="number">1000006</span>], pos[<span class="number">1000006</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(Head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(Head)); cnt = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ll x, ll v)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        pos[cnt] = x, val[cnt] = v, nxt[cnt] = Head[key];</span><br><span class="line">        Head[key] = cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ll <span class="title">Find</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        <span class="keyword">for</span>(ll i = Head[key]; ~i; i = nxt[i])&#123;</span><br><span class="line">            <span class="keyword">if</span>(pos[i] == x) <span class="keyword">return</span> val[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1l</span>l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;hs;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -407,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/主席树/" rel="next" title="主席树">
-                <i class="fa fa-chevron-left"></i> 主席树
+              <a href="/2020/03/03/Day5/" rel="next" title="Day5">
+                <i class="fa fa-chevron-left"></i> Day5
               </a>
             
           </div>
@@ -416,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/11/区间dp/" rel="prev" title="区间dp">
-                区间dp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小w的a-b问题"><span class="nav-text">小w的a=b问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串hash"><span class="nav-text">字符串hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写hash，可以替代map加速查询"><span class="nav-text">手写hash，可以替代map加速查询</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#链式前向星"><span class="nav-text">链式前向星</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手写Hash"><span class="nav-text">手写Hash</span></a></li></ol></div>
             
 
           </div>
