@@ -89,7 +89,7 @@
 <meta property="og:description" content="人工智能学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2020-03-04T07:08:57.568Z">
+<meta property="og:updated_time" content="2020-03-04T08:14:21.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
@@ -299,7 +299,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-04T15:08:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-04T16:14:21+08:00">
                 2020-03-04
               </time>
             
@@ -455,6 +455,8 @@
     D --> C
     C --> D</pre>
 
+
+
 <p>规则库：用于描述相应领域内知识的产生式集合。<br>综合数据库（事实库、上下文、黑板等）：一个用于存放问题求解过程中各种当前信息的数据结构。<br>控制系统（推理机构）：由一组程序组成，负责整个产生式系统的运行，实现对问题的求解。</p>
 <p>产生式优点：自然性、模块性、有效性、清晰性</p>
 <p>缺点：效率不高、不能表达结构性知识</p>
@@ -478,7 +480,7 @@
 <p><strong>消去存在量词</strong></p>
 <p>存在量词不出现在全称量词的辖域内；存在量词出现在一个或者多个全称量词的辖域内。</p>
 <p><code>Skolem化</code>：用Skolem函数代替存在变量</p>
-<p>$(\forall x_1)((\forall x_2)…(\forall x_n)(\exist y)P(x_1,x_2,…,x_n,y)))$，存在量词$y$的Skolem函数为$y=f(x_1,x_2,…,x_n)$</p>
+<p>$( \forall x_1)(( \forall x_2)…( \forall x_n)( \exists y)P(x_1,x_2,…,x_n,y)))$，存在量词$y$的Skolem函数为$y=f(x_1,x_2,…,x_n)$</p>
 <p>化为前束形：前束形=(前缀){母式}，把量词约束提前</p>
 <p>Skolem标准型（分配律）</p>
 <p>$P \vee (Q \wedge R) \Leftrightarrow (P \vee Q) \wedge (P \vee R)$</p>
@@ -501,7 +503,7 @@
 <p>$C_{12} = Q(a) \vee R(y)$</p>
 <p><strong>值得注意的是</strong>，当归结的$P(x)$是两个变量，如$P(x) \vee R(x)$和$\neg P(y) \vee Q(y)$或者$P(x) \vee R(x)$和$\neg P(x) \vee Q(x)$都不能进行归结。</p>
 <p><strong>归结反演</strong></p>
-<p>用$F$证明$Q$，我们构造集合$S = { F , \neg Q }$，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
+<p>用$F$证明$Q$，我们构造集合$S =  { F , \neg Q }$，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
 <p><strong>应用归结原理求解问题</strong></p>
 <p>用$F$求解$Q$，将$Q$用谓词公式表示，否定$Q$与answer构成析取式，加入$S$，此时$S = { F, \neg Q \vee ANSWER }$，再通过归结，得到$ANSWER$，那么就能得出答案。</p>
 
