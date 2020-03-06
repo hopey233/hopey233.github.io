@@ -89,7 +89,7 @@
 <meta property="og:description" content="人工智能学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2020-03-05T08:34:56.648Z">
+<meta property="og:updated_time" content="2020-03-06T06:43:11.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-05T16:34:56+08:00">
-                2020-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-06T14:43:11+08:00">
+                2020-03-06
               </time>
             
           </span>
@@ -490,8 +490,7 @@
 <p>子句变量标准化（每个子句变量不同）</p>
 <p>谓词公式和子句集是否等价？</p>
 <p>答：谓词公式和子句集不总是等价的，在谓词公式不可满足的条件下等价。在基于谓词逻辑的推理中，特别是归结推理中，把谓词公式转化为子句集是必要的。</p>
-<p><strong>鲁宾逊归结原理</strong></p>
-<p>子句集中子句之间都必须是合取关系</p>
+<h5 id="鲁宾逊归结原理"><a href="#鲁宾逊归结原理" class="headerlink" title="鲁宾逊归结原理"></a>鲁宾逊归结原理</h5><p>子句集中子句之间都必须是合取关系</p>
 <p>基本思想：首先检查$S$是否含空语句，若含则$S$不满足，否则去找子句进行归结，一旦出现空子句，那么$S$不满足</p>
 <p>归结：$C_1 ( \neg Q \vee P ), C_2 ( Q \vee R ) $可以化成$C_{12} ( P \vee R ) $</p>
 <p>如果$C_1,C_2$为真，则$C_{12}$为真</p>
@@ -502,10 +501,8 @@
 <p>$L_1 = P(x),L_2=\neg P(b)$，则$\sigma = $ { $ b/x $ }</p>
 <p>$C_{12} = Q(a) \vee R(y)$</p>
 <p><strong>值得注意的是</strong>，当归结的$P(x)$是两个变量，如$P(x) \vee R(x)$和$\neg P(y) \vee Q(y)$或者$P(x) \vee R(x)$和$\neg P(x) \vee Q(x)$都不能进行归结。</p>
-<p><strong>归结反演</strong></p>
-<p>用$F$证明$Q$，我们构造集合$S =  $ { $ F , \neg Q $ }，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
-<p><strong>应用归结原理求解问题</strong></p>
-<p>用$F$求解$Q$，将$Q$用谓词公式表示，否定$Q$与answer构成析取式，加入$S$，此时$S = $ { $ F, \neg Q \vee ANSWER $ }，再通过归结，得到$ANSWER$，那么就能得出答案。</p>
+<h5 id="归结反演"><a href="#归结反演" class="headerlink" title="归结反演"></a>归结反演</h5><p>用$F$证明$Q$，我们构造集合$S =  $ { $ F , \neg Q $ }，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
+<h5 id="应用归结原理求解问题"><a href="#应用归结原理求解问题" class="headerlink" title="应用归结原理求解问题"></a>应用归结原理求解问题</h5><p>用$F$求解$Q$，将$Q$用谓词公式表示，否定$Q$与answer构成析取式，加入$S$，此时$S = $ { $ F, \neg Q \vee ANSWER $ }，再通过归结，得到$ANSWER$，那么就能得出答案。</p>
 
       
     </div>
@@ -693,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#鲁宾逊归结原理"><span class="nav-text">鲁宾逊归结原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归结反演"><span class="nav-text">归结反演</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用归结原理求解问题"><span class="nav-text">应用归结原理求解问题</span></a></li></ol></li></ol></div>
             
 
           </div>
