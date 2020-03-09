@@ -88,10 +88,12 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="工程经济学笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T13:27:14.049Z">
+<meta property="og:image" content="http://yoursite.com/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg">
+<meta property="og:updated_time" content="2020-03-09T03:19:00.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程经济学">
 <meta name="twitter:description" content="工程经济学笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg">
 
 
 
@@ -297,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-05T21:27:14+08:00">
-                2020-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-09T11:19:00+08:00">
+                2020-03-09
               </time>
             
           </span>
@@ -633,6 +635,19 @@
 <p>营业外收支净额指营业外收入减去营业外支出后的数额。</p>
 <p>利润总额＝营业利润＋投资净收益＋营业外收支净额</p>
 <p>净利润＝利润总额－所得税</p>
+<hr>
+<h4 id="经济评价指标体系"><a href="#经济评价指标体系" class="headerlink" title="经济评价指标体系"></a>经济评价指标体系</h4><p><strong>投资回收期${P_t}$</strong></p>
+<p>从项目投资开始算起，用产出的受益全部收回所需要的时间长度，单位为年。<br>$$<br>\sum_{t=0}^{P_t} (CI-CO)_t = 0<br>$$<br>$P_t$ 投资回收期；$(CI-CO)_t$第$t$年的净现金流量$NCF$<br>$$<br>P_t = T-1 + \frac{第(T-1)年净现金流累计值的绝对值}{第T年的现金流<br>}<br>$$<br>$T$ 累积净现金流量首次为非负值所对应的年份</p>
+<p>上面为静态的计算方法，即不考虑利率变化</p>
+<p>实际情况我们可能需要计算动态的投资回收期，即用现金折现率求未来的钱现在为多少，$P = NCF_n * (1+i)^{-n}$，然后再按照公式计算。</p>
+<p>优点：概念明确，简单易算；既反映方案的盈利性又反映方案的风险</p>
+<p>缺点：只反映投资回收前的盈利情况，不够全面。</p>
+<p><strong>净现值${NPV}$</strong></p>
+<p>建设项目在整个寿命期内，各年的净现金流按既定的折现率折算到计算期初的现值之和</p>
+<p>净现值是考察建设项目在其计算期内盈利能力的主要动态评价指标<br>$$<br>NPV = \sum_{t=0}^{n} {NCF_t(P/F,ic,t)} = \sum_{t=0}^{n} {NCF_t* (1+ic)^{-t}}<br>$$<br>当$NPV \geq 0$时，说明经济可行性为合理的，反之不可行。</p>
+<p><strong>内部收益率${IRR}$</strong></p>
+<p>得项目计算期内各年净现金流量的现值累计值，即净现值等于零时的折现率<br>$$<br>\sum_{t=0}^{n} (1+IRR)^{-t} = 0<br>$$<br>线性内插法求解内部收益率</p>
+<p><img src="/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg" alt="alt"><br>$$<br>IRR = i_1 + \frac{NPV_1}{NPV_1+|NPV_2|} * (i_2 - i_1)<br>$$<br>为保证计算的精度，一般要求$i_2 - i_1 &lt;$ 5%</p>
 
       
     </div>
@@ -820,7 +835,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建设项目评价的基本经济要素"><span class="nav-text">建设项目评价的基本经济要素</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建设项目评价的基本经济要素"><span class="nav-text">建设项目评价的基本经济要素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经济评价指标体系"><span class="nav-text">经济评价指标体系</span></a></li></ol></div>
             
 
           </div>
