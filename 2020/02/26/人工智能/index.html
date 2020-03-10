@@ -89,7 +89,7 @@
 <meta property="og:description" content="人工智能学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2020-03-06T13:50:03.773Z">
+<meta property="og:updated_time" content="2020-03-10T06:39:17.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-06T21:50:03+08:00">
-                2020-03-06
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-10T14:39:17+08:00">
+                2020-03-10
               </time>
             
           </span>
@@ -503,6 +503,37 @@
 <p><strong>值得注意的是</strong>，当归结的$P(x)$是两个变量，如$P(x) \vee R(x)$和$\neg P(y) \vee Q(y)$或者$P(x) \vee R(x)$和$\neg P(x) \vee Q(x)$都不能进行归结。</p>
 <h5 id="归结反演"><a href="#归结反演" class="headerlink" title="归结反演"></a>归结反演</h5><p>用$F$证明$Q$，我们构造集合$S =  $ { $ F , \neg Q $ }，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
 <h5 id="应用归结原理求解问题"><a href="#应用归结原理求解问题" class="headerlink" title="应用归结原理求解问题"></a>应用归结原理求解问题</h5><p>用$F$求解$Q$，将$Q$用谓词公式表示，否定$Q$与answer构成析取式，加入$S$，此时$S = $ { $ F, \neg Q \vee ANSWER $ }，再通过归结，得到$ANSWER$，那么就能得出答案。</p>
+<h4 id="第五讲-可信度方法和证据理论"><a href="#第五讲-可信度方法和证据理论" class="headerlink" title="第五讲 可信度方法和证据理论"></a>第五讲 可信度方法和证据理论</h4><h5 id="5-2-可信度方法"><a href="#5-2-可信度方法" class="headerlink" title="5.2 可信度方法"></a>5.2 可信度方法</h5><p><strong>知识不确定性的表示</strong></p>
+<p>$IF \ \ \ \ E  \ \ \ \  THEN \ \ \ \ H  \ \ \ \ (CF(H,E))$；$CF(H,E)$：可信度因子，反映前提条件与结论的联系强度；取值范围：$[ -1 , 1 ]$</p>
+<p>若$CF(H,E) &gt; 0$，真的越确定；$&lt; 0$，假的越确定；$= 0$，证据的出现与$H$无关</p>
+<p>多个单一证据的合取：</p>
+<p>$E = E_1 \ AND \ E_2 \ AND … AND \ E_n$，则$CF(E) = min(CF(E_1),CF(E_2),…,CF(E_n))$</p>
+<p>多个单一证据的析取：</p>
+<p>$E = E_1 \ OR \ E_2 \ OR … OR \ E_n$，则$CF(E) = max(CF(E_1),CF(E_2),…,CF(E_n))$</p>
+<p><strong>不确定的传递</strong></p>
+<p>$CF(H) = CF(H,E) \times max(0,CF(E))$</p>
+<p><strong>不确定的合成</strong></p>
+<p>$CF(H,E_1) , CF(H,E_2)$</p>
+<p>$CF_1(H) = CF(H,E_1) \times max(0,CF(E_1))$</p>
+<p>$CF_2(H) = CF(H,E_2) \times max(0,CF(E_2))$<br>$$<br>CF_{1,2}(H) =<br>\begin{cases}<br>CF_1(H)+CF_2(H)-CF_1(H)_2CF(H) &amp; \text 若CF_1(H)  \geq 0 , CF_2(H) \geq 0  \newline<br>CF_1(H) + CF_2(H) + CF_1(H)_2CF(H) &amp; \text 若CF_1(H)  &lt; 0 , CF_2(H) &lt; 0  \newline<br>\frac{CF_1(H)+CF_2(H)}{1-min ( | CF_1(H) | , | CF_2(H) | ) }  &amp; \text CF_1(H),CF_2(H) 异号<br>\end{cases}<br>$$</p>
+<h5 id="5-3-证据理论"><a href="#5-3-证据理论" class="headerlink" title="5.3 证据理论"></a>5.3 证据理论</h5><p><strong>概率分配函数</strong></p>
+<p>在证据理论中，$D$的任何一个子集$A$都对应一个关于$x$的命题，称该命题为“$x$的值是在$A$中”</p>
+<p>特别的$M( \varnothing  ) = 0 , \sum_{B \subseteq A} = 1$</p>
+<p>概率分配函数是人工智能理论中非经典推理部分,证据理论中用到的一个函数，而概率是随机事件出现的可能性度量。</p>
+<p><strong>信任函数</strong></p>
+<p>$Bel \ : \ 2^D \rightarrow [0,1] (对于任何一个属于D的子集A,命它对应一个数M \in [0,1])且 Bel(A) = \sum_{B \subseteq A}^{} M(B) \ \ \ \  \forall A \subseteq D$</p>
+<p>$Bel(A)$：对命题$A$为真的总的信任程度</p>
+<p>$Bel(\varnothing) = M(\varnothing) = 0$</p>
+<p>$Bel(D) = \sum_{B \subseteq D} M(B) = 1$</p>
+<p><strong>似然函数</strong></p>
+<p>又称不可驳斥函数或上限函数</p>
+<p>$Pl(A) = 1 - Bel(\neg A)$</p>
+<p><strong>概率分配函数的正交和</strong></p>
+<p>设$M_1$和$M_2$是两个概率分配函数；则其正交和$M=M_1 \oplus M_2 : M(\varnothing) = 0$</p>
+<p>$M(A) = K^{-1} \sum_{x \cap y = \varnothing} M_1(x) M_2(y)$</p>
+<p>$K = 1 - \sum_{x \cap y = \varnothing }M_1(x) M_2(y) = \sum_{x \cap y \neq \varnothing } M_1(x) M_2(y)$</p>
+<p>如果$K \neq 0$，则正交和$M$也是一个概率分配函数</p>
+<p>如果$K = 0$，则不存在正交和$M$，即没有可能存在的概率函数，称$M_1$与$M_2$矛盾</p>
 
       
     </div>
@@ -690,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#鲁宾逊归结原理"><span class="nav-text">鲁宾逊归结原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归结反演"><span class="nav-text">归结反演</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用归结原理求解问题"><span class="nav-text">应用归结原理求解问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词"><span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式"><span class="nav-text">谓词公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#谓词公式的性质"><span class="nav-text">谓词公式的性质</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法"><span class="nav-text">一阶谓词逻辑知识表示法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一阶谓词逻辑知识表示法特点"><span class="nav-text">一阶谓词逻辑知识表示法特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#鲁宾逊归结原理"><span class="nav-text">鲁宾逊归结原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归结反演"><span class="nav-text">归结反演</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用归结原理求解问题"><span class="nav-text">应用归结原理求解问题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第五讲-可信度方法和证据理论"><span class="nav-text">第五讲 可信度方法和证据理论</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-可信度方法"><span class="nav-text">5.2 可信度方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-证据理论"><span class="nav-text">5.3 证据理论</span></a></li></ol></li></ol></div>
             
 
           </div>
