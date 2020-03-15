@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="补充内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-15T06:56:31.249Z">
+<meta property="og:updated_time" content="2020-03-15T07:25:50.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day8不确定推理">
 <meta name="twitter:description" content="补充内容">
@@ -297,7 +297,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-15T14:56:31+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-15T15:25:50+08:00">
                 2020-03-15
               </time>
             
@@ -382,7 +382,7 @@
 <p>先验概率：迟到的概率</p>
 <p>条件概率：已知天气不好的条件下，迟到的概率</p>
 <p>后验概率：已经迟到了，因为天气原因迟到的概率</p>
-<h3 id="逆概率方法"><a href="#逆概率方法" class="headerlink" title="逆概率方法"></a>逆概率方法</h3><p>Bayes定理：$P(E,H_i) \rightarrow P(H_i|E)$</p>
+<h3 id="逆概率方法"><a href="#逆概率方法" class="headerlink" title="逆概率方法"></a>逆概率方法</h3><p>Bayes定理：$P(E|H_i) \rightarrow P(H_i|E)$</p>
 <p><strong>Bayes公式</strong><br>$$<br>P(H|E) = \frac{P(E|H)P(H)}{ P(E)}<br>$$</p>
 <p>$$<br>P(H_i|E) = \frac{P(E|H_i)P(H_i)}{\sum_{j=1}^{n}P(E|H_j)P(H_j)}\ \ i = 1,2,…,n<br>$$<br><strong>推广</strong></p>
 <p>多个证据$E_1,E_2,…,E_m$，多个结论$H_1,H_2,…,H_n$，每个证据都以一定程度支持结论<br>$$<br>P(H_i|E_1E_2…E_m) = \frac{P(E_1|H_i)P(E_2|H_i)…P(E_m|H_i)P(H_i)}{\sum_{j=1}^{n}P(E_1|H_j)P(E_2|H_j)…P(E_m|H_j)P(H_j)}<br>$$</p>
@@ -399,7 +399,8 @@
 <p>$P(E|S) = max${$P(E_1|S),P(E_2|S),…,P(E_n|S)$}</p>
 <p>非$\neg$</p>
 <p>$P(\neg E|S) = 1- P(E|S)$</p>
-<h4 id="不确定性传递算法"><a href="#不确定性传递算法" class="headerlink" title="不确定性传递算法"></a>不确定性传递算法</h4><ul>
+<h4 id="不确定性传递算法"><a href="#不确定性传递算法" class="headerlink" title="不确定性传递算法"></a>不确定性传递算法</h4><p>$P(H)[先验概率]通过P(E),LS,LN,得到P(H|E)或者P(H|\neg E) [后验概率]$</p>
+<ul>
 <li><p>证据肯定存在时，即$P(E) = P(E|S) = 1$<br>$$<br>\frac{结论H成立的概率}{结论H不成立的概率} = \frac{P(H|E)}{P(\neg H|E)} = \frac{P(E|H) P(H)}{P(E|\neg H)P(\neg H)}<br>$$</p>
 <ul>
 <li><p>几率($odds$)函数：$O(x) =\frac{P(x)}{P(\neg x)} =  \frac{P(x)}{1-P(x)}$</p>
