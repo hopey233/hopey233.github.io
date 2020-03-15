@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="补充内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-14T14:27:37.853Z">
+<meta property="og:updated_time" content="2020-03-15T06:52:55.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day8不确定推理">
 <meta name="twitter:description" content="补充内容">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-14T22:27:37+08:00">
-                2020-03-14
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-15T14:52:55+08:00">
+                2020-03-15
               </time>
             
           </span>
@@ -377,8 +377,14 @@
 <p>复合条件：$E = E_1 \ AND  \ E_2 \ AND \ …\ AND \ E_m$</p>
 <p>$P(H_i|E_1,E_2,…,E_m)$：在证据$E_1,E_2,…,E_m$出现时结论的确定程度</p>
 <p>$P(H) = P(H|E)P(E) + P(H|\neg E)P(\neg E)$</p>
+<p><strong>条件概率、先验概率和后验概率</strong></p>
+<p>假设迟到的原因有2个：天气不好、起床晚了</p>
+<p>先验概率：迟到的概率</p>
+<p>条件概率：已知天气不好的条件下，迟到的概率</p>
+<p>后验概率：已经迟到了，因为天气原因迟到的概率</p>
 <h3 id="逆概率方法"><a href="#逆概率方法" class="headerlink" title="逆概率方法"></a>逆概率方法</h3><p>Bayes定理：$P(E,H_i) \rightarrow P(H_i|E)$</p>
-<p><strong>Bayes公式</strong><br>$$<br>P(H_i|E) = \frac{P(E|H_i)P(H_i)}{\sum_{j=1}^{n}P(E|H_j)P(H_j)}\ \ i = 1,2,…,n<br>$$<br><strong>推广</strong></p>
+<p><strong>Bayes公式</strong><br>$$<br>P(H|E) = \frac{P(E|H)P(H)}{ P(E)}<br>$$</p>
+<p>$$<br>P(H_i|E) = \frac{P(E|H_i)P(H_i)}{\sum_{j=1}^{n}P(E|H_j)P(H_j)}\ \ i = 1,2,…,n<br>$$<br><strong>推广</strong></p>
 <p>多个证据$E_1,E_2,…,E_m$，多个结论$H_1,H_2,…,H_n$，每个证据都以一定程度支持结论<br>$$<br>P(H_i|E_1E_2…E_m) = \frac{P(E_1|H_i)P(E_2|H_i)…P(E_m|H_i)P(H_i)}{\sum_{j=1}^{n}P(E_1|H_j)P(E_2|H_j)…P(E_m|H_j)P(H_j)}<br>$$</p>
 <h2 id="主观Bayes方法"><a href="#主观Bayes方法" class="headerlink" title="主观Bayes方法"></a>主观Bayes方法</h2><h4 id="知识的不确定性的表示"><a href="#知识的不确定性的表示" class="headerlink" title="知识的不确定性的表示"></a>知识的不确定性的表示</h4><p>知识：$IF \ \ E  \ \ THEN \ \ (LS,LN) \ \ H \ \ (P(H))$</p>
 <p>$E$：前提条件（简单条件和复合条件）</p>
@@ -445,7 +451,8 @@
 <li><p>$P(E|S)=P(E)$</p>
 <p>$P(H|S)=P(H)$</p>
 </li>
-<li><p>$P(E|S)$为其他值<br>$$<br>P(H|S) = \begin{cases}<br>P(H|\neg E)+\frac{P(H)-P(H|\neg E)}{P(E)} \times P(E|S) &amp;  0\leq P(E|S) &lt; P(E) \newline<br>P(H)+\frac{P(H|E)-P(H)}{1-P(E)} \times [P(E|S)-P(E)]  &amp; P(E) \leq P(E|S) \leq 1<br>\end{cases}<br>$$</p>
+<li><p>$P(E|S)$为其他值</p>
+<p>通过Bayes公式来求$P(E)$<br>$$<br>P(H|S) = \begin{cases}<br>P(H|\neg E)+\frac{P(H)-P(H|\neg E)}{P(E)} \times P(E|S) &amp;  0\leq P(E|S) &lt; P(E) \newline<br>P(H)+\frac{P(H|E)-P(H)}{1-P(E)} \times [P(E|S)-P(E)]  &amp; P(E) \leq P(E|S) \leq 1<br>\end{cases}<br>$$</p>
 <p>$$<br>P(H|S) = \begin{cases}<br>P(H|\neg E)+[P(H)-P(H|\neg E)] \times [\frac{1}{5}C(E|S)+1] &amp;  C(E|S) \leq 0 \newline<br>P(H)+[P(H|E)-P(H)] \times [\frac{1}{5 C(E|S)}]  &amp; C(E|S)&gt;0<br>\end{cases}<br>$$</p>
 </li>
 </ul>
