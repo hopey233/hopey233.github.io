@@ -89,7 +89,8 @@
 <meta property="og:description" content="人工智能学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2020-03-24T03:21:03.090Z">
+<meta property="og:image" content="http://yoursite.com/images/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4.jpg">
+<meta property="og:updated_time" content="2020-03-31T03:23:34.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
@@ -299,8 +300,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-24T11:21:03+08:00">
-                2020-03-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-31T11:23:34+08:00">
+                2020-03-31
               </time>
             
           </span>
@@ -578,9 +579,8 @@
 <li><p>操作：表示引起状态变化的过程型知识的一组关系或函数$F =${$f_1,f_2,…,f_m$}</p>
 </li>
 <li><p>状态空间：利用状态变量和操作符号表示，四元组形式$(S,O,S_0,G)$</p>
-<ul>
-<li>$S$：状态集合；$O$：操作算子的集合；$S_0$：包含问题的初始状态，为$S$的子集；$G$：若干具体状态或满足某些性质的路径信息描述。</li>
-</ul>
+</li>
+<li><p>$S$：状态集合；$O$：操作算子的集合；$S_0$：包含问题的初始状态，为$S$的子集；$G$：若干具体状态或满足某些性质的路径信息描述。</p>
 </li>
 <li><p>求解路径：求$S_0$到$G$的路径</p>
 </li>
@@ -627,6 +627,74 @@
 <li>可采纳性：能找到解的搜索算法</li>
 <li>单调性：$A^*$中$h(n)$单调</li>
 <li>信息性：如果$h_1(n) \leq h_2(n)$，称为$h_2$比$h_1$具有更多的信息性，如果$h(n)$越大，则信息性越多，所搜索状态就越少</li>
+</ul>
+<h1 id="第八讲-遗传算法及其应用"><a href="#第八讲-遗传算法及其应用" class="headerlink" title="第八讲 遗传算法及其应用"></a>第八讲 遗传算法及其应用</h1><h2 id="8-2-遗传算法的基本操作"><a href="#8-2-遗传算法的基本操作" class="headerlink" title="8.2 遗传算法的基本操作"></a>8.2 遗传算法的基本操作</h2><p><strong>位串编码</strong></p>
+<ul>
+<li><p>二进制编码</p>
+</li>
+<li><p>Gray编码（格雷码）</p>
+<ul>
+<li><p>二进制串[$\beta_1\beta_2…\beta_n$]，Gray[$\gamma_1 \gamma_2 … \gamma_n$]</p>
+</li>
+<li><p>$$<br>\gamma_k =<br>\begin{cases}<br>\beta_1 &amp; k=1<br>\newline<br>\beta_{k-1} \bigoplus \beta_k &amp; k&gt;1<br>\end{cases}<br>$$</p>
+</li>
+<li><p>$$<br>\beta_k = \sum_{i=1}^k \gamma_i(mod\ 2)<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>适应函数和尺度变换</strong></p>
+<ul>
+<li>线性变换：$f’ = af+b$</li>
+<li>非线性变换<ul>
+<li>幂函数变换：$f’ = f^K$</li>
+<li>指数变换：$f’ = e^{-af}$</li>
+</ul>
+</li>
+</ul>
+<p><strong>选择</strong></p>
+<p>基本思想：适应度越高越容易被选择</p>
+<p>在遗传算法中，关键就是个体的适应度和被选择个体的数目</p>
+<ul>
+<li><p>适应度比例法或蒙特卡洛法</p>
+<ul>
+<li>$$<br>p_{si} = \frac{f_i}{\sum_{i=1}^M f_i}<br>$$</li>
+</ul>
+</li>
+<li><p>排序方法</p>
+<ul>
+<li><p>线性排序</p>
+<ul>
+<li><p>$x_1,x_2,…,x_N$</p>
+</li>
+<li><p>$$<br>p_i = \frac{a-bi}{M(M+1)}<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>非线性排序</p>
+<ul>
+<li>$$<br>p_i =<br>\begin{cases}<br>q(1-q)^{i-1} &amp; i=1,2,…,M-1<br>\newline<br>(1-q)^{M-1} &amp; i=M<br>\end{cases}<br>$$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>交叉</strong></p>
+<ul>
+<li>一($n$)点交叉：随机选择一($n$)点进行组合成新个体</li>
+<li>部分匹配交叉：既要有新结构体出现，又要保证合法性</li>
+</ul>
+<p><strong>变异</strong></p>
+<ul>
+<li>位点变异：变换几个点</li>
+<li>逆转变异：取出一段逆序再插入</li>
+<li>等等</li>
+</ul>
+<p><strong>遗传算法的基本步骤</strong></p>
+<p><img src="/images/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4.jpg" alt="alt"></p>
+<p><strong>特点</strong></p>
+<ul>
+<li>全局优化概率算法</li>
 </ul>
 
       
@@ -815,7 +883,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鲁宾逊归结原理"><span class="nav-text">鲁宾逊归结原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归结反演"><span class="nav-text">归结反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用归结原理求解问题"><span class="nav-text">应用归结原理求解问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五讲-可信度方法和证据理论"><span class="nav-text">第五讲 可信度方法和证据理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-可信度方法"><span class="nav-text">5.2 可信度方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-证据理论"><span class="nav-text">5.3 证据理论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六讲-模糊推理方法"><span class="nav-text">第六讲 模糊推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-模糊逻辑提出"><span class="nav-text">6.1 模糊逻辑提出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-模糊集合和隶属函数"><span class="nav-text">6.2 模糊集合和隶属函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-模糊关系及其合成"><span class="nav-text">6.3 模糊关系及其合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-模糊推理与模糊决策"><span class="nav-text">6.4 模糊推理与模糊决策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-模糊推理的应用"><span class="nav-text">6.5 模糊推理的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七讲-搜索求解策略"><span class="nav-text">第七讲 搜索求解策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-搜索的概念"><span class="nav-text">7.1 搜索的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-状态空间知识表示法"><span class="nav-text">7.2 状态空间知识表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-启发式图搜索策略"><span class="nav-text">7.3 启发式图搜索策略</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一讲-人工智能概述"><span class="nav-text">第一讲 人工智能概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-人工智能的概念"><span class="nav-text">1.2 人工智能的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-人工智能的发展简史"><span class="nav-text">1.3 人工智能的发展简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-人工智能研究的基本内容"><span class="nav-text">1.4 人工智能研究的基本内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二讲-一阶谓词逻辑知识表示法"><span class="nav-text">第二讲 一阶谓词逻辑知识表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-命题逻辑"><span class="nav-text">2.1 命题逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-谓词逻辑"><span class="nav-text">2.2 谓词逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-一阶谓词逻辑知识表示法"><span class="nav-text">2.3 一阶谓词逻辑知识表示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三讲-产生式表示法和框架表示法"><span class="nav-text">第三讲 产生式表示法和框架表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-产生式表示法"><span class="nav-text">3.1 产生式表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-框架表示法"><span class="nav-text">3.2 框架表示法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四讲-基于谓词逻辑的推理方法"><span class="nav-text">第四讲 基于谓词逻辑的推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归结演绎推理"><span class="nav-text">归结演绎推理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鲁宾逊归结原理"><span class="nav-text">鲁宾逊归结原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归结反演"><span class="nav-text">归结反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用归结原理求解问题"><span class="nav-text">应用归结原理求解问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五讲-可信度方法和证据理论"><span class="nav-text">第五讲 可信度方法和证据理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-可信度方法"><span class="nav-text">5.2 可信度方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-证据理论"><span class="nav-text">5.3 证据理论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六讲-模糊推理方法"><span class="nav-text">第六讲 模糊推理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-模糊逻辑提出"><span class="nav-text">6.1 模糊逻辑提出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-模糊集合和隶属函数"><span class="nav-text">6.2 模糊集合和隶属函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-模糊关系及其合成"><span class="nav-text">6.3 模糊关系及其合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-模糊推理与模糊决策"><span class="nav-text">6.4 模糊推理与模糊决策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-模糊推理的应用"><span class="nav-text">6.5 模糊推理的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七讲-搜索求解策略"><span class="nav-text">第七讲 搜索求解策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-搜索的概念"><span class="nav-text">7.1 搜索的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-状态空间知识表示法"><span class="nav-text">7.2 状态空间知识表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-启发式图搜索策略"><span class="nav-text">7.3 启发式图搜索策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第八讲-遗传算法及其应用"><span class="nav-text">第八讲 遗传算法及其应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-遗传算法的基本操作"><span class="nav-text">8.2 遗传算法的基本操作</span></a></li></ol></li></ol></div>
             
 
           </div>
