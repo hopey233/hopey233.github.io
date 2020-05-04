@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://yoursite.com/images/%E7%BB%9F%E4%B8%80%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E5%9F%BA%E4%BA%8E%E6%9E%84%E4%BB%B6%E7%9A%84%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E8%BF%87%E7%A8%8B.jpg">
-<meta property="og:updated_time" content="2020-05-01T09:23:53.258Z">
+<meta property="og:updated_time" content="2020-05-04T08:48:11.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件工程">
 <meta name="twitter:description" content="软件工程笔记">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-01T17:23:53+08:00">
-                2020-05-01
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-04T16:48:11+08:00">
+                2020-05-04
               </time>
             
           </span>
@@ -506,6 +506,7 @@
 <p>D.瀑布模型</p>
 <p>10、( C ) 某企业拟开发-个企业信息管理系统，系统功能与多个部门的业务相关。现希望该系统能够尽快投入使用，系统功能可以在使用过程中改善，则最适宜采用的软件过程模型为_ (10)_ 。</p>
 <p>(10): A.瀑布模型 B. 原型模型 C.增量模型 D.螺旋模型  </p>
+<hr>
 <h1 id="软件测试方法"><a href="#软件测试方法" class="headerlink" title="软件测试方法"></a>软件测试方法</h1><p>这里需要特别注意一下：确认测试、验证测试、集成测试、单元测试都是软件测试的步骤，而不是测试的方法</p>
 <p><strong>黑盒测试</strong></p>
 <p>测试人员不清楚软件内部的构造，只通过软件说明书来测试程序是否合格<del>（类似于王大测试计组实验，不知道里面是怎么实现的，只在乎输入和输出）</del></p>
@@ -549,8 +550,8 @@
 <ul>
 <li>程序控制流程图</li>
 <li>程序环路的复杂性<ul>
-<li>$V(G) = E-N+2$ $E:$边数，$N:$点数（欧拉公式）</li>
-<li>$V(G) = P+1$ $P:$控制流图中的判定节点数</li>
+<li>$V(G) = E-N+2$       $E:$边数，$N:$点数（欧拉公式）</li>
+<li>$V(G) = P+1$                $P:$控制流图中的判定节点数</li>
 </ul>
 </li>
 <li>独立路径<ul>
@@ -569,6 +570,104 @@
 </li>
 </ul>
 <p><strong>黑盒测试</strong></p>
+<ul>
+<li>等价类的划分<ul>
+<li>划分等价类：有效等价类和无效等价类</li>
+<li>确定测试用例<ul>
+<li>为每一个等价类规定一个唯一的编号</li>
+<li>设计一个新的测试用例，使其尽可能多地覆盖尚未被覆盖的有效等价类，直到所有有效等价类都被覆盖为止</li>
+<li>设计一个新的测试用例，使其仅覆盖一个尚未被覆盖的无效等价类，直到所有无效等价类都被覆盖为止</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>边界值分析<ul>
+<li>相对与输入等价类和输出等价类而言，稍微高于边界值或者低于边界值的特定的情况</li>
+</ul>
+</li>
+</ul>
+<p><strong>软件测试的策略</strong></p>
+<p>$4$个步骤：单元测试、组装测试、确认测试、系统测试</p>
+<ul>
+<li>单元测试（模块测试）<ul>
+<li>模块接口测试、局部数据结构测试、路径测试、错误处理测试、边界测试</li>
+<li>驱动模块：相当于被测模块的主程序，接受数据，把数据传送给被测模块，最后输出结果</li>
+<li>桩模块（存根模块）：用以代替被测模块调用的子模块，可做少量的数据操作，不需要把子模块所有功能带入，但是也不允许什么都不做</li>
+</ul>
+</li>
+<li>组装测试（集成/联合测试）<ul>
+<li>在单元测试的基础上，需要将所有的模块按照设计要求组装成为系统</li>
+<li>一次性组装方式：对每个模块分别测试，然后全部组装到一起进行测试</li>
+<li>增值式组装方式：边加入边测试<ul>
+<li>自顶向下增值方式：先进行主（根）模块，然后DFS</li>
+<li>自底向上增值方式：一层一层往上，需要全部组装完才得到整个实体，但是无需考虑桩模块</li>
+<li>混合增值式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确认测试<ul>
+<li>验证软件的有效性，功能特性是否满足用户所需</li>
+<li>黑盒测试、软件配置复查、$\alpha$测试（开发环境或内部模拟环境）、$\beta$测试（单用户或多用户在实际情况下的测试）、验收测试、确认测试结果（符合或不符合）</li>
+</ul>
+</li>
+<li>系统测试<ul>
+<li>结合计算机硬件、外设、某些支持的软件等结合在一起测试</li>
+<li>类型：功能测试、回归测试、可靠性测试、强度测试、性能测试、恢复测试、启动/关机测试、配置测试、安全性测试、可使用性测试、可支持性测试、安装测试、互连测试、兼容性测试、容量测试、文档测试</li>
+</ul>
+</li>
+<li>人工测试<ul>
+<li>一些人工的模拟技术和一些类似动态分析所使用的方法对程序分析</li>
+</ul>
+</li>
+<li>自动化测试<ul>
+<li>脚本调试</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="软件维护"><a href="#软件维护" class="headerlink" title="软件维护"></a>软件维护</h1><p><strong>类型</strong></p>
+<ul>
+<li>改正性维护：特定环境下所暴露出来的问题</li>
+<li>适应性维护：对新环境的适应维护</li>
+<li>完善性维护：加新功能</li>
+<li>预防性维护</li>
+<li>维护需要申请维护报告与记录</li>
+</ul>
+<p><strong>逆向工程</strong></p>
+<p><strong>重构</strong></p>
+<p><strong>程序修改步骤</strong></p>
+<ul>
+<li>分析和理解程序</li>
+<li>实施修改</li>
+<li>重新验证程序</li>
+</ul>
+<p><strong>副作用</strong></p>
+<ul>
+<li>修改代码副作用</li>
+<li>修改数据副作用</li>
+<li>文档副作用</li>
+</ul>
+<p><strong>重新验证程序</strong></p>
+<ul>
+<li>静态确认</li>
+<li>确认测试</li>
+<li>维护后的验收</li>
+</ul>
+<p><strong>软件的维护性</strong></p>
+<ul>
+<li>特性：易分析性、易变更性、稳定性、测试性、维护性符合性</li>
+<li>提高软件维护性方法<ul>
+<li>使用提高软件维护性的开发技术和工具<ul>
+<li>模块化</li>
+<li>结构化程序设计</li>
+</ul>
+</li>
+<li>实施开发阶段产品的维护性审查</li>
+<li>改进文档</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -756,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-软件与软件工程的概念"><span class="nav-text">第一章 软件与软件工程的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-软件的概念、特性和分类"><span class="nav-text">1.1 软件的概念、特性和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-软件危机与软件工程"><span class="nav-text">1.2 软件危机与软件工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-软件工程的目标"><span class="nav-text">1.3 软件工程的目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-软件生存期"><span class="nav-text">1.4 软件生存期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-软件工程方法概述"><span class="nav-text">1.5 软件工程方法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-软件工具概述"><span class="nav-text">1.6 软件工具概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-软件工程知识体系及知识域"><span class="nav-text">1.7 软件工程知识体系及知识域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测验"><span class="nav-text">小测验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-软件生存期模型"><span class="nav-text">第二章 软件生存期模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-瀑布模型"><span class="nav-text">2.1 瀑布模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-快速原型模型"><span class="nav-text">2.2 快速原型模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-增量模型"><span class="nav-text">2.3 增量模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-螺旋模型"><span class="nav-text">2.4 螺旋模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-喷泉模型"><span class="nav-text">2.5 喷泉模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-统一过程"><span class="nav-text">2.6 统一过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-基于构件的开发模型"><span class="nav-text">2.7 基于构件的开发模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-敏捷过程"><span class="nav-text">2.8 敏捷过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测试"><span class="nav-text">小测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试方法"><span class="nav-text">软件测试方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-软件与软件工程的概念"><span class="nav-text">第一章 软件与软件工程的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-软件的概念、特性和分类"><span class="nav-text">1.1 软件的概念、特性和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-软件危机与软件工程"><span class="nav-text">1.2 软件危机与软件工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-软件工程的目标"><span class="nav-text">1.3 软件工程的目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-软件生存期"><span class="nav-text">1.4 软件生存期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-软件工程方法概述"><span class="nav-text">1.5 软件工程方法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-软件工具概述"><span class="nav-text">1.6 软件工具概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-软件工程知识体系及知识域"><span class="nav-text">1.7 软件工程知识体系及知识域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测验"><span class="nav-text">小测验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-软件生存期模型"><span class="nav-text">第二章 软件生存期模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-瀑布模型"><span class="nav-text">2.1 瀑布模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-快速原型模型"><span class="nav-text">2.2 快速原型模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-增量模型"><span class="nav-text">2.3 增量模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-螺旋模型"><span class="nav-text">2.4 螺旋模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-喷泉模型"><span class="nav-text">2.5 喷泉模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-统一过程"><span class="nav-text">2.6 统一过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-基于构件的开发模型"><span class="nav-text">2.7 基于构件的开发模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-敏捷过程"><span class="nav-text">2.8 敏捷过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测试"><span class="nav-text">小测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试方法"><span class="nav-text">软件测试方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件维护"><span class="nav-text">软件维护</span></a></li></ol></div>
             
 
           </div>
