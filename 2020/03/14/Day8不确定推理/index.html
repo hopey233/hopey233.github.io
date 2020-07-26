@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="补充内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-16T13:03:14.479Z">
+<meta property="og:updated_time" content="2020-06-12T15:23:52.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day8不确定推理">
 <meta name="twitter:description" content="补充内容">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-16T21:03:14+08:00">
-                2020-03-16
+              <time title="更新于" itemprop="dateModified" datetime="2020-06-12T23:23:52+08:00">
+                2020-06-12
               </time>
             
           </span>
@@ -385,13 +385,13 @@
 <h3 id="逆概率方法"><a href="#逆概率方法" class="headerlink" title="逆概率方法"></a>逆概率方法</h3><p>Bayes定理：$P(E|H_i) \rightarrow P(H_i|E)$</p>
 <p><strong>Bayes公式</strong><br>$$<br>P(H|E) = \frac{P(E|H)P(H)}{ P(E)}<br>$$</p>
 <p>$$<br>P(H_i|E) = \frac{P(E|H_i)P(H_i)}{\sum_{j=1}^{n}P(E|H_j)P(H_j)}\ \ i = 1,2,…,n<br>$$<br><strong>推广</strong></p>
-<p>多个证据$E_1,E_2,…,E_m$，多个结论$H_1,H_2,…,H_n$，每个证据都以一定程度支持结论<br>$$<br>P(H_i|E_1E_2…E_m) = \frac{P(E_1|H_i)P(E_2|H_i)…P(E_m|H_i)P(H_i)}{\sum_{j=1}^{n}P(E_1|H_j)P(E_2|H_j)…P(E_m|H_j)P(H_j)}<br>$$</p>
+<p>多个证据$E_1,E_2,…,E_m$，多个结论$H_1,H_2,…,H_n$，每个证据都以一定程度支持结论<br>$$<br>P(H_i|E_1E_2…E_m) = \frac{P(E_1|H_i)P(E_2|H_i)…P(E_m|H_i)P(H_i)}{  \sum_{j=1}^{n}  P(E_1|H_j)P(E_2|H_j)…P(E_m|H_j)P(H_j)}<br>$$</p>
 <h2 id="主观Bayes方法"><a href="#主观Bayes方法" class="headerlink" title="主观Bayes方法"></a>主观Bayes方法</h2><h4 id="知识的不确定性的表示"><a href="#知识的不确定性的表示" class="headerlink" title="知识的不确定性的表示"></a>知识的不确定性的表示</h4><p>知识：$IF \ \ E  \ \ THEN \ \ (LS,LN) \ \ H \ \ (P(H))$</p>
 <p>$E$：前提条件（简单条件和复合条件）</p>
 <p>$H$：结论</p>
 <p>$(LS,LN)$：规则强度<br>$$<br>LS = \frac{P(E|H)}{P(E| \neg H)}<br>$$</p>
 <p>$$<br>LN = \frac{P(\neg E|H)}{P(\neg E| \neg H)} = \frac{1 - P(E|H)}{1 - P(E|\neg H)}<br>$$</p>
-<p>特别说明一种情况，自己没怎么看清，太菜了，上面两式直接可以消去$P(E|H)$或者$P(E|\neg H)$，不就可以得到一个新的式子了吗<del>一直以为作业题是假的，错怪出题人了！</del><br>$$<br>P(E|H) = \frac{LN \times LS - LS}{LN -LS}<br>$$</p>
+<p>特别说明一种情况，自己没怎么看清，太菜了，上面两式直接可以消去$P(E|H)$或者$P(E|\neg H)$，不就可以得到一个新的式子了吗，然后可以用这个值和Bayes计算$P(E)$，但是在实际过程中，$LS$和$LN$是专家给的，相当于是一个估计值，所以算出的$P(E)$也是一个估计值，当题目未给时可以用$LS$和$LN$计算$P(E)$。<del>不过一般题型都会给$P(E)$</del><br>$$<br>P(E|H) = \frac{LN \times LS - LS}{LN -LS}<br>\<br>P(E|\neg H) = \frac{LN-1}{LN-LS}<br>$$</p>
 <h4 id="证据的不确定性的表示"><a href="#证据的不确定性的表示" class="headerlink" title="证据的不确定性的表示"></a>证据的不确定性的表示</h4><p>$P(E|S)$：对于初始证据$E$，由用户根据观察结果$S$给出概率，由结果推原因</p>
 <p>$C(E|S)$：可信度，对所提供的证据可以相信的程度</p>
 <h4 id="组合证据不确定性算法"><a href="#组合证据不确定性算法" class="headerlink" title="组合证据不确定性算法"></a>组合证据不确定性算法</h4><p>合取$\wedge$</p>

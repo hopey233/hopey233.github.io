@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="算法笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-11T03:26:25.684Z">
+<meta property="og:updated_time" content="2020-07-26T08:49:14.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法">
 <meta name="twitter:description" content="算法笔记">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-11T11:26:25+08:00">
-                2020-03-11
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-26T16:49:14+08:00">
+                2020-07-26
               </time>
             
           </span>
@@ -382,6 +382,18 @@
 <p>下界记号$\Omega$：如果存在整的常数$C$和自然数$N_0$，使得当$N \ge N_0$时有$f(N) \ge C*g(N)$，则$f(N)$有下界函数$g(N)$，记为$f(N)=\Omega(g(N))$。</p>
 <p>同阶记号$\Theta$：$f(N)=\Theta(g(N))$表示$f(N)$和$g(N)$同阶。</p>
 <p>低阶记号$o$：$f(N) = o(g(N))$表示$f(N)$比$g(N)$阶低。</p>
+<h2 id="主方法求解递归式的时间复杂度"><a href="#主方法求解递归式的时间复杂度" class="headerlink" title="主方法求解递归式的时间复杂度"></a>主方法求解递归式的时间复杂度</h2><p>例：求$T(n) = 25*T(\frac{n}{5}) + n^2$，默认$T(1)=1$</p>
+<ul>
+<li>主定理：设$a \geq 1 \ b&gt;1$，设$f(n)$为一函数，$T(n) = a*T(\frac{n}{b}) + f(n)$，$\frac{n}{b}$向上取整或者向下取整对结果没有影响<ul>
+<li>若$f(n) &lt; n^{log_b a}$：$T(n) = \Theta (n^{log_b a})$</li>
+<li>若$f(n)=n^{log_b a}$： $T(n) = \Theta (n^{log_b a} logn)$</li>
+<li>若$f(n) &gt; n^{log_b a}$： $T(n) = \Theta (f(n))$</li>
+</ul>
+</li>
+<li>则上题为第二种情况：$T(n) = n^2 logn$</li>
+<li>修改$T(n) = 25*T(\frac{n}{5}) + n^3$，则为第三种情况，$T(n)=n^3$</li>
+<li>修改$T(n) = 25*T(\frac{n}{5}) + n^{1.5}$，则为第一种情况，$T(n)=n^2$</li>
+</ul>
 <p>五种确定性算法，都使用递归的思想：</p>
 <p>分支法，动态规划法(dp)，贪心法，回溯法，分支界限法。</p>
 <p>算法所具有的五大特性：有穷性，确定性、输入、输出、可行性</p>
@@ -572,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法和过程"><span class="nav-text">算法和过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见符号及概念"><span class="nav-text">常见符号及概念</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法和过程"><span class="nav-text">算法和过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见符号及概念"><span class="nav-text">常见符号及概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主方法求解递归式的时间复杂度"><span class="nav-text">主方法求解递归式的时间复杂度</span></a></li></ol></li></ol></div>
             
 
           </div>
