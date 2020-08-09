@@ -90,7 +90,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4.jpg">
-<meta property="og:updated_time" content="2020-08-08T14:59:38.828Z">
+<meta property="og:updated_time" content="2020-08-09T03:38:21.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-08T22:59:38+08:00">
-                2020-08-08
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-09T11:38:21+08:00">
+                2020-08-09
               </time>
             
           </span>
@@ -444,7 +444,7 @@
 <p>假言三段论：$A \rightarrow B , B \rightarrow C \Rightarrow A \rightarrow C$</p>
 <p>构造性二难：$P \vee Q , P \rightarrow R , Q \rightarrow R \Rightarrow R $</p>
 <p>全称固化：$(\forall x)P(x) \Rightarrow P(y)$</p>
-<p>存在固化：$(\exist x)P(x) \Rightarrow P(x_0)$</p>
+<p>存在固化：$(\exists x)P(x) \Rightarrow P(x_0)$</p>
 <p>反证法：正难则反</p>
 <h2 id="2-3-一阶谓词逻辑知识表示法"><a href="#2-3-一阶谓词逻辑知识表示法" class="headerlink" title="2.3 一阶谓词逻辑知识表示法"></a>2.3 一阶谓词逻辑知识表示法</h2><p> 一阶谓词逻辑知识表示法</p>
 <p>1、定义谓词及个体</p>
@@ -513,17 +513,29 @@
 <p><img src="/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg" alt="alt"></p>
 <p>特点：结构性、继承性、自然性、便于表达结构性的知识</p>
 <h1 id="第四讲-基于谓词逻辑的推理方法"><a href="#第四讲-基于谓词逻辑的推理方法" class="headerlink" title="第四讲 基于谓词逻辑的推理方法"></a>第四讲 基于谓词逻辑的推理方法</h1><ul>
-<li>置换<ul>
-<li>可以简单理解维在一个谓词公式中用置换项去顶替变量</li>
-<li>形如$\{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\}$</li>
-<li>用$t_i$代替$x_i$<ul>
+<li><p>置换</p>
+<ul>
+<li><p>可以简单理解维在一个谓词公式中用置换项去顶替变量</p>
+</li>
+<li><p>形如$\{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\}$</p>
+</li>
+<li><p>用$t_i$代替$x_i$</p>
+<ul>
 <li>使得$t_i$与$x_i$不相同</li>
 <li>$x_i$不能循环出现在另一个$t_j$中（例如$\{ g(z)/x , f(x)/z \}$就不是一个置换，但是$\{ g(a)/x , f(x)/z \}$是置换，因为无循环递推）</li>
 </ul>
 </li>
-<li>设$\theta = \{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\}$，将$x_i$换成$t_i$得到$G$，称$G$为$F$在置换$\theta$下的<strong>例示</strong>，记作$G = F \theta$</li>
-<li>$\theta \circ \lambda$：$\theta = \{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\} \lambda= \{ u_1 /y_1 ,u_2/y_2,…,u_m/y_m\}$ 得到 $\{ t_1 \lambda /x_1 ,t_2 \lambda /x_2,…,t_n \lambda /x_n ,u_1 /y_1 ,u_2/y_2,…,u_m/y_m\}$。删除两种元素，一种为$t_i \lambda  = x_i$；另一种为$y_j = x_i$</li>
+<li><p>设$\theta = \{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\}$，将$x_i$换成$t_i$得到$G$，称$G$为$F$在置换$\theta$下的<strong>例示</strong>，记作$G = F \theta$</p>
+</li>
+<li><p>$\theta \circ \lambda$：$\theta = \{ t_1 /x_1 ,t_2/x_2,…,t_n/x_n\} \lambda= \{ u_1 /y_1 ,u_2/y_2,…,u_m/y_m\}$ </p>
+<p>得到 $\{ t_1 \lambda /x_1 ,t_2 \lambda /x_2,…,t_n \lambda /x_n ,u_1 /y_1 ,u_2/y_2,…,u_m/y_m\}$。删除两种元素，一种为$t_i \lambda  = x_i$；另一种为$y_j = x_i$</p>
+<ul>
+<li>其中值得注意的是$t_i \lambda$：用$\lambda$置换$t_i$，例如$f(y)/x$，$b/y$，置换成$f(b/y)/x = f(b)/x$</li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>合一：设有公式集$F = \{F_1,F_1,…,F_n \}$，寻找一个置换$\theta$使得$F_1 \theta = F_2 \theta = … =F_n \theta$</p>
 </li>
 </ul>
 <h2 id="归结演绎推理"><a href="#归结演绎推理" class="headerlink" title="归结演绎推理"></a>归结演绎推理</h2><p>反证法：$P \Rightarrow Q$，当且仅当$P \wedge \neg Q \Leftrightarrow F$，即$Q$为$P$的逻辑结论，当且仅当$P \wedge \neg Q$为假。</p>
@@ -536,30 +548,38 @@
 <p>$A \rightarrow B$可化为$A \wedge \neg B$</p>
 <p>$A \leftrightarrow B$可化为$( A \wedge B ) \vee ( \neg A \wedge \neg B )$</p>
 <p>德摩根律（略）</p>
+<p><strong>化为Skolem标准型</strong></p>
+<p>化为前束形：前束形=(前缀){母式}，把量词约束提前</p>
 <p><strong>消去存在量词</strong></p>
 <p>存在量词不出现在全称量词的辖域内；存在量词出现在一个或者多个全称量词的辖域内。</p>
 <p><code>Skolem化</code>：用Skolem函数代替存在变量</p>
 <p>$( \forall x_1)(( \forall x_2)…( \forall x_n)( \exists y)P(x_1,x_2,…,x_n,y)))$，存在量词$y$的Skolem函数为$y=f(x_1,x_2,…,x_n)$</p>
-<p>化为前束形：前束形=(前缀){母式}，把量词约束提前</p>
 <p>Skolem标准型（分配律）</p>
 <p>$P \vee (Q \wedge R) \Leftrightarrow (P \vee Q) \wedge (P \vee R)$</p>
 <p>$P \wedge (Q \vee R) \Leftrightarrow (P \wedge Q) \vee (P \wedge R)$</p>
 <p>略去全称量词</p>
-<p>消去合取词</p>
+<p>消去合取词：将上面的母式划分为若干个子句</p>
 <p>子句变量标准化（每个子句变量不同）</p>
 <p>谓词公式和子句集是否等价？</p>
 <p>答：谓词公式和子句集不总是等价的，在谓词公式不可满足的条件下等价。在基于谓词逻辑的推理中，特别是归结推理中，把谓词公式转化为子句集是必要的。</p>
 <h2 id="鲁宾逊归结原理"><a href="#鲁宾逊归结原理" class="headerlink" title="鲁宾逊归结原理"></a>鲁宾逊归结原理</h2><p>子句集中子句之间都必须是合取关系</p>
-<p>基本思想：首先检查$S$是否含空语句，若含则$S$不满足，否则去找子句进行归结，一旦出现空子句，那么$S$不满足</p>
+<p>基本思想：首先检查$S$是否含空语句，若含则$S$不满足，否则去找子句进行归结，一旦出现空子句，那么$S$不满足。将互补的文字消去，留下的文字进行析取</p>
 <p>归结：$C_1 ( \neg Q \vee P ), C_2 ( Q \vee R ) $可以化成$C_{12} ( P \vee R ) $</p>
 <p>如果$C_1,C_2$为真，则$C_{12}$为真</p>
-<p>若将$C_{12}$替换$C_1,C_2$得到$S_1$，与原来的$S_0$比较，$S_1$的不可满足性$\Rightarrow$ $S_0$的不可满足性</p>
-<p>若将$C_{12}$加入$S_0$得到$S_2$，则$S_2$的不可满足性$\Leftrightarrow$ $S_0$的不可满足性</p>
+<p>若将$C_{12}$<strong>替换</strong>$C_1,C_2$得到$S_1$，与原来的$S_0$比较，$S_1$的不可满足性$\Rightarrow$ $S_0$的不可满足性</p>
+<p>若将$C_{12}$<strong>加入</strong>$S_0$得到$S_2$，则$S_2$的不可满足性$\Leftrightarrow$ $S_0$的不可满足性</p>
 <p>$C_1 = P(x) \vee Q(a),C_2 = \neg P(b) \vee R(x)$</p>
 <p>令$C_2 =\neg P(b) \vee R(y)$，不同子句变量标准化</p>
 <p>$L_1 = P(x),L_2=\neg P(b)$，则$\sigma = $ { $ b/x $ }</p>
 <p>$C_{12} = Q(a) \vee R(y)$</p>
 <p><strong>值得注意的是</strong>，当归结的$P(x)$是两个变量，如$P(x) \vee R(x)$和$\neg P(y) \vee Q(y)$或者$P(x) \vee R(x)$和$\neg P(x) \vee Q(x)$都不能进行归结。</p>
+<ul>
+<li><p>子句集$S$是不可满足的，当且仅当存在一个从$S$到空子句的归结过程</p>
+</li>
+<li><p>设$C_1$和$C_2$是两个没有公共变元的子句，$L_1$和$L_2$分别是$C_1$和$C_2$中的文字，如果$L_1$和$L_2$存在一个合一$\sigma$则：</p>
+<p>$C_{12} = ( \{ C_1 , \sigma \} - \{ L_1 , \sigma \}) \cup ( \{ C_1 , \sigma \} - \{ L_1 , \sigma \}) $</p>
+</li>
+</ul>
 <h2 id="归结反演"><a href="#归结反演" class="headerlink" title="归结反演"></a>归结反演</h2><p>用$F$证明$Q$，我们构造集合$S =  $ { $ F , \neg Q $ }，利用归结原理，将每次得到的归结式并入$S$中，若出现空语句则可停止，此时就证明了$Q$为真。</p>
 <h2 id="应用归结原理求解问题"><a href="#应用归结原理求解问题" class="headerlink" title="应用归结原理求解问题"></a>应用归结原理求解问题</h2><p>用$F$求解$Q$，将$Q$用谓词公式表示，否定$Q$与answer构成析取式，加入$S$，此时$S = $ { $ F, \neg Q \vee ANSWER $ }，再通过归结，得到$ANSWER$，那么就能得出答案。</p>
 <h1 id="第五讲-可信度方法和证据理论"><a href="#第五讲-可信度方法和证据理论" class="headerlink" title="第五讲 可信度方法和证据理论"></a>第五讲 可信度方法和证据理论</h1><h2 id="5-2-可信度方法"><a href="#5-2-可信度方法" class="headerlink" title="5.2 可信度方法"></a>5.2 可信度方法</h2><p><strong>知识不确定性的表示</strong></p>
@@ -580,7 +600,7 @@
 <p>特别的$M( \varnothing  ) = 0 , \sum_{B \subseteq A} = 1$</p>
 <p>概率分配函数是人工智能理论中非经典推理部分,证据理论中用到的一个函数，而概率是随机事件出现的可能性度量。</p>
 <p><strong>信任函数</strong></p>
-<p>$Bel \ : \ 2^D \rightarrow [0,1] (对于任何一个属于D的子集A,命它对应一个数M \in [0,1])且 Bel(A) = \sum_{B \subseteq A}^{} M(B) \ \ \ \  \forall A \subseteq D$</p>
+<p>$Bel \ : \ 2^D \rightarrow [0,1] ($对于任何一个属于$D$的子集$A$,命它对应一个数$M \in [0,1])$且$ Bel(A) =  \sum_{B \subseteq A}^{} M(B) \ \ \ \  \forall A \subseteq D$</p>
 <p>$Bel(A)$：对命题$A$为真的总的信任程度</p>
 <p>$Bel(\varnothing) = M(\varnothing) = 0$</p>
 <p>$Bel(D) = \sum_{B \subseteq D} M(B) = 1$</p>
