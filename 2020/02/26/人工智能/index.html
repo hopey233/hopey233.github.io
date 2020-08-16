@@ -90,7 +90,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4.jpg">
-<meta property="og:updated_time" content="2020-08-15T14:08:20.569Z">
+<meta property="og:updated_time" content="2020-08-16T01:29:21.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能学习笔记（暂时维护中）">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-15T22:08:20+08:00">
-                2020-08-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-16T09:29:21+08:00">
+                2020-08-16
               </time>
             
           </span>
@@ -650,6 +650,7 @@
 <ul>
 <li>$f(\Omega) = 1 \ f(\varnothing)=0$</li>
 <li>$Bel(A) \leq f(A) \leq Pl(A)$</li>
+<li>$f(\neg A) = 1 - f(A)$</li>
 </ul>
 <p><strong>$H$的确定性$CER(H)$</strong></p>
 <ul>
@@ -659,10 +660,24 @@
 </ul>
 <p><strong>不确定的更新</strong><br>$$<br>IF \quad THEN \quad H = \{ h_1,h_2,…,h_n \} \quad CF = \{ c_1,c_2,…,c_n \}<br>$$</p>
 <ul>
-<li>求H的概率分配函数<ul>
+<li><p>求H的概率分配函数</p>
+<ul>
 <li>$m \{ \{h_1 \},\{ h_2 \},…,\}  =  (CER(E) \times c_1 ,…)$</li>
 <li>$m(\Omega) = 1 - \sum_{i=1}^n CER(E) \times c_i$</li>
 <li>再正交，求f，CER</li>
+</ul>
+</li>
+<li><p>汉明距离：求两个模糊集之间的差异</p>
+<ul>
+<li>离散：$d(F,G) = \frac{1}{n} \times \sum_{i=1}^n |\mu_F(u_i) - \mu_G(u_i)|$</li>
+<li>连续：$d(F,G) = \frac{1}{b-a} \int_a^b |\mu_F(u_i) - \mu_G(u_i)| d(u)$</li>
+</ul>
+</li>
+<li><p>贴近度</p>
+<p>$(F,G) = \frac{1}{2} \times (F \cdot G + (1 - F \bigodot  G))$</p>
+<ul>
+<li>$F \cdot G = \vee_U (\mu_F(u_i) \wedge \mu_G(u_i))$</li>
+<li>$F \bigodot G = \wedge_U (\mu_F(u_i) \vee \mu_G(u_i))$</li>
 </ul>
 </li>
 </ul>
@@ -687,8 +702,13 @@
 <p><strong>隶属度</strong></p>
 <p>常见的隶属函数有正态分布、三角分布、梯形分布等</p>
 <p>确定方法：模糊统计法、专家经验法、二元对比排序法、基本概念扩充法</p>
-<h2 id="6-3-模糊关系及其合成"><a href="#6-3-模糊关系及其合成" class="headerlink" title="6.3 模糊关系及其合成"></a>6.3 模糊关系及其合成</h2><p>模糊集合的模糊关系用叉积表示<br>$$<br>R:A \times B \rightarrow [0,1]<br>$$<br>叉积常用最小算子运算</p>
-<p>$\mu_{A \times B} (A,B) = min${$\mu_A(a) , \mu_B(b)$}</p>
+<h2 id="6-3-模糊关系及其合成"><a href="#6-3-模糊关系及其合成" class="headerlink" title="6.3 模糊关系及其合成"></a>6.3 模糊关系及其合成</h2><p><strong>模糊关系的构造</strong></p>
+<ul>
+<li>$R_m$：$\int_{U \times V} (\mu_F(u) \wedge \mu_G(v)) \vee (1-\mu_F(u)) / (u,v)$</li>
+<li>$R_c$：$\int_{U \times V} (\mu_F(u) \wedge \mu_G(v)) / (u,v)$</li>
+<li>$R_g$：$\mu_F(u) \rightarrow \mu_G(v) = \begin{cases} 1 &amp; \mu_F(u) \leq \mu_G(v) \newline \mu_G(v) &amp; \mu_F(u) &gt; \mu_G(v)\end{cases}$</li>
+<li></li>
+</ul>
 <p>离散模糊集，用向量乘</p>
 <p>$\mu_{A \times B} (a,b) = \mu_A^T \circ  \mu_B $</p>
 <p>上面的向量运算，把乘换成取小运算，加换成取大运算即可</p>
