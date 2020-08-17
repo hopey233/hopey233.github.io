@@ -89,7 +89,7 @@
 <meta property="og:description" content="工程经济学笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg">
-<meta property="og:updated_time" content="2020-08-16T15:05:59.102Z">
+<meta property="og:updated_time" content="2020-08-17T14:55:00.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程经济学">
 <meta name="twitter:description" content="工程经济学笔记">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-16T23:05:59+08:00">
-                2020-08-16
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-17T22:55:00+08:00">
+                2020-08-17
               </time>
             
           </span>
@@ -659,33 +659,47 @@
 <p>利润总额＝营业利润＋投资净收益＋营业外收支净额</p>
 <p>净利润＝利润总额－所得税</p>
 <hr>
-<h1 id="经济评价指标体系"><a href="#经济评价指标体系" class="headerlink" title="经济评价指标体系"></a>经济评价指标体系</h1><p><strong>投资回收期${P_t}$</strong></p>
+<h1 id="经济评价指标体系"><a href="#经济评价指标体系" class="headerlink" title="经济评价指标体系"></a>经济评价指标体系</h1><ul>
+<li><strong>投资回收期${P_t}$</strong></li>
+</ul>
 <p>从项目投资开始算起，用产出的受益全部收回所需要的时间长度，单位为年。<br>$$<br>\sum_{t=0}^{P_t} (CI-CO)_t = 0<br>$$<br>$P_t$ 投资回收期；$(CI-CO)_t$第$t$年的净现金流量$NCF$<br>$$<br>P_t = T-1 + \frac{第(T-1)年净现金流累计值的绝对值}{第T年的现金流<br>}<br>$$<br>$T$ 累积净现金流量首次为非负值所对应的年份</p>
 <p>上面为静态的计算方法，即不考虑利率变化</p>
 <p>实际情况我们可能需要计算动态的投资回收期，即用现金折现率求未来的钱现在为多少，$P = NCF_n * (1+i)^{-n}$，然后再按照公式计算。</p>
 <p>优点：概念明确，简单易算；既反映方案的盈利性又反映方案的风险</p>
 <p>缺点：只反映投资回收前的盈利情况，不够全面。</p>
-<p><strong>净现值${NPV}$</strong></p>
+<ul>
+<li><strong>净现值${NPV}$</strong></li>
+</ul>
 <p>建设项目在整个寿命期内，各年的净现金流按既定的折现率折算到计算期初的现值之和</p>
 <p>净现值是考察建设项目在其计算期内盈利能力的主要动态评价指标<br>$$<br>NPV = \sum_{t=0}^{n} {NCF_t(P/F,ic,t)} = \sum_{t=0}^{n} {NCF_t* (1+ic)^{-t}}<br>$$<br>当$NPV \geq 0$时，说明经济可行性为合理的，反之不可行。</p>
-<p><strong>内部收益率${IRR}$</strong></p>
+<ul>
+<li><strong>内部收益率${IRR}$</strong></li>
+</ul>
 <p>得项目计算期内各年净现金流量的现值累计值，即净现值等于零时的折现率<br>$$<br>\sum_{t=0}^{n} NCF_t(1+IRR)^{-t} = 0<br>$$<br>线性内插法求解内部收益率</p>
-<p><img src="/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg" alt="alt"><br>$$<br>IRR = i_1 + \frac{NPV_1}{NPV_1+|NPV_2|} * (i_2 - i_1)<br>$$<br>为保证计算的精度，一般要求$i_2 - i_1 &lt;$ 5%</p>
+<p><img src="/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg" alt="alt"><br>$$<br>IRR = i_1 + \frac{NPV_1}{NPV_1+|NPV_2|} * (i_2 - i_1)<br>$$<br>为保证计算的精度，一般要求$i_2 - i_1 &lt; 5\%$</p>
 <p>经济意义：方案存在于项目中的投资（未被回收的投资）可以实现的盈利（收益）能力</p>
 <p>$IRR$经济可行性的评价标准为$IRR \geq ic$，$ic$为社会折现率</p>
-<p>一般地，当建设项目在计算期的净现金流 符号变化不超过一次时（所谓常规建设项 目），净现值方程有唯一的实数解，即方案的内部收益率。</p>
-<p><strong>投资收益率$ROI$</strong></p>
+<p>一般地，当建设项目在计算期的净现金流符号变化不超过一次时（所谓常规建设项目），净现值方程有唯一的实数解，即方案的内部收益率。</p>
+<ul>
+<li><strong>投资收益率$ROI$</strong></li>
+</ul>
 <p>单位总投资能实现的息税前利润，即$ROI = \frac{EBIT}{TI}$</p>
 <p>$EBIT$：息税前利润     $TI$：投资总额</p>
-<p>$EBIT$=毛（净）利润+所得税税金（+还的利息）</p>
+<p>$EBIT$=净利润+所得税税金+还的利息=毛利润+还的利息（毛利润是还没付税金的利润）</p>
 <p>反映全部投资（存在于项目中的投资与已收回投资之和）收益能力的静态指标</p>
-<p><strong>资本金利润率$ROE$</strong></p>
+<ul>
+<li><strong>资本金利润率$ROE$</strong></li>
+</ul>
 <p>单位资本金可以实现的净利润，即$ROE = \frac{NP}{EC} = \frac{年净利润}{项目资本金}$</p>
-<p><strong>利息备付率$ICR$</strong></p>
+<ul>
+<li><strong>利息备付率$ICR$</strong></li>
+</ul>
 <p>利息备付率也称已获利息倍数，是指项目在借款偿还期内各年可用于支付利息的息税前利润与当期应付利息费用的比值，即$ICR = \frac{EBIT}{PI}$</p>
 <p>$PI$：计入成本的应付利息。注意：建设期的利息最后是折算到固定资产中去了，$PI$应该是运营期还的利息</p>
 <p>利息备付率从付息资金来源的充裕性角度反映项 目偿付债务利息的保障程度。一般来说，利息备付率应大于$2$</p>
-<p><strong>偿债备付率$DSCR$</strong></p>
+<ul>
+<li><strong>偿债备付率$DSCR$</strong></li>
+</ul>
 <p>偿债备付率是指借款偿还期内，各年可用于还本付息的资金与当年应还本付息额的比值。即</p>
 <p>$DSCR = \frac{(EBITAD - TAX)}{PD}$</p>
 <p>$EBITAD$：息税折旧摊销前利润</p>
@@ -699,7 +713,8 @@
 <p>$EBITAD = EBIT + 折旧 + 摊销 = 267+20 = 287w$</p>
 <p>$DSCR = \frac {(EBITAD - TAX) }{PD} = \frac{287-200 * 25 \% }{80+67} = 1.61$</p>
 <hr>
-<h1 id="多方案比较选择"><a href="#多方案比较选择" class="headerlink" title="多方案比较选择"></a>多方案比较选择</h1><p><strong>方案之间的相互关系</strong></p>
+<h1 id="多方案比较选择"><a href="#多方案比较选择" class="headerlink" title="多方案比较选择"></a>多方案比较选择</h1><ul>
+<li><p><strong>方案之间的相互关系</strong></p>
 <ul>
 <li>独立方案：方案各自独立存在，不受其他方案的任何状态影响</li>
 <li>互斥方案：互相排斥不可兼容的方案</li>
@@ -707,33 +722,40 @@
 <li>资金约束条件下的相关方案：独立方案的一种特例，受到资金的约束</li>
 <li>混合方案</li>
 </ul>
-<p><strong>互斥方案的检验</strong></p>
+</li>
+<li><p><strong>互斥方案的检验</strong></p>
 <ul>
 <li>合格性检验：备选方案的绝对经济效益检验，考察方案的经济可行性</li>
 <li>最优性检验：可行方案的相对经济效益检验，对可行方案进行经济性排序，提示优选目标</li>
 <li>以上两种方案缺一不可</li>
 </ul>
-<p><strong>寿命相等的互斥方案经济性比选</strong></p>
-<ul>
-<li><p>合格性检验（绝对效益检验） $NPV \geq 0$</p>
 </li>
-<li><p>最优性检验（相对效益检验）</p>
+<li><p><strong>寿命相等的互斥方案经济性比选</strong></p>
+<ul>
+<li>合格性检验（绝对效益检验） $NPV \geq 0$</li>
+<li>最优性检验（相对效益检验）</li>
+</ul>
 <p>定义投资小的方案为基础方案$B$；投资次小的方案为相对方案$A$</p>
 <p>若$\Delta_{A-B} NPV \geq 0$，则相对方案优；否则，基础方案优</p>
 </li>
-</ul>
-<p><strong>内部收益率法</strong></p>
+<li><p><strong>内部收益率法</strong></p>
 <ul>
-<li><p>合格性检验 $IRR \geq i_c$</p>
-</li>
-<li><p>最优性检验 </p>
-<p>若$\Delta _{A-B} IRR \geq i_c$，则相对方案优；否则，基础方案优</p>
+<li>合格性检验 $IRR \geq i_c$</li>
+<li>最优性检验 </li>
+<li>若$\Delta _{A-B} IRR \geq i_c$，则相对方案优；否则，基础方案优</li>
+</ul>
 </li>
 </ul>
 <hr>
-<h1 id="不确定性与风险分析"><a href="#不确定性与风险分析" class="headerlink" title="不确定性与风险分析"></a>不确定性与风险分析</h1><p>确定性分析——揭示项目的收益</p>
-<p>不确定性分析——揭示项目的风险</p>
-<p>共同构成了完整的项目评价体系</p>
+<h1 id="不确定性与风险分析"><a href="#不确定性与风险分析" class="headerlink" title="不确定性与风险分析"></a>不确定性与风险分析</h1><ul>
+<li>确定性分析——揭示项目的收益</li>
+</ul>
+<ul>
+<li>不确定性分析——揭示项目的风险</li>
+</ul>
+<ul>
+<li>共同构成了完整的项目评价体系</li>
+</ul>
 <p><strong>例题</strong></p>
 <ul>
 <li><p>某方案设计年产量为30万件，估计产品单价为10元，单位可变成本为8元，年固定成本为40万元，营业税率为 5%。试分别用产量、销售收入、生产能力利用率表示盈亏平衡点，并计算经营安全度。</p>
