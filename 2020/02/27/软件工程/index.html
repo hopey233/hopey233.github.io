@@ -102,7 +102,10 @@
 <meta property="og:image" content="http://yoursite.com/images/%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E7%8E%AF%E5%A2%83%E5%9B%BE.jpg">
-<meta property="og:updated_time" content="2020-08-18T15:04:27.733Z">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%AC%A6%E5%8F%B7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Warnier%E5%9B%BE.jpg">
+<meta property="og:updated_time" content="2020-08-19T14:37:37.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件工程">
 <meta name="twitter:description" content="软件工程笔记">
@@ -312,8 +315,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-18T23:04:27+08:00">
-                2020-08-18
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T22:37:37+08:00">
+                2020-08-19
               </time>
             
           </span>
@@ -524,7 +527,7 @@
 <p>核心是<strong>数据字典</strong>，下面三种图围绕该核心</p>
 <ul>
 <li><strong>数据流图</strong>（DFD）：描述数据在系统中如何被传送和变换，以及子功能</li>
-<li><strong>实体-关系图</strong>（ER图）：描述对象以及数据对象之间的关系，用于数据建模</li>
+<li><strong>实体-关系图</strong>（E-R图）：描述对象以及数据对象之间的关系，用于数据建模</li>
 <li><strong>状态迁移图</strong>（STD）：描述系统对外部事件如何响应</li>
 <li><img src="/images/%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></li>
 </ul>
@@ -538,6 +541,60 @@
 <li><p>环境图（顶层数据流图）</p>
 <p><img src="/images/%E7%8E%AF%E5%A2%83%E5%9B%BE.jpg" alt="alt"></p>
 </li>
+<li><p>数据流图的分层</p>
+<ul>
+<li>将顶层数据流图进行功能分解得到一层数据流图</li>
+<li>将一层数据流图的功能进行进一步分解得到二层数据流图</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据建模</strong></p>
+<ul>
+<li>E-R图</li>
+</ul>
+<p><strong>行为建模</strong></p>
+<ul>
+<li><img src="/images/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1.jpg" alt="alt"></li>
+<li>上面是有触发事件行为的状态图，当然也可以有无事件触发的</li>
+<li>事件：事件说明[守卫条件]/动作表达式<ul>
+<li>事件说明的语法为：事件名（参数表）</li>
+<li>守卫条件是一个布尔表达式，优先看事件说明的真值</li>
+<li>动作表达式是一个过程表达式，当状态开始时执行该表达式</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据字典</strong></p>
+<ul>
+<li>词条描述：数据流词条、数据元素词条、数据存储文件词条、加工词条、数据源点及汇点词条</li>
+<li>数据结构<ul>
+<li>定义式<ul>
+<li><img src="/images/%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%AC%A6%E5%8F%B7.jpg" alt="alt"></li>
+</ul>
+</li>
+<li>Warnier图<ul>
+<li>下图给出了“存折”的Warnier图。在图中，用花括号“{”表示层次关系，在同一括号下，自上到下是顺序排列的数据项。在有些数据项的名字后面附加了圆括号，给出该数据项重复的次数。如“字母（2，24）”表示字母有2~24个；“整数（11）”表示数字占11位；“浮点数（9，2）”表示浮点数整数部分占7位，小数部分占2位；“摘要（0，1）”表示摘要可有可无，若有就占一栏。此外，用符号⊕表示二者选一的选择关系</li>
+<li><img src="/images/Warnier%E5%9B%BE.jpg" alt="alt"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>加工规格说明</strong></p>
+<ul>
+<li>决策表</li>
+<li>决策树</li>
+</ul>
+<p><strong>系统需求规格说明</strong></p>
+<ul>
+<li>需求规格说明（SRS）</li>
+<li>数据需求说明（DRD）</li>
+<li>完整性、无歧义性、一致性、可验证性、可修改性、可追踪性</li>
+</ul>
+<p><strong>需求评审</strong></p>
+<p><strong>需求管理</strong></p>
+<ul>
+<li>需求跟踪</li>
+<li>需求变更管理</li>
 </ul>
 <h1 id="软件测试方法"><a href="#软件测试方法" class="headerlink" title="软件测试方法"></a>软件测试方法</h1><p>这里需要特别注意一下：确认测试、验证测试、集成测试、单元测试都是软件测试的步骤，而不是测试的方法</p>
 <p><strong>黑盒测试</strong></p>
