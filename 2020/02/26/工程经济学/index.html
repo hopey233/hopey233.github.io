@@ -89,7 +89,7 @@
 <meta property="og:description" content="工程经济学笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E7%BA%BF%E6%80%A7%E5%86%85%E6%8F%92%E6%B3%95%E6%B1%82%E8%A7%A3IRR.jpg">
-<meta property="og:updated_time" content="2020-08-19T15:04:45.283Z">
+<meta property="og:updated_time" content="2020-08-20T14:48:17.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程经济学">
 <meta name="twitter:description" content="工程经济学笔记">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-19T23:04:45+08:00">
-                2020-08-19
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-20T22:48:17+08:00">
+                2020-08-20
               </time>
             
           </span>
@@ -467,7 +467,7 @@
 <p>​        由于上面两个$F$的公式，联立得<br>$$<br>P * (1+i)^n= \frac{A * [(1+i)^n-1]}{i}<br>$$</p>
 <p>$$<br>P=\frac{A * [(1+i)^n-1]}{i * (1+i)^n}=A(P/A,i,n)<br>$$<br>​        例题：小A从建设银行贷款60万付首套房按揭，贷款利率为$4.9 \% $，按年计息，贷款15年，等额本息还款，试计算每年应还银行本金，利息分别是多少。<br>$$<br>F=P(F/P,i,n)=P * (1+i)^n = 60 * (1+0.049)^{10} = 122.97(万元)<br>$$</p>
 <p>$$<br>F=A(F/A,i,n)=\frac{A * [(1+i)^n-1]}{i}<br>$$</p>
-<p>联立上两式，可以得到$A$，直接用年金终值公式求$A$也可以求<br>$$<br>A=\frac{F * i}{(1+i)^n-1}=\frac{122.97 * 0.049}{1.049^{10}-1}=5.74(万元)<br>$$<br>第一年利息：$60 * 0.049=2.94(万元)$</p>
+<p>联立上两式，可以得到$A$，当然直接用年金终值公式求$A$也可以求<br>$$<br>A=\frac{F * i}{(1+i)^n-1}=\frac{122.97 * 0.049}{1.049^{10}-1}=5.74(万元)<br>$$<br>第一年利息：$60 * 0.049=2.94(万元)$</p>
 <p>第一年本金：$5.74-2.94=2.80(万元)$</p>
 <p>第二年利息：$(60-2.80) * 0.049 = 2.80(万元)$</p>
 <p>第二年本金：$5.74-2.80=2.94(万元)$</p>
@@ -754,25 +754,6 @@
 </ul>
 </li>
 </ul>
-<h1 id="不确定性与风险分析"><a href="#不确定性与风险分析" class="headerlink" title="不确定性与风险分析"></a>不确定性与风险分析</h1><ul>
-<li>确定性分析——揭示项目的收益</li>
-</ul>
-<ul>
-<li>不确定性分析——揭示项目的风险</li>
-</ul>
-<ul>
-<li>共同构成了完整的项目评价体系</li>
-</ul>
-<p><strong>例题</strong></p>
-<ul>
-<li><p>某方案设计年产量为30万件，估计产品单价为10元，单位可变成本为8元，年固定成本为40万元，营业税率为 5%。试分别用产量、销售收入、生产能力利用率表示盈亏平衡点，并计算经营安全度。</p>
-<p>​    $Q_0 = \frac{F}{p-v-pr} = \frac{400000}{10-8-10 \times 5 \% } = 266667$（件）</p>
-<p>​    $S_0 = \frac{p * F}{p - v - pr} = \frac{10 * 400000}{10-8-10 * 5 \%} = 2666667$（元）</p>
-<p>​    $a_0 = \frac{Q_0}{Q_s} = 88.9 \%$</p>
-<p>​    $A = 1-a_0 = 11.1 \%$</p>
-<p>​    由于$a_0 &gt; 70 \% ,A &lt; 30 \%$，所以项目经营风险较高，财务运营可靠性不高。</p>
-</li>
-</ul>
 <h1 id="建设项目融资"><a href="#建设项目融资" class="headerlink" title="建设项目融资"></a>建设项目融资</h1><p>项目融资是项目投资的前提好基础</p>
 <ul>
 <li>建设项目的融资主体<ul>
@@ -804,10 +785,49 @@
 <li>债务资金融资</li>
 </ul>
 </li>
-<li>新型项目融资模式主要有BOT、 PPP、ABS</li>
+<li>新型项目融资模式<ul>
+<li>BOT<ul>
+<li>利用外资和民营资本兴建基础设施的新兴融资模式。由东道国政府或其所属机构与项目公司签署协议，把项目建设和经营的特许权授予项目公司（建设Build）。项目公司在项目经营特许期内，利用项目的收益偿还投资及营运支出， 并获得利润（经营Operate），特许期满后，项目移交给东道国政府或其下属机构（转让Transfer）</li>
+</ul>
+</li>
+<li>ABS<ul>
+<li>发行高级债券</li>
+</ul>
+</li>
+<li>PPP<ul>
+<li>公共部门与私人企业合作</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>融资的基本原则：以融资需要的资金成本和筹资效率为标准，力求组成要素的合理化，多元化 。以提高筹资的效率和效益，降低筹资成本，减少筹资风险。</li>
+</ul>
+<h1 id="国民经济评价"><a href="#国民经济评价" class="headerlink" title="国民经济评价"></a>国民经济评价</h1><ul>
+<li>国民经济评价</li>
+</ul>
+<ul>
+<li>项目的外部效果</li>
+</ul>
+<h1 id="不确定性与风险分析"><a href="#不确定性与风险分析" class="headerlink" title="不确定性与风险分析"></a>不确定性与风险分析</h1><ul>
+<li>确定性分析——揭示项目的收益</li>
+</ul>
+<ul>
+<li>不确定性分析——揭示项目的风险</li>
+</ul>
+<ul>
+<li>共同构成了完整的项目评价体系</li>
+</ul>
+<p><strong>例题</strong></p>
+<ul>
+<li><p>某方案设计年产量为30万件，估计产品单价为10元，单位可变成本为8元，年固定成本为40万元，营业税率为 5%。试分别用产量、销售收入、生产能力利用率表示盈亏平衡点，并计算经营安全度。</p>
+<p>​    $Q_0 = \frac{F}{p-v-pr} = \frac{400000}{10-8-10 \times 5 \% } = 266667$（件）</p>
+<p>​    $S_0 = \frac{p * F}{p - v - pr} = \frac{10 * 400000}{10-8-10 * 5 \%} = 2666667$（元）</p>
+<p>​    $a_0 = \frac{Q_0}{Q_s} = 88.9 \%$</p>
+<p>​    $A = 1-a_0 = 11.1 \%$</p>
+<p>​    由于$a_0 &gt; 70 \% ,A &lt; 30 \%$，所以项目经营风险较高，财务运营可靠性不高。</p>
+</li>
 </ul>
 
       
@@ -996,7 +1016,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建设项目评价的基本经济要素"><span class="nav-text">建设项目评价的基本经济要素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经济评价指标体系"><span class="nav-text">经济评价指标体系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多方案比较选择"><span class="nav-text">多方案比较选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不确定性与风险分析"><span class="nav-text">不确定性与风险分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建设项目融资"><span class="nav-text">建设项目融资</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资金的时间价值与现金流量"><span class="nav-text">资金的时间价值与现金流量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建设项目评价的基本经济要素"><span class="nav-text">建设项目评价的基本经济要素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经济评价指标体系"><span class="nav-text">经济评价指标体系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多方案比较选择"><span class="nav-text">多方案比较选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建设项目融资"><span class="nav-text">建设项目融资</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#国民经济评价"><span class="nav-text">国民经济评价</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不确定性与风险分析"><span class="nav-text">不确定性与风险分析</span></a></li></ol></div>
             
 
           </div>
