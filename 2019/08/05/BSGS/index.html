@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hope_Y's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="用于解决$y^x \equiv z\ (mod\ p)$，给定$y,z,p \geq 1$，求解$x$。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BSGS">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/BSGS/index.html">
+<meta property="og:site_name" content="Hope_Y&#39;s blog">
+<meta property="og:description" content="用于解决$y^x \equiv z\ (mod\ p)$，给定$y,z,p \geq 1$，求解$x$。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-06T03:45:07.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BSGS">
+<meta name="twitter:description" content="用于解决$y^x \equiv z\ (mod\ p)$，给定$y,z,p \geq 1$，求解$x$。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/05/BSGS/">
+
+
+
+  <script> 
+   (function(){
+          if(''){
+              if (prompt('请输入文章密码') !== ''){
+                  alert('密码错误！');
+                  history.back();
+              }
+          }
+      })();
+  </script>
+
+  <title>BSGS | Hope_Y's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hope_Y's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/BSGS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hope_Y">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/00.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hope_Y's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BSGS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T10:21:22+08:00">
+                2019-08-05
+              </time>
+            
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-06T11:45:07+08:00">
+                2019-08-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/05/BSGS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/05/BSGS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用于解决$y^x \equiv z\ (mod\ p)$，给定$y,z,p \geq 1$，求解$x$。</p>
+<a id="more"></a>
+
+<p>当$gcd(y,p)=1$，在这种情况下，有可能给定$p$为质数。设$x=a * m - b$ ，$m= \lceil \sqrt p \rceil$，$ a \in [0,m+1)$，$b \in [0,m)$，那么原式变成$y^{a * m}=z * y^{b}$，先枚举$b$，计算$z * y^{b}(mod\ p)$，存到$map$中，再枚举$a$就好了。</p>
+<h2 id="SDOI2011"><a href="#SDOI2011" class="headerlink" title="SDOI2011"></a><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2242" target="_blank" rel="noopener">SDOI2011</a></h2><p>题意：给定$y,z,p$，计算1. $y^z (mod \ p)$；2. 满足$x * y \equiv z(mod \ p)$的最小非负整数的$x$；3.满足$y^x  \equiv  z\ (mod\ p)$的最小非负整数的$x$。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll y,z,p;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x,ll mod)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> qpow(x,mod<span class="number">-2</span>,mod);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nnot</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BSGS</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;ll,ll&gt;pw;</span><br><span class="line">    <span class="keyword">if</span>(y == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">-1</span>, m = <span class="built_in">sqrt</span>(p) + <span class="number">1</span>, xx, s = y;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">        pw[s] = i;</span><br><span class="line">        s = s * x % p;</span><br><span class="line">    &#125;</span><br><span class="line">    xx = qpow(x, m, p), s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= m + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        s = s * xx % p;</span><br><span class="line">        <span class="keyword">if</span>(pw.count(s))&#123;</span><br><span class="line">            ans = i * m - pw[s];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) nnot();</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll t,op;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;t,&amp;op);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;y,&amp;z,&amp;p);</span><br><span class="line">        <span class="keyword">if</span>(op == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,qpow(y,z,p));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op == <span class="number">2</span>)&#123;</span><br><span class="line">            ll tm=y%p;</span><br><span class="line">            <span class="keyword">if</span>(tm==<span class="number">0</span> &amp;&amp; z%p!=<span class="number">0</span>)&#123;</span><br><span class="line">                nnot();</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,z*inv(y,p)%p);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(y%p) BSGS(y,z);</span><br><span class="line">            <span class="keyword">else</span> nnot();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>当$gcd(y,p) \neq 1$时，就要用到$exgcd$理论。</p>
+<p>将原式写成$y * y^{x-1}+k * p=z,k \in Z$，根据$exgcd$，当$d=gcd(y,p)$不是$z$的约数就不会有解，有：$$\frac{y}{d} * y^{x-1}+k * \frac{p}{d}=\frac{z}{d}$$</p>
+<p>一直递归直到$d=1$，设之间的所有的$d$的乘积为$g$，递归$c$次，令$x’=x-c\ ,\ p’=\frac{p}{g}\ ,\ z=\frac{z}{g}$，$y^{x’} * \frac{y^c}{g} \equiv z’(mod \ p’)$</p>
+<p>然后再用BSGS求解。</p>
+<h2 id="SPOJMOD-Power-Modulo-Inverted"><a href="#SPOJMOD-Power-Modulo-Inverted" class="headerlink" title="SPOJMOD Power Modulo Inverted"></a><a href="http://www.spoj.com/problems/MOD/" target="_blank" rel="noopener">SPOJMOD Power Modulo Inverted</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll y,z,p;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (y==<span class="number">0</span>)?x:gcd(y,x%y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">exBSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(z==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">map</span>&lt;ll,ll&gt;pw;</span><br><span class="line">    ll cnt=<span class="number">0</span>,mul=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll d=gcd(y,p); d!=<span class="number">1</span>; d=gcd(y,p))&#123;</span><br><span class="line">        <span class="keyword">if</span>(z%d) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ++cnt,z/=d,p/=d,mul=(mul*y/d%p);</span><br><span class="line">        <span class="keyword">if</span>(z == mul) <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    ll s=z,m=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">        pw[s]=i;</span><br><span class="line">        s=s*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">    ll x=qpow(y,m,p);</span><br><span class="line">    s=mul;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        s=s*x%p;</span><br><span class="line">        <span class="keyword">if</span>(pw.count(s)) <span class="keyword">return</span> i*m-pw[s]+cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;y,&amp;p,&amp;z)&amp;&amp;(y||z||p))&#123;</span><br><span class="line">        y%=p;</span><br><span class="line">        z%=p;</span><br><span class="line">        ll ans=exBSGS();</span><br><span class="line">        <span class="keyword">if</span>(ans &lt; <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="generator-2"><a href="#generator-2" class="headerlink" title="generator 2"></a><a href="https://ac.nowcoder.com/acm/contest/885/C" target="_blank" rel="noopener">generator 2</a></h2><p>2019年牛客多校第五场。</p>
+<p>题意：你有一个$n$个数字的递推式：$x_{i} \equiv  (a * x_{i-1} + b)mod \ p$ ，给定$n$，$x_0$，$a$，$b$，$p$，其中$p$是素数，询问$Q$次，求一个最小的下标$i$，使得$x_i \equiv  v (mod \ p)$。</p>
+<p>题解：很容易得到关于$x_i$的通项公式：$$x_i = a^i * x_0  + b * \sum_{j=0}^{i-1} a^j = a^i * x_0  + b * (\frac{a^i - 1}{a - 1}) = a ^ i * (\frac{b}{a-1}+x_0) - \frac{b}{a-1}$$</p>
+<p>那么，可以化成$$a^i \equiv \frac{(a-1) * v+b}{(a-1) * x_0+b} (mod \ p)$$</p>
+<p>由于题目需要查询的次数有$1000$次，直接套上面的$BSGS$复杂度太大，所以就需要预处理，我们看上面的代码，每次进行算法时其实都有一次for循环是预处理，我们把这一步放在查询前，改用unorder_map或者手写hash存值。</p>
+<p>进一步优化，我们把预处理的时间增加，而减少查询时间，将预处理改成$\left \lceil p^{\frac{2}{3}} \right \rceil$，然后将查询的时间改成$\left \lceil p^{\frac{1}{3}} \right \rceil$。</p>
+<p>注意这题$a$等于1或者0需要特判。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Hash</span>&#123;</span></span><br><span class="line">    ll mod = <span class="number">2908361</span>;</span><br><span class="line">    ll cnt = <span class="number">0</span>, Head[<span class="number">2908361</span>], nxt[<span class="number">1000006</span>];</span><br><span class="line">    ll val[<span class="number">1000006</span>], pos[<span class="number">1000006</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(Head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(Head)); cnt = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ll x, ll v)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        pos[cnt] = x, val[cnt] = v, nxt[cnt] = Head[key];</span><br><span class="line">        Head[key] = cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ll <span class="title">Find</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">        ll key = x % mod;</span><br><span class="line">        <span class="keyword">for</span>(ll i = Head[key]; ~i; i = nxt[i])&#123;</span><br><span class="line">            <span class="keyword">if</span>(pos[i] == x) <span class="keyword">return</span> val[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1l</span>l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;hs;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x,ll n,ll mod)</span></span>&#123;</span><br><span class="line">    ll res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) res=res*x%mod;</span><br><span class="line">        x=x*x%mod;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x,ll p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> qpow(x,p<span class="number">-2</span>,p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(ll y,ll p)</span></span>&#123;</span><br><span class="line">    hs.init();</span><br><span class="line">    ll m=<span class="built_in">ceil</span>(<span class="built_in">pow</span>(p,<span class="number">2.0</span>/<span class="number">3.0</span>));</span><br><span class="line">    ll s=<span class="number">1l</span>l;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        hs.Insert(s,i);</span><br><span class="line">        s=s*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">BSGS</span><span class="params">(ll y,ll z,ll p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(z == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    ll ans=<span class="number">-1</span>,m=<span class="built_in">ceil</span>(<span class="built_in">pow</span>(p,<span class="number">1.0</span>/<span class="number">3.0</span>)),s=inv(z,p);</span><br><span class="line">    ll up=<span class="built_in">ceil</span>(<span class="built_in">pow</span>(p,<span class="number">2.0</span>/<span class="number">3.0</span>));</span><br><span class="line">    ll x=qpow(y,up,p);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        s=s*x%p;</span><br><span class="line">        ll fin=hs.Find(s);</span><br><span class="line">        <span class="keyword">if</span>(fin!=<span class="number">-1</span>)&#123;</span><br><span class="line">            ans=i*up-fin;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll n,p,x,a,b,v,T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld %lld %lld"</span>,&amp;n,&amp;x,&amp;a,&amp;b,&amp;p);</span><br><span class="line">        ll q;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;q);</span><br><span class="line">        Init(a,p);</span><br><span class="line">        <span class="keyword">while</span>(q--)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;v);</span><br><span class="line">            <span class="keyword">if</span>(a==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(x==v) <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(b==v) <span class="built_in">puts</span>(<span class="string">"1"</span>);</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(a==<span class="number">1</span>)&#123;</span><br><span class="line">                ll ans=((v-x)*inv(b,p)+p)%p;</span><br><span class="line">                <span class="keyword">if</span>(ans&gt;=n) ans=<span class="number">-1</span>;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ll z=(((a<span class="number">-1</span>)*v+b)%p*(inv(((a<span class="number">-1</span>)*x+b)%p,p)))%p;</span><br><span class="line">            ll ans=BSGS(a,z,p);</span><br><span class="line">            <span class="keyword">if</span>(ans &gt;= n) ans=<span class="number">-1</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/Wechat.png" alt="Hope_Y 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.jpg" alt="Hope_Y 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/19/kmp/" rel="next" title="kmp&exkmp">
+                <i class="fa fa-chevron-left"></i> kmp&exkmp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/22/模板整理/" rel="prev" title="模板整理">
+                模板整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/00.jpg" alt="Hope_Y">
+            
+              <p class="site-author-name" itemprop="name">Hope_Y</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hopey233" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1954105421@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2011"><span class="nav-text">SDOI2011</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SPOJMOD-Power-Modulo-Inverted"><span class="nav-text">SPOJMOD Power Modulo Inverted</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generator-2"><span class="nav-text">generator 2</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hope_Y</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/hopey233/hopey233.github.io">Hope_Y</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">QAQ-
+  I can do all things
+  </div>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+</span>
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5PmmFV0NaDBc4yxtJHhmo02r-gzGzoHsz',
+        appKey: 'vmJwEjA28DWtqGUMfE08B8Cr',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

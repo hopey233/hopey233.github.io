@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hope_Y's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="差点掉分，D2有思路最后bug多多。然后A题让我们知道了自己英语是白学了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/cf190717/index.html">
+<meta property="og:site_name" content="Hope_Y&#39;s blog">
+<meta property="og:description" content="差点掉分，D2有思路最后bug多多。然后A题让我们知道了自己英语是白学了">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-18T03:04:16.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces Round">
+<meta name="twitter:description" content="差点掉分，D2有思路最后bug多多。然后A题让我们知道了自己英语是白学了">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/18/cf190717/">
+
+
+
+  <script> 
+   (function(){
+          if(''){
+              if (prompt('请输入文章密码') !== ''){
+                  alert('密码错误！');
+                  history.back();
+              }
+          }
+      })();
+  </script>
+
+  <title>Codeforces Round | Hope_Y's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hope_Y's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/18/cf190717/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hope_Y">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/00.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hope_Y's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Codeforces Round</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-18T10:57:16+08:00">
+                2019-07-18
+              </time>
+            
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-18T11:04:16+08:00">
+                2019-07-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/codeforces/" itemprop="url" rel="index">
+                    <span itemprop="name">codeforces</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/18/cf190717/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/18/cf190717/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><del>差点掉分</del>，D2有思路最后bug多多。然后A题让我们知道了自己英语是白学了</p>
+<a id="more"></a>
+
+<h2 id="A-Drinks-Choosing"><a href="#A-Drinks-Choosing" class="headerlink" title="A.Drinks Choosing"></a><a href="https://codeforces.com/contest/1195/problem/A" target="_blank" rel="noopener">A.Drinks Choosing</a></h2><p>题意：#%…￥%￥%…￥%……&amp;………&amp;%#￥%#￥…#^#**&amp;#@$#()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1100</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> vis[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="comment">//memset(vis,2,sizeof vis);</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        b[a[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(b+<span class="number">1</span>,b+<span class="number">1</span>+k);</span><br><span class="line">    <span class="keyword">int</span> all=n/<span class="number">2</span>+n%<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b[i]%<span class="number">2</span>==<span class="number">0</span> &amp;&amp; b[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            ans+=b[i];</span><br><span class="line">            all-=(b[i]/<span class="number">2</span>);</span><br><span class="line">            b[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(b[i]%<span class="number">2</span>==<span class="number">1</span> &amp;&amp; b[i]&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            ans+=(b[i]<span class="number">-1</span>);</span><br><span class="line">            all-=(b[i]/<span class="number">2</span>);</span><br><span class="line">            b[i]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans+all);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="B-Sport-Mafia"><a href="#B-Sport-Mafia" class="headerlink" title="B.Sport Mafia"></a><a href="https://codeforces.com/contest/1195/problem/B" target="_blank" rel="noopener">B.Sport Mafia</a></h2><p>推公式，答案就是: $n- \frac { { \sqrt {8 * k + 8 * n + 9 }  } - 3 } {2}$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll n,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;k);</span><br><span class="line">    ll tmp=n-(<span class="number">-3</span>+(ll)<span class="built_in">sqrt</span>(<span class="number">9</span>+<span class="number">8</span>*n+<span class="number">8</span>*k))/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,tmp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-Basketball-Exercise"><a href="#C-Basketball-Exercise" class="headerlink" title="C.Basketball Exercise"></a><a href="https://codeforces.com/contest/1195/problem/C" target="_blank" rel="noopener">C.Basketball Exercise</a></h2><p>dp</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll a[maxn],b[maxn];</span><br><span class="line">ll n;</span><br><span class="line">ll dp[maxn][<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;b[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=a[<span class="number">0</span>];</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">1</span>]=b[<span class="number">0</span>];</span><br><span class="line">    dp[<span class="number">1</span>][<span class="number">0</span>]=a[<span class="number">1</span>]+b[<span class="number">0</span>];</span><br><span class="line">    dp[<span class="number">1</span>][<span class="number">1</span>]=a[<span class="number">0</span>]+b[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>; i&lt;n; i++)&#123;</span><br><span class="line">        dp[i][<span class="number">0</span>]=max(dp[i<span class="number">-1</span>][<span class="number">1</span>],max(dp[i<span class="number">-2</span>][<span class="number">0</span>],dp[i<span class="number">-2</span>][<span class="number">1</span>]))+a[i];</span><br><span class="line">        dp[i][<span class="number">1</span>]=max(dp[i<span class="number">-1</span>][<span class="number">0</span>],max(dp[i<span class="number">-2</span>][<span class="number">1</span>],dp[i<span class="number">-2</span>][<span class="number">0</span>]))+b[i];</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,max(dp[n<span class="number">-1</span>][<span class="number">0</span>],dp[n<span class="number">-1</span>][<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="D1-Submarine-in-the-Rybinsk-Sea"><a href="#D1-Submarine-in-the-Rybinsk-Sea" class="headerlink" title="D1.Submarine in the Rybinsk Sea"></a><a href="https://codeforces.com/contest/1195/problem/D1" target="_blank" rel="noopener">D1.Submarine in the Rybinsk Sea</a></h2><p>求贡献</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">998244353</span>;</span><br><span class="line">ll n;</span><br><span class="line">ll a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">        ll len=<span class="built_in">strlen</span>(s);</span><br><span class="line">        ll tmp=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">            tmp=(tmp+(s[i]-<span class="string">'0'</span>))%mod;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;len<span class="number">-1</span>) tmp=(tmp*<span class="number">100</span>)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//printf("%lld %lld\n",tmp,tmp*10);</span></span><br><span class="line">        ans=(ans+tmp)%mod;</span><br><span class="line">        ans=(ans+tmp*<span class="number">10</span>)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans*n%mod);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="D2-Submarine-in-the-Rybinsk-Sea"><a href="#D2-Submarine-in-the-Rybinsk-Sea" class="headerlink" title="D2.Submarine in the Rybinsk Sea"></a><a href="https://codeforces.com/contest/1195/problem/D2" target="_blank" rel="noopener">D2.Submarine in the Rybinsk Sea</a></h2><p>与D1不同的是，每个数的长度不一样。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">998244353</span>;</span><br><span class="line">ll n;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100010</span>][<span class="number">20</span>];</span><br><span class="line">ll vis[<span class="number">20</span>];</span><br><span class="line">ll ba[<span class="number">25</span>];</span><br><span class="line">ll sum[<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ba[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>; i&lt;<span class="number">25</span>; i++)&#123;</span><br><span class="line">        ba[i]=ba[i<span class="number">-1</span>]*<span class="number">10</span>%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s[i]);</span><br><span class="line">        ll len=<span class="built_in">strlen</span>(s[i]);</span><br><span class="line">        vis[len]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">18</span>; i&gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">        sum[i]=sum[i+<span class="number">1</span>]+vis[i];</span><br><span class="line">        <span class="comment">//printf("%lld %lld %lld\n",i,sum[i],vis[2]);</span></span><br><span class="line">    &#125;</span><br><span class="line">    ll cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll ii=<span class="number">0</span>; ii&lt;n; ii++)&#123;</span><br><span class="line">        ll c=<span class="built_in">strlen</span>(s[ii]);</span><br><span class="line">        <span class="keyword">for</span>(ll i=c; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(vis[i]==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            ll tmp=<span class="number">0</span>;</span><br><span class="line">            ll f=<span class="number">-1</span>;</span><br><span class="line">            <span class="comment">//puts(s[ii]);</span></span><br><span class="line">            <span class="keyword">for</span>(ll k=<span class="number">0</span>; k&lt;c-i; k++)&#123;</span><br><span class="line">                tmp=(tmp*<span class="number">10</span>)%mod;</span><br><span class="line">                tmp=(tmp+s[ii][k]-<span class="string">'0'</span>)%mod;</span><br><span class="line">                f=k;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp=(tmp*ba[(i)*<span class="number">2</span>])%mod*(vis[i]*<span class="number">2</span>)%mod;</span><br><span class="line">            <span class="comment">//printf("%lld &amp;&amp; %lld %lld %lld\n",tmp,f,ba[i*2],c);</span></span><br><span class="line">            f++;</span><br><span class="line">            ll tmpp=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(ll k=f; k&lt;c; k++)&#123;</span><br><span class="line">                tmpp=(tmpp+(s[ii][k]-<span class="string">'0'</span>))%mod;</span><br><span class="line">                <span class="comment">//printf("%c %lld\n",s[ii][k],tmpp);</span></span><br><span class="line">                <span class="keyword">if</span>(k&lt;c<span class="number">-1</span>) tmpp=(tmpp*<span class="number">100</span>)%mod;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//printf("%lld %lld %lld\n",tmpp,tmpp*10,sum[c]);</span></span><br><span class="line">            <span class="keyword">if</span>(tmp==<span class="number">0</span>) tmp=(tmp+((tmpp+tmpp*<span class="number">10</span>)*sum[c]%mod))%mod;</span><br><span class="line">            <span class="keyword">else</span> tmp=(tmp+((tmpp+tmpp*<span class="number">10</span>)*vis[i]%mod))%mod;</span><br><span class="line">            ans=(ans+tmp)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//printf("%lld %lld\n",tmp,tmp*10);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans%mod);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/Wechat.png" alt="Hope_Y 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.jpg" alt="Hope_Y 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/树链剖分/" rel="next" title="树链剖分">
+                <i class="fa fa-chevron-left"></i> 树链剖分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/19/kmp/" rel="prev" title="kmp&exkmp">
+                kmp&exkmp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/00.jpg" alt="Hope_Y">
+            
+              <p class="site-author-name" itemprop="name">Hope_Y</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hopey233" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1954105421@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Drinks-Choosing"><span class="nav-text">A.Drinks Choosing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Sport-Mafia"><span class="nav-text">B.Sport Mafia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Basketball-Exercise"><span class="nav-text">C.Basketball Exercise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D1-Submarine-in-the-Rybinsk-Sea"><span class="nav-text">D1.Submarine in the Rybinsk Sea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D2-Submarine-in-the-Rybinsk-Sea"><span class="nav-text">D2.Submarine in the Rybinsk Sea</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hope_Y</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/hopey233/hopey233.github.io">Hope_Y</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">QAQ-
+  I can do all things
+  </div>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+</span>
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5PmmFV0NaDBc4yxtJHhmo02r-gzGzoHsz',
+        appKey: 'vmJwEjA28DWtqGUMfE08B8Cr',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
