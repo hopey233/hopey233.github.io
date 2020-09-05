@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hope_Y's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="软件工程笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程">
+<meta property="og:url" content="http://yoursite.com/2020/02/27/软件工程/index.html">
+<meta property="og:site_name" content="Hope_Y&#39;s blog">
+<meta property="og:description" content="软件工程笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%AE%9E%E9%99%85%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/V%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%BB%9F%E4%B8%80%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%9F%BA%E4%BA%8E%E6%9E%84%E4%BB%B6%E7%9A%84%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E8%BF%87%E7%A8%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%8E%AF%E5%A2%83%E5%9B%BE.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%AC%A6%E5%8F%B7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Warnier%E5%9B%BE.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A8%8B%E5%BA%8F%E6%B5%81%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%A8%8B%E5%BA%8F%E6%B5%81%E5%9B%BE%E7%AC%A6%E5%8F%B7.png">
+<meta property="og:image" content="http://yoursite.com/images/N-S%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/images/PAD%E5%9B%BE.png">
+<meta property="og:updated_time" content="2020-08-23T12:45:43.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件工程">
+<meta name="twitter:description" content="软件工程笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/27/软件工程/">
+
+
+
+  <script> 
+   (function(){
+          if(''){
+              if (prompt('请输入文章密码') !== ''){
+                  alert('密码错误！');
+                  history.back();
+              }
+          }
+      })();
+  </script>
+
+  <title>软件工程 | Hope_Y's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hope_Y's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/软件工程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hope_Y">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/00.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hope_Y's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件工程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-27T15:47:16+08:00">
+                2020-02-27
+              </time>
+            
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-23T20:45:43+08:00">
+                2020-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课堂笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">课堂笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/27/软件工程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/27/软件工程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>软件工程笔记</p>
+<a id="more"></a>
+
+<h1 id="软件与软件工程的概念"><a href="#软件与软件工程的概念" class="headerlink" title="软件与软件工程的概念"></a>软件与软件工程的概念</h1><h2 id="1-1-软件的概念、特性和分类"><a href="#1-1-软件的概念、特性和分类" class="headerlink" title="1.1 软件的概念、特性和分类"></a>1.1 软件的概念、特性和分类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>$$<br>软件（与硬件相互依存）<br>\begin{cases}<br>程序：按事先设计的功能和性能要求执行的指令序列<br>\newline<br>数据：使程序能正常操纵信息的数据结构<br>\newline<br>文档：与程序开发、维护和使用有关的图文材料<br>\end{cases}<br>$$</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>形态特性：无形的逻辑实体</p>
+<p>智能特性：复杂的智力产品</p>
+<p>开发特性：软件的开发至今没有完全摆脱手艺的开发方式</p>
+<p>质量特性：目前还没有得到完全没有缺陷的软件产品</p>
+<p>生产特性：无明显制造过程，按需制作</p>
+<p>管理特性：开发管理特性</p>
+<p>环境特性：依赖编译环境</p>
+<p>维护特性：比硬件更加复杂的维护</p>
+<p>废弃特性：没有老化而被废弃的问题，但是存在退化问题</p>
+<p>应用特性：无可取代的地位</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>系统软件：底层软件，服务于其他程序的程序</p>
+<p>应用软件：解决特定业务所需要的独立应用程序</p>
+<p>工程/科学软件：“数值计算”</p>
+<p>嵌入式软件：某个产品中特定功能的软件</p>
+<p>产品线软件：为多个不同用户提供特定功能</p>
+<p>Web/移动应用软件：App</p>
+<p>人工智能软件：智能</p>
+<h2 id="1-2-软件危机与软件工程"><a href="#1-2-软件危机与软件工程" class="headerlink" title="1.2 软件危机与软件工程"></a>1.2 软件危机与软件工程</h2><p>软件危机：计算机软件的开发、运行和维护过程所遇到的一系列严重问题</p>
+<p>主要表现（征兆）：软件发展速度远远滞后于硬件的发展（判断时只需判断是否对该软件有负面反馈）</p>
+<p>原因：开发周期长、成本高、质量差、维护困难</p>
+<h2 id="1-3-软件工程的目标"><a href="#1-3-软件工程的目标" class="headerlink" title="1.3 软件工程的目标"></a>1.3 软件工程的目标</h2><p>运用先进的开发技术和管理方法提高软件的质量和生产率（花更少的代价做最好产品）</p>
+<p>功能性、可靠性、易于使用性、效率、可维护性、可移植性</p>
+<h2 id="1-4-软件生存期"><a href="#1-4-软件生存期" class="headerlink" title="1.4 软件生存期"></a>1.4 软件生存期</h2><p>三时期：软件定义（做什么）—-&gt;软件开发（如何做）—-&gt;运行维护（使软件持久地满足用户的需要）</p>
+<h2 id="1-5-软件工程方法概述"><a href="#1-5-软件工程方法概述" class="headerlink" title="1.5 软件工程方法概述"></a>1.5 软件工程方法概述</h2><p>软件开发全过程中使用的一整套技术方案成为方法学（范型）</p>
+<p>方法学三要素：过程、方法和工具</p>
+<p>传统方法、面向对象方法、面向服务方法、面向数据方法、形式化方法</p>
+<h2 id="1-6-软件工具概述"><a href="#1-6-软件工具概述" class="headerlink" title="1.6 软件工具概述"></a>1.6 软件工具概述</h2><p>支持软件开发过程的工具、支持软件维护过程的工具、支持软件管理过程和支持过程的工具</p>
+<h2 id="1-7-软件工程知识体系及知识域"><a href="#1-7-软件工程知识体系及知识域" class="headerlink" title="1.7 软件工程知识体系及知识域"></a>1.7 软件工程知识体系及知识域</h2><p>四个基础类的知识域：软件工程经济学、计算基础、工程基础和教学基础</p>
+<h2 id="小测验"><a href="#小测验" class="headerlink" title="小测验"></a>小测验</h2><p>1、( <strong>D</strong> ) 下列的叙述中，_ (1)_ 不是软件危机的征兆。</p>
+<p>A.软件产品往往不满足用户的真实需求</p>
+<p>B.软件产品常常是不可维护的</p>
+<p>C.软件开发成本和进度的估计不准确.</p>
+<p>D.随着软件规模的增大，其复杂性不断增加</p>
+<p>2、( <strong>A</strong> ) 下列的叙述中，(2)_ 不是软件危机发 生的主要原因。</p>
+<p>A.缺乏可视化的开发工具</p>
+<p>B.随着软件规模的增大，其复杂性不断增加</p>
+<p>c.需求说明不充分或存在错误</p>
+<p>D.软件开发过程不规范，缺少方法论和规范的指导</p>
+<p>3、( <strong>A</strong> ) 下面的_ (3)_ 不再是现代软件 工程师关注的问题。</p>
+<p>A.为什么计算机硬件的成本这么高?</p>
+<p>B.为什么软件需要很长时间才能完成?</p>
+<p>c.为什么开发一个软件的成本这么高?</p>
+<p>D.为什么不能在产品发布前去除软件错误?</p>
+<p>4、( <strong>C</strong> )软件会逐渐退化而不会磨损，其原因在于_ (4)_ 。</p>
+<p>A.软件通常暴露在恶劣的环境下</p>
+<p>B.软件错误通常发生在使用之后</p>
+<p>C.不断的变更使组件接口之间引起错误</p>
+<p>D.软件备件很难订购  </p>
+<p>5、( <strong>B</strong> ) 软件工程的基本目标是_ (5)_ 。</p>
+<p>A.消除软件固有的复杂性</p>
+<p>B.开发高质量的软件</p>
+<p>C.努力发挥开发人员的创造性潜能</p>
+<p>D.更好地维护正在使用的软件产品  </p>
+<h1 id="软件生存期模型"><a href="#软件生存期模型" class="headerlink" title="软件生存期模型"></a>软件生存期模型</h1><h2 id="2-1-瀑布模型"><a href="#2-1-瀑布模型" class="headerlink" title="2.1 瀑布模型"></a>2.1 瀑布模型</h2><p><img src="/images/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>1）阶段间具有顺序性和依赖性。其中包含两重含义：</p>
+<p>​        必须等前一阶段的工作完成之后，才能开始后一阶段的工作。</p>
+<p>​        前一阶段的输出文档就是后一阶段的输入文档。</p>
+<p>2）推迟实现的观点。</p>
+<p>​        瀑布模型在编码之前设置了系统分析和系统设计的各个阶段。分析与设计阶段的基本任务规定，在这两个阶段主要考虑目标系统的逻辑模型，不涉及软件的物理实现。</p>
+<p>​        清楚地区分逻辑设计与物理设计，尽可能推迟程序的物理实现，是按照瀑布模型开发软件的一条重要的指导思想。</p>
+<p>3）质量保证的观点。</p>
+<p>​        每个阶段都必须完成规定的文档，没有交出合格的文档就是没有完成该阶段的任务。</p>
+<p>​        每个阶段结束前都要对所完成的文档进行评审，以便及时发现问题，改正错误。</p>
+<p>在实际开发过程中，瀑布模型是带有反馈的，图中实线箭头表示开发过程，虚线箭头表示维护过程。当在后面阶段发现前面阶段的错误时，需要沿图中左侧的反馈线返回前面的阶段，修正前面阶段的产品之后再回来继续完成后面阶段的任务。</p>
+<p><img src="/images/%E5%AE%9E%E9%99%85%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>瀑布模型的变体：V模型</p>
+<p><img src="/images/V%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>优点：可强迫开发人员采用规范化的方法、严格地规定了每个阶段必须提交的文档、要求每个阶段交出的所有产品都必须是经过验证（评审）的。</p>
+<p>缺点：由于瀑布模型几乎完全依赖于书面的规格说明，很可能导致最终开发出的软件产品不能真正满足用户的需要。如果需求规格说明与用户需求之间有差异，就会发生这种情况、瀑布模型只适用于项目开始时需求已确定的情况。</p>
+<h2 id="2-2-快速原型模型"><a href="#2-2-快速原型模型" class="headerlink" title="2.2 快速原型模型"></a>2.2 快速原型模型</h2><p>快速原型是快速建立起来的可以在计算机上运行的程序，它所能完成的功能往往是最终产品功能的一个子集。</p>
+<p><img src="/images/%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>优点：</p>
+<p>有助于满足用户的真实需求。</p>
+<p>原型系统已经通过与用户的交互而得到验证，据此产生的规格说明文档能够正确地描述用户需求。</p>
+<p>软件产品的开发基本上是按线性顺序进行。</p>
+<p>因为规格说明文档正确地描述了用户需求，所以在开发过程的后续阶段不会因发现规格说明文档的错误而进行较大的返工。</p>
+<p>开发人员通过建立原型系统已经学到了许多东西，因此，在设计和编码阶段发生错误的可能性比较小，这自然减少了在后续阶段需要改正前面阶段所犯错误的可能性。</p>
+<p>快速原型的本质是“快速”。开发人员应该尽可能快地建造出原型系统，以加速软件开发过程，节约软件开发成本。原型的用途是获知用户的真正需求，一旦需求确定了，原型就可以抛弃，当然也可以在原型的基础上进行开发。</p>
+<h2 id="2-3-增量模型"><a href="#2-3-增量模型" class="headerlink" title="2.3 增量模型"></a>2.3 增量模型</h2><p>使用增量模型开发软件时，把软件产品作为一系列的增量构件来设计、编码、集成和测试。</p>
+<p>如果客户要求你在一个短期很难完成的产品，那么就适合增量模型，先提交一个或几个增量，后续再做补充</p>
+<p>使用增量模型时，第一个增量构件往往实现软件的基本需求，提供最核心的功能。；第二个增量构件提供更完善的编辑和文档生成功能；第三个增量构件实现拼写和语法检查功能；第四个增量构件完成高级的页面排版功能。</p>
+<p><img src="/images/%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>优点：风险低、适用于紧急项目、由于核心功能是最先交付的，后续测试多，故不易失败、制作者有较长时间学习，减少失败风险</p>
+<p>注意：在把每个新的增量构件集成到现有软件体系结构中时，必须不破坏原来已经开发出来的产品；软件体系结构必须是开放的，即向现有产品中加入新构件的过程必须简单、方便。</p>
+<h2 id="2-4-螺旋模型"><a href="#2-4-螺旋模型" class="headerlink" title="2.4 螺旋模型"></a>2.4 螺旋模型</h2><p>螺旋模型最初是Boehm于1988年提出来的。该模型将瀑布模型与快速原型模型结合起来，并且加入两种模型均忽略了的风险分析。螺旋模型的基本思想是，使用原型及其他方法来尽量降低风险。</p>
+<p>理解这种模型的一个简便方法，是把它看作在每个阶段之前都增加了风险分析过程的快速原型模型，如图2-7所示。</p>
+<p><img src="/images/%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<p>优点：</p>
+<p>对可选方案和约束条件的强调有利于已有软件的重用，也有助于把软件质量作为软件开发的一个重要目标。</p>
+<p>减少了过多测试或测试不足所带来的风险。</p>
+<p>在螺旋模型中维护只是模型的另一个周期，因而在维护和开发之间并没有本质区别。</p>
+<p>注意：螺旋模型是风险驱动的，因此要求软件开发人员必须具有丰富的风险评估经验和这方面的专门知识。</p>
+<h2 id="2-5-喷泉模型"><a href="#2-5-喷泉模型" class="headerlink" title="2.5 喷泉模型"></a>2.5 喷泉模型</h2><p>喷泉模型是典型面对对象生命周期模型</p>
+<p>“喷泉”一词体现了迭代和无间隙特性。图中代表不同阶段的圆圈相互重叠，这明确表示两个活动之间存在重叠。用面向对象方法开发软件时，在分析、设计和编码等项开发活动之间并不存在明显的边界，而各阶段在表示方法上的一致性也保证了各项开发活动之间的无缝过渡。图中一个阶段内的向下箭头代表该阶段中的迭代或求精。</p>
+<p><img src="/images/%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<h2 id="2-6-统一过程"><a href="#2-6-统一过程" class="headerlink" title="2.6 统一过程"></a>2.6 统一过程</h2><p>统一建模语言UML</p>
+<p>初始阶段 —-&gt; 细化节点 —-&gt; 构造（构建）阶段 —-&gt; 移交阶段</p>
+<p><img src="/images/%E7%BB%9F%E4%B8%80%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<h2 id="2-7-基于构件的开发模型"><a href="#2-7-基于构件的开发模型" class="headerlink" title="2.7 基于构件的开发模型"></a>2.7 基于构件的开发模型</h2><p><img src="/images/%E5%9F%BA%E4%BA%8E%E6%9E%84%E4%BB%B6%E7%9A%84%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></p>
+<h2 id="2-8-敏捷过程"><a href="#2-8-敏捷过程" class="headerlink" title="2.8 敏捷过程"></a>2.8 敏捷过程</h2><p>一种较为广泛的敏捷过程—-&gt;极限编程过程</p>
+<p><img src="/images/%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E8%BF%87%E7%A8%8B.jpg" alt="alt"></p>
+<h2 id="小测试"><a href="#小测试" class="headerlink" title="小测试"></a>小测试</h2><p>  1、( A )某公司要开发一个软件产品，产品的某些需求是明确的，而某些需求则需要进一步细化。由于市场竞争的压力，产品需要尽快上市，则开发该软件产品最不适合采用_ (1)_ 过程模型。</p>
+<p>(1): A.瀑布 B.快速原型 C.增量 D.螺旋</p>
+<p>2、( D ) 某软件公司欲开发-一个基于Web的考勤管理系统。在项目初期,客户对系统的基本功能、表现形式等要求并不明确，在这种情况下，采用_ (2)_ 比较合适。</p>
+<p>(2): A.瀑布模型 B.螺旋模型 C.喷泉模型 D.极限编程</p>
+<p>3 4、( A )（ C ）某开发小组欲为一公司开发一个产品控制软件,监控产品的生产和销售过程,从购买各种材料开始,到产品的加工和销售进行全程跟踪。购买材料的流程、产品的加工过程以及销售过程可能会发生变化。该软件的开发最不适宜采用_ (3)_ 模型，主要是因为这种模型_ (4)_</p>
+<p>(3): A.瀑布 B.快速原型 C.增量 D.喷泉</p>
+<p>(4): A.不能解决风险 B.不能快速提交软件C.难以适应变化的需求 D.不能理解用户的需求</p>
+<p>5、( C )新软件项目与过去成功开发过的一个项目类似，但规模更大，此时比较适合使用(5) 进行项目开发设计。</p>
+<p>(5): A.快速原型法 B .变换模型 C.瀑布模型 D.螺旋模型  </p>
+<p> 6、( B ) 某开发小组欲开发一个超大规模软件:使用通信卫星,在订阅者中提供、监视和控制移动电话通信,则最不适宜采用_(6) _过程模型。</p>
+<p>(6): A.瀑布 B.快速原型 C.螺旋 D.喷泉</p>
+<p>7 8、( C ) ( A ) 若用户需求不清晰且经常发生变化，但系统规模不太大且不太复杂，则最适宜采用_ (7)_ 过程模型，对于数据处理领域的问题，若系统规模不太大且不太复杂，需求变化也不大，则最适宜采用_ (8)_过程模型。</p>
+<p>(7): A.瀑布模型B.螺旋模型C.快速原型D.喷泉模型</p>
+<p>(8): A.瀑布模型 B.螺旋模型 C.快速原型 D.喷泉模型</p>
+<p>9、( A ) 支持面向对象技术的软件过程模型是_ (9)_</p>
+<p>(9): A.喷泉模型 B .螺旋模型 C.增量模型 D.瀑布模型</p>
+<p>10、( C ) 某企业拟开发-个企业信息管理系统，系统功能与多个部门的业务相关。现希望该系统能够尽快投入使用，系统功能可以在使用过程中改善，则最适宜采用的软件过程模型为_ (10)_ 。</p>
+<p>(10): A.瀑布模型 B. 原型模型 C.增量模型 D.螺旋模型  </p>
+<h1 id="软件需求获取与结构化分析"><a href="#软件需求获取与结构化分析" class="headerlink" title="软件需求获取与结构化分析"></a>软件需求获取与结构化分析</h1><p><strong>任务</strong></p>
+<ul>
+<li>发现和分析问题</li>
+<li>与用户交流</li>
+<li>从数据、过程和接口三个方面观察问题的不同侧面</li>
+<li>将需求文档化：用例、决策表、决策树等</li>
+</ul>
+<p><strong>原则</strong></p>
+<ul>
+<li>深入浅出（获取的需求尽可能的详细）</li>
+<li>以流程为主线的原则</li>
+</ul>
+<p><strong>结构化分析方法</strong></p>
+<ul>
+<li><p>结构化模型</p>
+<p>核心是<strong>数据字典</strong>，下面三种图围绕该核心</p>
+<ul>
+<li><strong>数据流图</strong>（DFD）：描述数据在系统中如何被传送和变换，以及子功能</li>
+<li><strong>实体-关系图</strong>（E-R图）：描述对象以及数据对象之间的关系，用于数据建模</li>
+<li><strong>状态迁移图</strong>（STD）：描述系统对外部事件如何响应</li>
+<li><img src="/images/%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B.jpg" alt="alt"></li>
+</ul>
+</li>
+<li><p>基本符号</p>
+<p><img src="/images/%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7.jpg" alt="alt"></p>
+</li>
+<li><p>多个数据流之间的关系</p>
+<p><img src="/images/%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.jpg" alt="alt"></p>
+</li>
+<li><p>环境图（顶层数据流图）</p>
+<p><img src="/images/%E7%8E%AF%E5%A2%83%E5%9B%BE.jpg" alt="alt"></p>
+</li>
+<li><p>数据流图的分层</p>
+<ul>
+<li>将顶层数据流图进行功能分解得到一层数据流图</li>
+<li>将一层数据流图的功能进行进一步分解得到二层数据流图</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据建模</strong></p>
+<ul>
+<li>E-R图</li>
+</ul>
+<p><strong>行为建模</strong></p>
+<ul>
+<li><img src="/images/%E8%A1%8C%E4%B8%BA%E5%BB%BA%E6%A8%A1.jpg" alt="alt"></li>
+<li>上面是有触发事件行为的状态图，当然也可以有无事件触发的</li>
+<li>事件：事件说明[守卫条件]/动作表达式<ul>
+<li>事件说明的语法为：事件名（参数表）</li>
+<li>守卫条件是一个布尔表达式，优先看事件说明的真值</li>
+<li>动作表达式是一个过程表达式，当状态开始时执行该表达式</li>
+</ul>
+</li>
+</ul>
+<p><strong>数据字典</strong></p>
+<ul>
+<li>词条描述：数据流词条、数据元素词条、数据存储文件词条、加工词条、数据源点及汇点词条</li>
+<li>数据结构<ul>
+<li>定义式<ul>
+<li><img src="/images/%E5%AE%9A%E4%B9%89%E5%BC%8F%E7%AC%A6%E5%8F%B7.jpg" alt="alt"></li>
+</ul>
+</li>
+<li>Warnier图<ul>
+<li>下图给出了“存折”的Warnier图。在图中，用花括号“{”表示层次关系，在同一括号下，自上到下是顺序排列的数据项。在有些数据项的名字后面附加了圆括号，给出该数据项重复的次数。如“字母（2，24）”表示字母有2~24个；“整数（11）”表示数字占11位；“浮点数（9，2）”表示浮点数整数部分占7位，小数部分占2位；“摘要（0，1）”表示摘要可有可无，若有就占一栏。此外，用符号⊕表示二者选一的选择关系</li>
+<li><img src="/images/Warnier%E5%9B%BE.jpg" alt="alt"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>加工规格说明</strong></p>
+<ul>
+<li>决策表</li>
+<li>决策树</li>
+</ul>
+<p><strong>系统需求规格说明</strong></p>
+<ul>
+<li>需求规格说明（SRS）</li>
+<li>数据需求说明（DRD）</li>
+<li>完整性、无歧义性、一致性、可验证性、可修改性、可追踪性</li>
+</ul>
+<p><strong>需求评审</strong></p>
+<p><strong>需求管理</strong></p>
+<ul>
+<li>需求跟踪</li>
+<li>需求变更管理</li>
+</ul>
+<h1 id="结构化设计方法"><a href="#结构化设计方法" class="headerlink" title="结构化设计方法"></a>结构化设计方法</h1><p><strong>设计原则</strong></p>
+<ul>
+<li><p>分而治之</p>
+</li>
+<li><p>模块独立性</p>
+</li>
+<li><p>提高抽象层次</p>
+</li>
+<li><p>复用性设计</p>
+</li>
+<li><p>灵活性设计</p>
+</li>
+</ul>
+<p><strong>模块化设计</strong></p>
+<ul>
+<li>结构：网状与树状</li>
+<li>结构图：菱形有条件调用，扇形表示反复调用；信息流（数据信息[空心圆]和控制信息[实心圆]）</li>
+</ul>
+<p><strong>体系结构设计</strong></p>
+<ul>
+<li>变换型数据流与变换型系统结构图（数据变换）</li>
+<li>事务型数据流与事务型系统结构图（事务变换）</li>
+</ul>
+<p><strong>模块间的耦合和内聚</strong></p>
+<ul>
+<li><p>耦合</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>低</th>
+<th></th>
+<th></th>
+<th>耦合性</th>
+<th></th>
+<th></th>
+<th>高</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非直接耦合</td>
+<td>数据耦合</td>
+<td>标记耦合</td>
+<td>控制耦合</td>
+<td>外部耦合</td>
+<td>公共耦合</td>
+<td>内容耦合</td>
+</tr>
+<tr>
+<td><strong>强</strong></td>
+<td></td>
+<td></td>
+<td><strong>模块独立性</strong></td>
+<td></td>
+<td></td>
+<td><strong>弱</strong></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>内聚</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>高</th>
+<th></th>
+<th></th>
+<th>内聚性</th>
+<th></th>
+<th></th>
+<th>低</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能内聚</td>
+<td>信息内聚</td>
+<td>通信内聚</td>
+<td>过程内聚</td>
+<td>时间内聚</td>
+<td>逻辑内聚</td>
+<td>巧合内聚</td>
+</tr>
+<tr>
+<td><strong>强</strong></td>
+<td></td>
+<td></td>
+<td><strong>模块独立性</strong></td>
+<td></td>
+<td></td>
+<td>弱</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>程序化程序设计</strong></p>
+<ul>
+<li>程序流程图<ul>
+<li>顺序型</li>
+<li>选择型</li>
+<li>先判定型(while)</li>
+<li>后判定型(until)</li>
+<li>多情况型(case)</li>
+<li><img src="/images/%E7%A8%8B%E5%BA%8F%E6%B5%81%E5%9B%BE.png" alt="alt"></li>
+<li><img src="/images/%E7%A8%8B%E5%BA%8F%E6%B5%81%E5%9B%BE%E7%AC%A6%E5%8F%B7.png" alt="alt"></li>
+</ul>
+</li>
+<li>N-S图<ul>
+<li><img src="/images/N-S%E5%9B%BE.png" alt="alt"></li>
+<li>每个矩形框都定义了功能域，清晰可见</li>
+<li>转移不能任意规定</li>
+<li>很容易确定局部数据和全局数据的作用域</li>
+<li>容易表现嵌套关系，也可以表示模块的层次</li>
+</ul>
+</li>
+<li>PAD图<ul>
+<li><img src="/images/PAD%E5%9B%BE.png" alt="alt"></li>
+<li>结构清晰</li>
+<li>易于自动装换成高级语言源程序</li>
+<li>既可以表示程序逻辑，也可以描绘数据结构</li>
+<li>支持自顶向下、逐步求精的方法</li>
+</ul>
+</li>
+<li>伪代码<ul>
+<li>简单陈述句结构：避免复合语句</li>
+<li>判定结构：IF-THEN-ELSE 或者 CASE-OF</li>
+<li>重复结构：WHILE-DO 或者 REPEAT-UNTIL</li>
+</ul>
+</li>
+<li>自顶向下、逐步细化</li>
+</ul>
+<h1 id="软件测试方法"><a href="#软件测试方法" class="headerlink" title="软件测试方法"></a>软件测试方法</h1><p>这里需要特别注意一下：确认测试、验证测试、集成测试、单元测试都是软件测试的步骤，而不是测试的方法</p>
+<p><strong>黑盒测试</strong></p>
+<p>测试人员不清楚软件内部的构造，只通过软件说明书来测试程序是否合格<del>（类似于王大测试计组实验，不知道里面是怎么实现的，只在乎输入和输出）</del></p>
+<p><strong>白盒测试</strong></p>
+<p>与黑盒测试相反，直到程序的内部工作流程图，然后精心造样例来发现错误</p>
+<ul>
+<li>逻辑覆盖<ul>
+<li>$\vee \rightarrow AND$     $\wedge \rightarrow OR$</li>
+<li>将程序段的每一处分支都表示出来</li>
+</ul>
+</li>
+<li>语句覆盖<ul>
+<li>格式：【输入的(x,x,x),输出的(x,x,x)】覆盖【$L_i$】</li>
+<li>也就是说要构造若干组数据使得能覆盖某一条线路$L_i$</li>
+</ul>
+</li>
+<li>判定（分支）覆盖<ul>
+<li>构造若干数据使得覆盖条件分支的真和假分支至少经历一次</li>
+</ul>
+</li>
+<li>条件覆盖<ul>
+<li>构造若干数据使得每个判断里面的语句的子语句的真和假至少经过一次</li>
+<li>但是可能不会覆盖所有的判定的分支</li>
+</ul>
+</li>
+<li>判定-条件覆盖<ul>
+<li>将上述两种覆盖结合</li>
+</ul>
+</li>
+<li>条件组合覆盖<ul>
+<li>对每个判断里面的子语句进行真假的组合得到$2^n$个组合，然后构造使得能覆盖这些组合</li>
+<li>比如$T_1T_2 ,\overline{T_1}T_2 ,T_1\overline{T_2}, \overline{T_1T_2}$ ，就是能全部出现在测试样例中</li>
+</ul>
+</li>
+<li>路径覆盖<ul>
+<li>能覆盖所有的路径</li>
+</ul>
+</li>
+</ul>
+<p><strong>路径覆盖</strong></p>
+<ul>
+<li>程序控制流程图</li>
+<li>程序环路的复杂性<ul>
+<li>$V(G) = E-N+2$       <ul>
+<li>$E:$边数  ， $N:$点数（欧拉公式）</li>
+</ul>
+</li>
+<li>$V(G) = P+1$<ul>
+<li>$P:$控制流图中的判定节点数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>独立路径<ul>
+<li>包括一组以前没有处理的语句或条件的一条路径，不唯一</li>
+</ul>
+</li>
+<li>步骤<ul>
+<li>由过程到处控制流图</li>
+<li>计算得到的控制流图的环路复杂性</li>
+<li>准备测试用例，确保基本路径集中的每一条路径的执行</li>
+<li>图形矩阵<ul>
+<li>邻接矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>黑盒测试</strong></p>
+<ul>
+<li>等价类的划分<ul>
+<li>划分等价类：有效等价类和无效等价类</li>
+<li>确定测试用例<ul>
+<li>为每一个等价类规定一个唯一的编号</li>
+<li>设计一个新的测试用例，使其尽可能多地覆盖尚未被覆盖的有效等价类，直到所有有效等价类都被覆盖为止</li>
+<li>设计一个新的测试用例，使其仅覆盖一个尚未被覆盖的无效等价类，直到所有无效等价类都被覆盖为止</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>边界值分析<ul>
+<li>相对与输入等价类和输出等价类而言，稍微高于边界值或者低于边界值的特定的情况</li>
+</ul>
+</li>
+</ul>
+<p><strong>软件测试的策略</strong></p>
+<p>$4$个步骤：单元测试、组装测试、确认测试、系统测试</p>
+<ul>
+<li>单元测试（模块测试）<ul>
+<li>模块接口测试、局部数据结构测试、路径测试、错误处理测试、边界测试</li>
+<li>驱动模块：相当于被测模块的主程序，接受数据，把数据传送给被测模块，最后输出结果</li>
+<li>桩模块（存根模块）：用以代替被测模块调用的子模块，可做少量的数据操作，不需要把子模块所有功能带入，但是也不允许什么都不做</li>
+</ul>
+</li>
+<li>组装测试（集成/联合测试）<ul>
+<li>在单元测试的基础上，需要将所有的模块按照设计要求组装成为系统</li>
+<li>一次性组装方式：对每个模块分别测试，然后全部组装到一起进行测试</li>
+<li>增值式组装方式：边加入边测试<ul>
+<li>自顶向下增值方式：先进行主（根）模块，然后DFS</li>
+<li>自底向上增值方式：一层一层往上，需要全部组装完才得到整个实体，但是无需考虑桩模块</li>
+<li>混合增值式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确认测试<ul>
+<li>验证软件的有效性，功能特性是否满足用户所需</li>
+<li>黑盒测试、软件配置复查、$\alpha$测试（开发环境或内部模拟环境）、$\beta$测试（单用户或多用户在实际情况下的测试）、验收测试、确认测试结果（符合或不符合）</li>
+</ul>
+</li>
+<li>系统测试<ul>
+<li>结合计算机硬件、外设、某些支持的软件等结合在一起测试</li>
+<li>类型：功能测试、回归测试、可靠性测试、强度测试、性能测试、恢复测试、启动/关机测试、配置测试、安全性测试、可使用性测试、可支持性测试、安装测试、互连测试、兼容性测试、容量测试、文档测试</li>
+</ul>
+</li>
+<li>人工测试<ul>
+<li>一些人工的模拟技术和一些类似动态分析所使用的方法对程序分析</li>
+</ul>
+</li>
+<li>自动化测试<ul>
+<li>脚本调试</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="软件维护"><a href="#软件维护" class="headerlink" title="软件维护"></a>软件维护</h1><p><strong>类型</strong></p>
+<ul>
+<li>改正性维护：特定环境下所暴露出来的问题</li>
+<li>适应性维护：对新环境的适应维护</li>
+<li>完善性维护：加新功能</li>
+<li>预防性维护</li>
+<li>维护需要申请维护报告与记录</li>
+</ul>
+<p><strong>逆向工程</strong></p>
+<p><strong>重构</strong></p>
+<p><strong>程序修改步骤</strong></p>
+<ul>
+<li>分析和理解程序</li>
+<li>实施修改</li>
+<li>重新验证程序</li>
+</ul>
+<p><strong>副作用</strong></p>
+<ul>
+<li>修改代码副作用</li>
+<li>修改数据副作用</li>
+<li>文档副作用</li>
+</ul>
+<p><strong>重新验证程序</strong></p>
+<ul>
+<li>静态确认</li>
+<li>确认测试</li>
+<li>维护后的验收</li>
+</ul>
+<p><strong>软件的维护性</strong></p>
+<ul>
+<li>特性：易分析性、易变更性、稳定性、测试性、维护性符合性</li>
+<li>提高软件维护性方法<ul>
+<li>使用提高软件维护性的开发技术和工具<ul>
+<li>模块化</li>
+<li>结构化程序设计</li>
+</ul>
+</li>
+<li>实施开发阶段产品的维护性审查</li>
+<li>改进文档</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>thanks!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/Wechat.png" alt="Hope_Y 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.jpg" alt="Hope_Y 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/26/工程经济学/" rel="next" title="工程经济学">
+                <i class="fa fa-chevron-left"></i> 工程经济学
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/28/Day1/" rel="prev" title="Day1">
+                Day1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/00.jpg" alt="Hope_Y">
+            
+              <p class="site-author-name" itemprop="name">Hope_Y</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hopey233" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1954105421@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件与软件工程的概念"><span class="nav-text">软件与软件工程的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-软件的概念、特性和分类"><span class="nav-text">1.1 软件的概念、特性和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-软件危机与软件工程"><span class="nav-text">1.2 软件危机与软件工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-软件工程的目标"><span class="nav-text">1.3 软件工程的目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-软件生存期"><span class="nav-text">1.4 软件生存期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-软件工程方法概述"><span class="nav-text">1.5 软件工程方法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-软件工具概述"><span class="nav-text">1.6 软件工具概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-软件工程知识体系及知识域"><span class="nav-text">1.7 软件工程知识体系及知识域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测验"><span class="nav-text">小测验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件生存期模型"><span class="nav-text">软件生存期模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-瀑布模型"><span class="nav-text">2.1 瀑布模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-快速原型模型"><span class="nav-text">2.2 快速原型模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-增量模型"><span class="nav-text">2.3 增量模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-螺旋模型"><span class="nav-text">2.4 螺旋模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-喷泉模型"><span class="nav-text">2.5 喷泉模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-统一过程"><span class="nav-text">2.6 统一过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-基于构件的开发模型"><span class="nav-text">2.7 基于构件的开发模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-敏捷过程"><span class="nav-text">2.8 敏捷过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小测试"><span class="nav-text">小测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件需求获取与结构化分析"><span class="nav-text">软件需求获取与结构化分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构化设计方法"><span class="nav-text">结构化设计方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试方法"><span class="nav-text">软件测试方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件维护"><span class="nav-text">软件维护</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hope_Y</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/hopey233/hopey233.github.io">Hope_Y</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">QAQ-
+  I can do all things
+  </div>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+</span>
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5PmmFV0NaDBc4yxtJHhmo02r-gzGzoHsz',
+        appKey: 'vmJwEjA28DWtqGUMfE08B8Cr',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
