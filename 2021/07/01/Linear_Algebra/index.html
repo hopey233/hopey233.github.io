@@ -88,10 +88,18 @@
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
 <meta property="og:description" content="3Blue1Brown">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-01T15:03:23.697Z">
+<meta property="og:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2_%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E7%9F%A9%E9%98%B5.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%A4%8D%E5%90%88.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_1.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_2.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_3.png">
+<meta property="og:updated_time" content="2021-07-02T15:20:49.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Algebra">
 <meta name="twitter:description" content="3Blue1Brown">
+<meta name="twitter:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png">
 
 
 
@@ -297,8 +305,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-07-01T23:03:23+08:00">
-                2021-07-01
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-02T23:20:49+08:00">
+                2021-07-02
               </time>
             
           </span>
@@ -373,9 +381,8 @@
 
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><ul>
 <li><p>二阶行列式</p>
-<ul>
-<li>$\begin{vmatrix} a_{11} &amp; a_{12} \\  a_{21} &amp; a_{22} \\  \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}  $</li>
-</ul>
+</li>
+<li><p>$\begin{vmatrix} a_{11} &amp; a_{12} \\  a_{21} &amp; a_{22} \\  \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}  $</p>
 </li>
 <li><p>三阶行列式</p>
 <ul>
@@ -464,7 +471,7 @@
 </li>
 <li><p>伴随矩阵</p>
 <ul>
-<li>代数余子式的转置称为伴随矩阵，只有方针才有伴随矩阵，记为$A^*$</li>
+<li>代数余子式的转置称为伴随矩阵，只有方阵才有伴随矩阵，记为$A^*$</li>
 <li>$AA^* = A^*A = |A|E$</li>
 <li>$A^{−1}=\frac{1}{|A|} A^*$，若存在$A^{-1}$</li>
 <li>$(A ^ *)^{-1}=(A^{-1})^ *=\frac{1}{|A|}A$</li>
@@ -489,8 +496,40 @@
 <li>对于矩阵$\begin{bmatrix}<br>a &amp; b\\<br>c &amp; d<br>\end{bmatrix}$，逆矩阵为$\frac{1}{ad-bc}\begin{bmatrix}<br>d &amp; -b\\<br>-c &amp; a<br>\end{bmatrix}$</li>
 </ul>
 </li>
-<li></li>
 </ul>
+<h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>在计算机中，向量往往是对于数据的抽象表示。</p>
+<ul>
+<li>向量的加法可以理解成向量的移动，向量的数乘可以理解为向量的缩放</li>
+<li>正交向量内积为0，$(\alpha, \beta ) = \alpha ^ T \beta = 0$</li>
+<li>向量组$\alpha _1, \alpha _2, … \alpha _s$满足自内积为1，反之内积为0，则称为标准或单位正交向量</li>
+<li>施密特正交化<ul>
+<li>线性无关向量组$\alpha_1, \alpha_2$</li>
+<li>$\beta_1 = \alpha_1$</li>
+<li>$\beta_2 = \alpha_2 - \frac{(\alpha_2, \beta_1)}{(\beta_1, \beta_1)} \beta_1$</li>
+<li>单位化：$\eta_1 = \frac{\beta_1}{|\beta_1|}, \eta_2 = \frac{\beta_2}{|\beta_2|}$</li>
+</ul>
+</li>
+</ul>
+<h3 id="向量的线性变换"><a href="#向量的线性变换" class="headerlink" title="向量的线性变换"></a>向量的线性变换</h3><p>向量按照矩阵的坐标变换变成了另一种样式，这里的坐标变换改变x轴y轴，原点不变，所有网格线仍然等距且平行，对于更高维度的坐标系也成立。</p>
+<p>可以利用基向量来描述线性变换</p>
+<p>通过记录两个基向量$\hat{i}, \hat{j}$，就可以得到变换后的其他向量。</p>
+<p>已知向量$\overrightarrow v = \begin{bmatrix} -1 \\ 2\end{bmatrix}$</p>
+<p>变换之前的$\hat{i},\hat{j}$分别为：</p>
+<p>$\hat{i} = \begin{bmatrix} 1 \\ 0\end{bmatrix} \ \ \ \hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} \ \ \  \overrightarrow{v} = -1 \hat{i} + 2 \hat{j}$</p>
+<p>假设变换之后的$\hat{i}, \hat{j}$如下，则</p>
+<p>$\begin{aligned}<br>\hat{i} = \begin{bmatrix}<br>1 \\<br>-2<br>\end{bmatrix} \\<br>\hat{j} = \begin{bmatrix}<br>3 \\<br>0<br>\end{bmatrix} \\<br>\vec{v} = -1\hat{i} + 2 \hat{j} &amp;= \begin{bmatrix}<br>5 \\<br>2<br>\end{bmatrix} \\<br>&amp;= -1\begin{bmatrix}<br>1 \\<br>-2<br>\end{bmatrix}  + 2 \begin{bmatrix}<br>3 \\<br>0<br>\end{bmatrix} \\<br>&amp;= \begin{bmatrix}<br>1 &amp; 3 \\<br>-2 &amp; 0<br>\end{bmatrix}  \begin{bmatrix}<br>-1 \\<br>2<br>\end{bmatrix} \\<br>&amp;= \begin{bmatrix}<br>5 \\<br>2<br>\end{bmatrix} \\<br>\end{aligned}<br>$</p>
+<p>写成矩阵形式则为$\begin{bmatrix}<br>1 &amp; 3 \\<br>-2 &amp; 0<br>\end{bmatrix}  \begin{bmatrix}<br>-1 \\<br>2<br>\end{bmatrix}$</p>
+<p><img src="/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png" alt="alt"></p>
+<p><img src="/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2_%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F.png" alt="alt"></p>
+<p>如果变换后的$\hat{i}, \hat{j}$是线性相关的，说明变换后的坐标为一维空间，相当于两个基向量重合了</p>
+<h3 id="线性变换的复合与矩阵乘法"><a href="#线性变换的复合与矩阵乘法" class="headerlink" title="线性变换的复合与矩阵乘法"></a>线性变换的复合与矩阵乘法</h3><p><img src="/images/%E5%A4%8D%E5%90%88%E7%9F%A9%E9%98%B5.png" alt="alt"></p>
+<p>两个矩阵的乘积需要从右向左读，类似函数的复合。</p>
+<p><img src="/images/%E7%9F%A9%E9%98%B5%E5%A4%8D%E5%90%88.png" alt="alt"></p>
+<p>这样两个矩阵的乘积就对应了一个复合的线性变换，最终得到对应变换后的$\hat{i}, \hat{j}$</p>
+<p><img src="/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_1.png" alt="alt"></p>
+<p><img src="/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_2.png" alt="alt"></p>
+<p>更一般的情形</p>
+<p><img src="/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_3.png" alt="alt"></p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
       
     </div>
@@ -703,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
