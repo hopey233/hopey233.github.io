@@ -95,7 +95,13 @@
 <meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_1.png">
 <meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_2.png">
 <meta property="og:image" content="http://yoursite.com/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_3.png">
-<meta property="og:updated_time" content="2021-07-03T10:22:50.357Z">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_1.png">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png">
+<meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_%E9%9B%B6%E5%80%BC.gif">
+<meta property="og:image" content="http://yoursite.com/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_1.png">
+<meta property="og:image" content="http://yoursite.com/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_2.png">
+<meta property="og:updated_time" content="2021-07-03T12:59:29.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Algebra">
 <meta name="twitter:description" content="3Blue1Brown">
@@ -305,7 +311,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-07-03T18:22:50+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-03T20:59:29+08:00">
                 2021-07-03
               </time>
             
@@ -522,7 +528,7 @@
 <p><img src="/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png" alt="alt"></p>
 <p><img src="/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2_%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F.png" alt="alt"></p>
 <p>如果变换后的$\hat{i}, \hat{j}$是线性相关的，说明变换后的坐标为一维空间，相当于两个基向量重合了</p>
-<h3 id="线性变换的复合与矩阵乘法"><a href="#线性变换的复合与矩阵乘法" class="headerlink" title="线性变换的复合与矩阵乘法"></a>线性变换的复合与矩阵乘法</h3><p><img src="/images/%E5%A4%8D%E5%90%88%E7%9F%A9%E9%98%B5.png" alt="alt"></p>
+<h2 id="线性变换的复合与矩阵乘法"><a href="#线性变换的复合与矩阵乘法" class="headerlink" title="线性变换的复合与矩阵乘法"></a>线性变换的复合与矩阵乘法</h2><p><img src="/images/%E5%A4%8D%E5%90%88%E7%9F%A9%E9%98%B5.png" alt="alt"></p>
 <p>两个矩阵的乘积需要从右向左读，类似函数的复合。</p>
 <p><img src="/images/%E7%9F%A9%E9%98%B5%E5%A4%8D%E5%90%88.png" alt="alt"></p>
 <p>这样两个矩阵的乘积就对应了一个复合的线性变换，最终得到对应变换后的$\hat{i}, \hat{j}$</p>
@@ -532,6 +538,31 @@
 <p><img src="/images/%E5%A4%8D%E5%90%88%E5%8F%98%E6%8D%A2_3.png" alt="alt"></p>
 <p>复合乘积的顺序会影响结果，即$\mathbf{M_1 M_2} \neq \mathbf{M_2 M_1}$</p>
 <p>满足结合律(Associativity)：$(AB)C = A(BC)$<code>因为变换都是从右至左的，添加括号完全没有影响变换</code></p>
+<h3 id="三维空间的线性变换"><a href="#三维空间的线性变换" class="headerlink" title="三维空间的线性变换"></a>三维空间的线性变换</h3><p>与二维的变换类似，三维考虑$\hat{i} , \hat{j}, \hat{k}$三组基向量的变换过程。由此引申为$n$维矩阵变换。</p>
+<h2 id="行列式的本质"><a href="#行列式的本质" class="headerlink" title="行列式的本质"></a>行列式的本质</h2><ul>
+<li><p>行列式的本质是计算线性变化对空间的缩放比例，具体一点就是，测量一个给定区域面积增大或减小的比例。</p>
+</li>
+<li><p>单位面积的变换代表任意区域的面积变换比例。</p>
+</li>
+</ul>
+<p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_1.png" alt="alt"></p>
+<p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png" alt="alt"></p>
+<p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png" alt="alt"></p>
+<ul>
+<li><p><strong>行列式的值表示缩放比例</strong></p>
+</li>
+<li><p>对于行列式值为负数的解释</p>
+</li>
+</ul>
+<p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_%E9%9B%B6%E5%80%BC.gif" alt="alt"></p>
+<ul>
+<li><p>三维空间的行列式类似，它的单位是一个单位1的立方体。</p>
+</li>
+<li><p>三位空间的线性变换，可以使用<strong>右手定则</strong>判断三维空间的定向。如果变换前后都可以通过右手定则得到，那么他的行列式就是正值，否则为负值。</p>
+</li>
+</ul>
+<p><img src="/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_1.png" alt="alt"></p>
+<p><img src="/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_2.png" alt="alt"></p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
       
     </div>
@@ -744,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维空间的线性变换"><span class="nav-text">三维空间的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式的本质"><span class="nav-text">行列式的本质</span></a></li></ol></li></ol></div>
             
 
           </div>
