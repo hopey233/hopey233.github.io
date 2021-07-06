@@ -101,7 +101,9 @@
 <meta property="og:image" content="http://yoursite.com/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_%E9%9B%B6%E5%80%BC.gif">
 <meta property="og:image" content="http://yoursite.com/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_1.png">
 <meta property="og:image" content="http://yoursite.com/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_2.png">
-<meta property="og:updated_time" content="2021-07-03T12:59:29.448Z">
+<meta property="og:image" content="http://yoursite.com/images/%E7%82%B9%E7%A7%AF_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/%E7%82%B9%E7%A7%AF_2.jpg">
+<meta property="og:updated_time" content="2021-07-06T15:06:35.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Algebra">
 <meta name="twitter:description" content="3Blue1Brown">
@@ -311,8 +313,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-07-03T20:59:29+08:00">
-                2021-07-03
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-06T23:06:35+08:00">
+                2021-07-06
               </time>
             
           </span>
@@ -549,10 +551,9 @@
 <p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png" alt="alt"></p>
 <p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_2.png" alt="alt"></p>
 <ul>
-<li><p><strong>行列式的值表示缩放比例</strong></p>
-</li>
-<li><p>对于行列式值为负数的解释</p>
-</li>
+<li><strong>行列式的值表示缩放比例</strong></li>
+<li>当行列式值为零，说明围成得面积（体积）为零，导致了降维</li>
+<li>对于行列式值为负数的解释</li>
 </ul>
 <p><img src="/images/%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%98%E6%8D%A2_%E9%9B%B6%E5%80%BC.gif" alt="alt"></p>
 <ul>
@@ -563,6 +564,30 @@
 </ul>
 <p><img src="/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_1.png" alt="alt"></p>
 <p><img src="/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_2.png" alt="alt"></p>
+<ul>
+<li>$det(M_1 M_2) = det(M_1)det(M_2)$ 复合缩放比例等于两个分比例的积</li>
+</ul>
+<h3 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h3><p>矩阵变换的逆过程</p>
+<p>当矩阵对应行列式为0说明已经降维，此时逆变换无效，即无逆变换</p>
+<h3 id="秩"><a href="#秩" class="headerlink" title="秩"></a>秩</h3><p>表示变换空间后的维度（对应线性无关向量数），满秩列空间维数和空间维数相等。</p>
+<h3 id="核"><a href="#核" class="headerlink" title="核"></a>核</h3><p>对于所有矩阵变换来说，如果变换后落到零向量$\vec{v} = [0, …, 0]$中，我们把变换前的该向量组称为零空间（Null space）或核（Kernel），即$A \vec{x} = [0, … ,0]$的解集合$\vec{x}$</p>
+<h3 id="点积"><a href="#点积" class="headerlink" title="点积"></a>点积</h3><p>对于两个维度相同的向量，他们的点积计算为：$\begin{bmatrix}1 \\ 2\end{bmatrix} ^ T\cdot\begin{bmatrix} 3 \\ 4\end{bmatrix}=1\cdot3+2\cdot4=11$</p>
+<p>点积的几何解释是将一个向量向一个向量投影，然后两个长度相乘，如果为负数则表示反向。</p>
+<p><code>要证明点积的上述计算原理，需要了解</code>$L(\vec{v} + \vec{w}) = L(\vec{v}) + L(\vec{w}) \\ L(c \vec{v} ) = c L(\vec{v})$<code>其中L函数为线性变换</code></p>
+<p>重新认识一下这种运算，在二维空间中沿着某方向放置一条数轴，数轴的基向量设为$\hat{u}$。我们将空间中的向量投影到这条直线上，可表明这个操作是线性的，因为它满足等距分布的点在投影之后仍是等距分布。</p>
+<p><img src="/images/%E7%82%B9%E7%A7%AF_1.jpg" alt="alt"></p>
+<p>根据这个投影，我们定义了一个从二维向量到数的线性变换（需要强调的是，尽管这条数轴放置在二维空间中，但是这个变换是一个从二维向量到数的函数，输出的是一个数，而向量$\hat{u}$是一个二维向量，只是恰好落在数轴的方向），下一步就是得到其对应的1x2矩阵（投影矩阵），矩阵的列向量应该是向量$\hat{i}$和$\hat{j}$经过线性变换后得到的数值。</p>
+<p><img src="/images/%E7%82%B9%E7%A7%AF_2.jpg" alt></p>
+<p>注意向量$\hat{u}$和向量$\hat{i}$都是单位向量，从对称性可知向量$\hat{i}$向$\hat{u}$投影的长度，等于向量$\hat{u}$在向量$\hat{i}$方向上的投影长度，而$\hat{u}$向$\hat{i}$方向的投影就是$\hat{u}$的横坐标，也就等于向量$\hat{i}$在数轴上投影得到的数。同样的过程也可对$\hat{j}$进行操作。以此得到投影矩阵的两个元素就是向量$\hat{u}$的两个坐标，即线性变换为$[\hat{u} _x, \hat{u}_y]$ 。对偶向量为$\hat{u} = \begin{bmatrix} \hat{u}_x \\ \hat{u}_y \end{bmatrix}$</p>
+<h3 id="叉积"><a href="#叉积" class="headerlink" title="叉积"></a>叉积</h3><p>$\vec{v} \times \vec{w} = \vec{ p}$ 的数值上等于平行四边形面积，当$\vec{v}$在$\vec{w}$右侧，数值为正数，$\hat{i} \times \vec{j} = +$</p>
+<p>真正的叉积是通过两个<strong>三维</strong>向量$\vec{v}$和$\vec{w}$，生成一个新的三维向量$\vec{u}$，这个向量垂直于向量$\vec{v} \vec{w}$所围成的平面，长度等于他们的面积。</p>
+<p>在数值和几何角度理解参阅<a href="https://zhuanlan.zhihu.com/p/113506625" target="_blank" rel="noopener">clik this</a></p>
+<h2 id="基变换"><a href="#基变换" class="headerlink" title="基变换"></a>基变换</h2><ul>
+<li><p>不同空间网格定义相同向量有不同的表示方法，这也就是前文所讲的线性变换的原理</p>
+</li>
+<li><p>线性变换数值上是变换后网格的声明的向量到直角坐标系的向量的变换，逆变换相反</p>
+</li>
+</ul>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
       
     </div>
@@ -775,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维空间的线性变换"><span class="nav-text">三维空间的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式的本质"><span class="nav-text">行列式的本质</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维空间的线性变换"><span class="nav-text">三维空间的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式的本质"><span class="nav-text">行列式的本质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逆矩阵"><span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秩"><span class="nav-text">秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核"><span class="nav-text">核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点积"><span class="nav-text">点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#叉积"><span class="nav-text">叉积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基变换"><span class="nav-text">基变换</span></a></li></ol></li></ol></div>
             
 
           </div>
