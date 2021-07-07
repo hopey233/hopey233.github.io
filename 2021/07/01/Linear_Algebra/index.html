@@ -81,12 +81,12 @@
 
 
 
-<meta name="description" content="3Blue1Brown">
+<meta name="description" content="3Blue1Brown &amp;amp; PCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear Algebra">
 <meta property="og:url" content="http://yoursite.com/2021/07/01/Linear_Algebra/index.html">
 <meta property="og:site_name" content="Hope_Y&#39;s blog">
-<meta property="og:description" content="3Blue1Brown">
+<meta property="og:description" content="3Blue1Brown &amp;amp; PCA">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png">
 <meta property="og:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2_%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F.png">
@@ -103,10 +103,10 @@
 <meta property="og:image" content="http://yoursite.com/images/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99_2.png">
 <meta property="og:image" content="http://yoursite.com/images/%E7%82%B9%E7%A7%AF_1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/%E7%82%B9%E7%A7%AF_2.jpg">
-<meta property="og:updated_time" content="2021-07-07T08:50:13.066Z">
+<meta property="og:updated_time" content="2021-07-07T10:55:51.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Algebra">
-<meta name="twitter:description" content="3Blue1Brown">
+<meta name="twitter:description" content="3Blue1Brown &amp;amp; PCA">
 <meta name="twitter:image" content="http://yoursite.com/images/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2.png">
 
 
@@ -313,7 +313,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-07-07T16:50:13+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-07T18:55:51+08:00">
                 2021-07-07
               </time>
             
@@ -384,7 +384,7 @@
       
 
       
-        <p><a href="https://www.bilibili.com/video/av44855426/" target="_blank" rel="noopener">3Blue1Brown</a> </p>
+        <p><a href="https://www.bilibili.com/video/av44855426/" target="_blank" rel="noopener">3Blue1Brown</a> &amp; PCA</p>
 <a id="more"></a>
 
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><ul>
@@ -581,7 +581,7 @@
 <p>注意向量$\hat{u}$和向量$\hat{i}$都是单位向量，从对称性可知向量$\hat{i}$向$\hat{u}$投影的长度，等于向量$\hat{u}$在向量$\hat{i}$方向上的投影长度，而$\hat{u}$向$\hat{i}$方向的投影就是$\hat{u}$的横坐标，也就等于向量$\hat{i}$在数轴上投影得到的数。同样的过程也可对$\hat{j}$进行操作。以此得到投影矩阵的两个元素就是向量$\hat{u}$的两个坐标，即线性变换为$[\hat{u} _x, \hat{u}_y]$ 。对偶向量为$\hat{u} = \begin{bmatrix} \hat{u}_x \\ \hat{u}_y \end{bmatrix}$</p>
 <h3 id="叉积"><a href="#叉积" class="headerlink" title="叉积"></a>叉积</h3><p>$\vec{v} \times \vec{w} = \vec{ p}$ 的数值上等于平行四边形面积，当$\vec{v}$在$\vec{w}$右侧，数值为正数，$\hat{i} \times \vec{j} = +$</p>
 <p>真正的叉积是通过两个<strong>三维</strong>向量$\vec{v}$和$\vec{w}$，生成一个新的三维向量$\vec{u}$，这个向量垂直于向量$\vec{v} \vec{w}$所围成的平面，长度等于他们的面积。</p>
-<p>在数值和几何角度理解参阅<a href="https://zhuanlan.zhihu.com/p/113506625" target="_blank" rel="noopener">clik this</a></p>
+<p>在数值和几何角度理解参阅<a href="https://zhuanlan.zhihu.com/p/113506625" target="_blank" rel="noopener">click this</a></p>
 <h2 id="基变换"><a href="#基变换" class="headerlink" title="基变换"></a>基变换</h2><ul>
 <li><p>不同空间网格定义相同向量有不同的表示方法，这也就是前文所讲的线性变换的原理</p>
 </li>
@@ -596,13 +596,20 @@
 <li>实质上就是就是线性变换$A$，在$P$的作用下到了另一个坐标系的变换，再通过$P^{-1}$回到直角坐标系和在直角坐标系的$B$变换一致。也就是说两者只是在不同空间系下的相同变换</li>
 <li>相似对角化<ul>
 <li>$P^{-1} A  P = \Lambda$，其中$\Lambda$为对角矩阵，说明在$P$空间变换是只在变更基向量的长度</li>
-<li>$P$为将上述$\lambda$的解代入$(A - \lambda I) \vec{v} = \vec{0}$所得到所有特征向量$\vec{v}$，在组建成一个矩阵$P$，称为对角化</li>
+<li>$P$为将上述$\lambda$的解代入$(A - \lambda I) \vec{v} = \vec{0}$所得到所有特征向量$\vec{v}$，再组建成一个矩阵$P$，称为对角化</li>
 <li>$A^n = P \Lambda P^{-1} P \Lambda P^{-1}  … P \Lambda P^{-1}  = P \Lambda ^ {n} P^{-1} $ </li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h1 id="PCA降维"><a href="#PCA降维" class="headerlink" title="PCA降维"></a>PCA降维</h1><p>详细推导<a href="http://blog.codinglabs.org/articles/pca-tutorial.html" target="_blank" rel="noopener">click this</a></p>
+<p>假设一组数据$X = \begin{pmatrix}<br>a_1 &amp; a_2 &amp; a_3 &amp; … &amp; a_m \\<br>b_1 &amp; b_2 &amp; b_3 &amp; … &amp; b_m<br>\end{pmatrix}$，均值处理为0（即将每个字段减去字段的平均值，几何上就是将坐标轴移动到$(\bar{a}, \bar{b})$），$cov(a,b) = \frac{1}{m} \sum_{i=1}^m a_i b_i $，将之变成一个矩阵上来，构造$\frac{1}{m} X X^{T}$</p>
+<p>需要一个线性变换使得$\frac{1}{m} X X^{T}$变成对角矩阵，方差最大，协方差最小为0，此时就是求出$P$</p>
+<p>此时的$P$就是$\frac{1}{m} X X^T$特征向量组成的矩阵，之后用$P$的第一列乘$X$便得到一组一唯向量</p>
+<p>PCA代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__  == <span class="string">"__main__"</span>:</span><br><span class="line">    X = np.array([[<span class="number">-1</span>, <span class="number">-2</span>], [<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>]], dtype= float)</span><br><span class="line">    m, n = X.shape</span><br><span class="line">    Cov = X.T.dot(X) / m</span><br><span class="line">    lam, c = np.linalg.eig(Cov)</span><br><span class="line">    P = c.T</span><br><span class="line">    PCA = P[<span class="number">0</span>].dot(X.T)</span><br><span class="line">    print(PCA)</span><br></pre></td></tr></table></figure>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
       
     </div>
@@ -815,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维空间的线性变换"><span class="nav-text">三维空间的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式的本质"><span class="nav-text">行列式的本质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逆矩阵"><span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秩"><span class="nav-text">秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核"><span class="nav-text">核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点积"><span class="nav-text">点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#叉积"><span class="nav-text">叉积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基变换"><span class="nav-text">基变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征向量和特征值"><span class="nav-text">特征向量和特征值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向量的线性变换"><span class="nav-text">向量的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换的复合与矩阵乘法"><span class="nav-text">线性变换的复合与矩阵乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维空间的线性变换"><span class="nav-text">三维空间的线性变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式的本质"><span class="nav-text">行列式的本质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逆矩阵"><span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秩"><span class="nav-text">秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核"><span class="nav-text">核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点积"><span class="nav-text">点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#叉积"><span class="nav-text">叉积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基变换"><span class="nav-text">基变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征向量和特征值"><span class="nav-text">特征向量和特征值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA降维"><span class="nav-text">PCA降维</span></a></li></ol></div>
             
 
           </div>
